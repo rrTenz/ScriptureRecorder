@@ -1,0 +1,863 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B185B3CBCFB155515FC44FC /* Pods_ScriptureRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7304BA159B047762CB102791 /* Pods_ScriptureRecorder.framework */; };
+		3BE0649E9CE0438C896B0A84 /* Pods_ScriptureRecorderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51EFB32A6BE9E689AE75F917 /* Pods_ScriptureRecorderTests.framework */; };
+		C731BCDE1F3BB76D00395A8B /* ViewController_Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = C731BCDD1F3BB76D00395A8B /* ViewController_Export.swift */; };
+		C743CE801ED65BC0009BE5C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743CE7F1ED65BC0009BE5C0 /* AppDelegate.swift */; };
+		C743CE821ED65BC0009BE5C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743CE811ED65BC0009BE5C0 /* ViewController.swift */; };
+		C743CE851ED65BC0009BE5C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C743CE831ED65BC0009BE5C0 /* Main.storyboard */; };
+		C743CE871ED65BC0009BE5C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C743CE861ED65BC0009BE5C0 /* Assets.xcassets */; };
+		C743CE8A1ED65BC0009BE5C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C743CE881ED65BC0009BE5C0 /* LaunchScreen.storyboard */; };
+		C743CE951ED65BC1009BE5C0 /* ScriptureRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743CE941ED65BC1009BE5C0 /* ScriptureRecorderTests.swift */; };
+		C743CEA01ED65BC1009BE5C0 /* ScriptureRecorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743CE9F1ED65BC1009BE5C0 /* ScriptureRecorderUITests.swift */; };
+		C743CEAF1ED68526009BE5C0 /* ViewController_Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743CEAE1ED68526009BE5C0 /* ViewController_Book.swift */; };
+		C743CEB31ED745F0009BE5C0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743CEB21ED745F0009BE5C0 /* Constants.swift */; };
+		C743CEB51ED77F69009BE5C0 /* ViewController_SubBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743CEB41ED77F69009BE5C0 /* ViewController_SubBook.swift */; };
+		C743CEC01ED79DC5009BE5C0 /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743CEBF1ED79DC5009BE5C0 /* Scripture.swift */; };
+		C743CEC61EDDEFC6009BE5C0 /* ViewController_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743CEC51EDDEFC6009BE5C0 /* ViewController_Settings.swift */; };
+		C75E98E41F425C7900CDDD7E /* Icon_512.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E98E31F425C7900CDDD7E /* Icon_512.png */; };
+		C75E98E61F425D6100CDDD7E /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E98E51F425D6100CDDD7E /* gear.png */; };
+		C75E98EA1F425E5100CDDD7E /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E98E91F425E5100CDDD7E /* back.png */; };
+		C75E98ED1F438FDA00CDDD7E /* go.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E98EC1F438FDA00CDDD7E /* go.png */; };
+		C75E98EF1F438FE000CDDD7E /* garbage.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E98EE1F438FE000CDDD7E /* garbage.png */; };
+		C75E98F11F438FEC00CDDD7E /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E98F01F438FEC00CDDD7E /* bookmark.png */; };
+		C75E98F31F43A60500CDDD7E /* ViewController_Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E98F21F43A60500CDDD7E /* ViewController_Bookmark.swift */; };
+		C75E98F51F43B4D500CDDD7E /* Cover2.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E98F41F43B4D500CDDD7E /* Cover2.png */; };
+		C76BE3A11F365F0600DD02CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C76BE3A01F365F0600DD02CC /* GoogleService-Info.plist */; };
+		C76BE3AC1F36B81500DD02CC /* ViewController_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76BE3AB1F36B81500DD02CC /* ViewController_User.swift */; };
+		C7C022FC1F3A506900E05153 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C022FB1F3A506900E05153 /* Utilities.swift */; };
+		C7C022FF1F3A618F00E05153 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C022FE1F3A618F00E05153 /* CloudKit.framework */; };
+		C7D69DCD1F3E67B0007DF8B1 /* Richard-G-Scott-banner-2015.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7D69DCC1F3E67B0007DF8B1 /* Richard-G-Scott-banner-2015.jpg */; };
+		C7D69DCF1F3E693C007DF8B1 /* ViewController_Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D69DCE1F3E693C007DF8B1 /* ViewController_Quote.swift */; };
+		C7D69DD21F3E6D2F007DF8B1 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D69DD01F3E6D2F007DF8B1 /* play.png */; };
+		C7D69DD31F3E6D2F007DF8B1 /* record.ico in Resources */ = {isa = PBXBuildFile; fileRef = C7D69DD11F3E6D2F007DF8B1 /* record.ico */; };
+		F3E46166AD2C0DAE7EF351C7 /* Pods_ScriptureRecorderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB332103692D33B58FD2BD0 /* Pods_ScriptureRecorderUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C743CE911ED65BC1009BE5C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C743CE741ED65BC0009BE5C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C743CE7B1ED65BC0009BE5C0;
+			remoteInfo = ScriptureRecorder;
+		};
+		C743CE9C1ED65BC1009BE5C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C743CE741ED65BC0009BE5C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C743CE7B1ED65BC0009BE5C0;
+			remoteInfo = ScriptureRecorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4331DC6819F24D4030304C51 /* Pods-ScriptureRecorderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScriptureRecorderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScriptureRecorderUITests/Pods-ScriptureRecorderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		44548B5ED6BA96CC8BBE2AFF /* Pods-ScriptureRecorderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScriptureRecorderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScriptureRecorderUITests/Pods-ScriptureRecorderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4AC616990760DC71D9577C0E /* Pods-ScriptureRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScriptureRecorder.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScriptureRecorder/Pods-ScriptureRecorder.release.xcconfig"; sourceTree = "<group>"; };
+		51EFB32A6BE9E689AE75F917 /* Pods_ScriptureRecorderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScriptureRecorderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB332103692D33B58FD2BD0 /* Pods_ScriptureRecorderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScriptureRecorderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7113B1CF76E7428FE0D52FEC /* Pods-ScriptureRecorderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScriptureRecorderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScriptureRecorderTests/Pods-ScriptureRecorderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7304BA159B047762CB102791 /* Pods_ScriptureRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScriptureRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B6AB02DA5DA209583E57450 /* Pods-ScriptureRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScriptureRecorder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScriptureRecorder/Pods-ScriptureRecorder.debug.xcconfig"; sourceTree = "<group>"; };
+		A722808331F5DAADB9AA2594 /* Pods-ScriptureRecorderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScriptureRecorderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScriptureRecorderTests/Pods-ScriptureRecorderTests.release.xcconfig"; sourceTree = "<group>"; };
+		C731BCDD1F3BB76D00395A8B /* ViewController_Export.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Export.swift; sourceTree = "<group>"; };
+		C743CE7C1ED65BC0009BE5C0 /* ScriptureRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScriptureRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C743CE7F1ED65BC0009BE5C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C743CE811ED65BC0009BE5C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C743CE841ED65BC0009BE5C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C743CE861ED65BC0009BE5C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C743CE891ED65BC0009BE5C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C743CE8B1ED65BC0009BE5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C743CE901ED65BC1009BE5C0 /* ScriptureRecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScriptureRecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C743CE941ED65BC1009BE5C0 /* ScriptureRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureRecorderTests.swift; sourceTree = "<group>"; };
+		C743CE961ED65BC1009BE5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C743CE9B1ED65BC1009BE5C0 /* ScriptureRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScriptureRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C743CE9F1ED65BC1009BE5C0 /* ScriptureRecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureRecorderUITests.swift; sourceTree = "<group>"; };
+		C743CEA11ED65BC1009BE5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C743CEAE1ED68526009BE5C0 /* ViewController_Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Book.swift; sourceTree = "<group>"; };
+		C743CEB21ED745F0009BE5C0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C743CEB41ED77F69009BE5C0 /* ViewController_SubBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_SubBook.swift; sourceTree = "<group>"; };
+		C743CEBF1ED79DC5009BE5C0 /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
+		C743CEC51EDDEFC6009BE5C0 /* ViewController_Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Settings.swift; sourceTree = "<group>"; };
+		C75E98E31F425C7900CDDD7E /* Icon_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_512.png; sourceTree = "<group>"; };
+		C75E98E51F425D6100CDDD7E /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		C75E98E91F425E5100CDDD7E /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		C75E98EC1F438FDA00CDDD7E /* go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go.png; sourceTree = "<group>"; };
+		C75E98EE1F438FE000CDDD7E /* garbage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garbage.png; sourceTree = "<group>"; };
+		C75E98F01F438FEC00CDDD7E /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark.png; sourceTree = "<group>"; };
+		C75E98F21F43A60500CDDD7E /* ViewController_Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Bookmark.swift; sourceTree = "<group>"; };
+		C75E98F41F43B4D500CDDD7E /* Cover2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cover2.png; sourceTree = "<group>"; };
+		C76BE3A01F365F0600DD02CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C76BE3AB1F36B81500DD02CC /* ViewController_User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_User.swift; sourceTree = "<group>"; };
+		C7C022FB1F3A506900E05153 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		C7C022FD1F3A618600E05153 /* ScriptureRecorder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScriptureRecorder.entitlements; sourceTree = "<group>"; };
+		C7C022FE1F3A618F00E05153 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C7D69DCC1F3E67B0007DF8B1 /* Richard-G-Scott-banner-2015.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Richard-G-Scott-banner-2015.jpg"; sourceTree = "<group>"; };
+		C7D69DCE1F3E693C007DF8B1 /* ViewController_Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Quote.swift; sourceTree = "<group>"; };
+		C7D69DD01F3E6D2F007DF8B1 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		C7D69DD11F3E6D2F007DF8B1 /* record.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = record.ico; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C743CE791ED65BC0009BE5C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B185B3CBCFB155515FC44FC /* Pods_ScriptureRecorder.framework in Frameworks */,
+				C7C022FF1F3A618F00E05153 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C743CE8D1ED65BC1009BE5C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE0649E9CE0438C896B0A84 /* Pods_ScriptureRecorderTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C743CE981ED65BC1009BE5C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3E46166AD2C0DAE7EF351C7 /* Pods_ScriptureRecorderUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0445BE12C642FC0DC5C27AB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B6AB02DA5DA209583E57450 /* Pods-ScriptureRecorder.debug.xcconfig */,
+				4AC616990760DC71D9577C0E /* Pods-ScriptureRecorder.release.xcconfig */,
+				7113B1CF76E7428FE0D52FEC /* Pods-ScriptureRecorderTests.debug.xcconfig */,
+				A722808331F5DAADB9AA2594 /* Pods-ScriptureRecorderTests.release.xcconfig */,
+				4331DC6819F24D4030304C51 /* Pods-ScriptureRecorderUITests.debug.xcconfig */,
+				44548B5ED6BA96CC8BBE2AFF /* Pods-ScriptureRecorderUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C743CE731ED65BC0009BE5C0 = {
+			isa = PBXGroup;
+			children = (
+				C743CE7E1ED65BC0009BE5C0 /* ScriptureRecorder */,
+				C743CE931ED65BC1009BE5C0 /* ScriptureRecorderTests */,
+				C743CE9E1ED65BC1009BE5C0 /* ScriptureRecorderUITests */,
+				C743CE7D1ED65BC0009BE5C0 /* Products */,
+				0445BE12C642FC0DC5C27AB2 /* Pods */,
+				EFD1DED77A6B9E0EA0F429CF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C743CE7D1ED65BC0009BE5C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C743CE7C1ED65BC0009BE5C0 /* ScriptureRecorder.app */,
+				C743CE901ED65BC1009BE5C0 /* ScriptureRecorderTests.xctest */,
+				C743CE9B1ED65BC1009BE5C0 /* ScriptureRecorderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C743CE7E1ED65BC0009BE5C0 /* ScriptureRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				C7C022FD1F3A618600E05153 /* ScriptureRecorder.entitlements */,
+				C743CEC21ED8A12E009BE5C0 /* Structs */,
+				C743CEC11ED8A0E5009BE5C0 /* ViewControllers */,
+				C743CE7F1ED65BC0009BE5C0 /* AppDelegate.swift */,
+				C743CE831ED65BC0009BE5C0 /* Main.storyboard */,
+				C743CE861ED65BC0009BE5C0 /* Assets.xcassets */,
+				C743CE881ED65BC0009BE5C0 /* LaunchScreen.storyboard */,
+				C743CE8B1ED65BC0009BE5C0 /* Info.plist */,
+				C76BE3A01F365F0600DD02CC /* GoogleService-Info.plist */,
+				C75E98EB1F438FB800CDDD7E /* Images */,
+			);
+			path = ScriptureRecorder;
+			sourceTree = "<group>";
+		};
+		C743CE931ED65BC1009BE5C0 /* ScriptureRecorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				C743CE941ED65BC1009BE5C0 /* ScriptureRecorderTests.swift */,
+				C743CE961ED65BC1009BE5C0 /* Info.plist */,
+			);
+			path = ScriptureRecorderTests;
+			sourceTree = "<group>";
+		};
+		C743CE9E1ED65BC1009BE5C0 /* ScriptureRecorderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C743CE9F1ED65BC1009BE5C0 /* ScriptureRecorderUITests.swift */,
+				C743CEA11ED65BC1009BE5C0 /* Info.plist */,
+			);
+			path = ScriptureRecorderUITests;
+			sourceTree = "<group>";
+		};
+		C743CEC11ED8A0E5009BE5C0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C743CE811ED65BC0009BE5C0 /* ViewController.swift */,
+				C743CEC51EDDEFC6009BE5C0 /* ViewController_Settings.swift */,
+				C743CEAE1ED68526009BE5C0 /* ViewController_Book.swift */,
+				C743CEB41ED77F69009BE5C0 /* ViewController_SubBook.swift */,
+				C76BE3AB1F36B81500DD02CC /* ViewController_User.swift */,
+				C731BCDD1F3BB76D00395A8B /* ViewController_Export.swift */,
+				C7D69DCE1F3E693C007DF8B1 /* ViewController_Quote.swift */,
+				C75E98F21F43A60500CDDD7E /* ViewController_Bookmark.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C743CEC21ED8A12E009BE5C0 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				C743CEB21ED745F0009BE5C0 /* Constants.swift */,
+				C743CEBF1ED79DC5009BE5C0 /* Scripture.swift */,
+				C7C022FB1F3A506900E05153 /* Utilities.swift */,
+			);
+			name = Structs;
+			sourceTree = "<group>";
+		};
+		C75E98EB1F438FB800CDDD7E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C75E98E91F425E5100CDDD7E /* back.png */,
+				C75E98F01F438FEC00CDDD7E /* bookmark.png */,
+				C75E98F41F43B4D500CDDD7E /* Cover2.png */,
+				C75E98EE1F438FE000CDDD7E /* garbage.png */,
+				C75E98E51F425D6100CDDD7E /* gear.png */,
+				C75E98EC1F438FDA00CDDD7E /* go.png */,
+				C75E98E31F425C7900CDDD7E /* Icon_512.png */,
+				C7D69DD01F3E6D2F007DF8B1 /* play.png */,
+				C7D69DD11F3E6D2F007DF8B1 /* record.ico */,
+				C7D69DCC1F3E67B0007DF8B1 /* Richard-G-Scott-banner-2015.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		EFD1DED77A6B9E0EA0F429CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7C022FE1F3A618F00E05153 /* CloudKit.framework */,
+				7304BA159B047762CB102791 /* Pods_ScriptureRecorder.framework */,
+				51EFB32A6BE9E689AE75F917 /* Pods_ScriptureRecorderTests.framework */,
+				5AB332103692D33B58FD2BD0 /* Pods_ScriptureRecorderUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C743CE7B1ED65BC0009BE5C0 /* ScriptureRecorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C743CEA41ED65BC1009BE5C0 /* Build configuration list for PBXNativeTarget "ScriptureRecorder" */;
+			buildPhases = (
+				BE0E568BBD963261FA25E3FE /* [CP] Check Pods Manifest.lock */,
+				C743CE781ED65BC0009BE5C0 /* Sources */,
+				C743CE791ED65BC0009BE5C0 /* Frameworks */,
+				C743CE7A1ED65BC0009BE5C0 /* Resources */,
+				1FDDAAAAB34F916ABEDBBE71 /* [CP] Embed Pods Frameworks */,
+				25787215A351FD2C99EBAE1A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScriptureRecorder;
+			productName = ScriptureRecorder;
+			productReference = C743CE7C1ED65BC0009BE5C0 /* ScriptureRecorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C743CE8F1ED65BC1009BE5C0 /* ScriptureRecorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C743CEA71ED65BC1009BE5C0 /* Build configuration list for PBXNativeTarget "ScriptureRecorderTests" */;
+			buildPhases = (
+				9B01275E2F2B92CBB68A1E90 /* [CP] Check Pods Manifest.lock */,
+				C743CE8C1ED65BC1009BE5C0 /* Sources */,
+				C743CE8D1ED65BC1009BE5C0 /* Frameworks */,
+				C743CE8E1ED65BC1009BE5C0 /* Resources */,
+				C4C90B2EC5B6A3F1B4163E50 /* [CP] Embed Pods Frameworks */,
+				80EBA12D475A4009F5F0C9A6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C743CE921ED65BC1009BE5C0 /* PBXTargetDependency */,
+			);
+			name = ScriptureRecorderTests;
+			productName = ScriptureRecorderTests;
+			productReference = C743CE901ED65BC1009BE5C0 /* ScriptureRecorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C743CE9A1ED65BC1009BE5C0 /* ScriptureRecorderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C743CEAA1ED65BC1009BE5C0 /* Build configuration list for PBXNativeTarget "ScriptureRecorderUITests" */;
+			buildPhases = (
+				5EC1C63AABD4377F59F6B093 /* [CP] Check Pods Manifest.lock */,
+				C743CE971ED65BC1009BE5C0 /* Sources */,
+				C743CE981ED65BC1009BE5C0 /* Frameworks */,
+				C743CE991ED65BC1009BE5C0 /* Resources */,
+				57880022A62DDFA87303B006 /* [CP] Embed Pods Frameworks */,
+				A6087B93F7FEB53160403236 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C743CE9D1ED65BC1009BE5C0 /* PBXTargetDependency */,
+			);
+			name = ScriptureRecorderUITests;
+			productName = ScriptureRecorderUITests;
+			productReference = C743CE9B1ED65BC1009BE5C0 /* ScriptureRecorderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C743CE741ED65BC0009BE5C0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "rrTenz Games";
+				TargetAttributes = {
+					C743CE7B1ED65BC0009BE5C0 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = U3F376V567;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					C743CE8F1ED65BC1009BE5C0 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = U3F376V567;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C743CE7B1ED65BC0009BE5C0;
+					};
+					C743CE9A1ED65BC1009BE5C0 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = U3F376V567;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C743CE7B1ED65BC0009BE5C0;
+					};
+				};
+			};
+			buildConfigurationList = C743CE771ED65BC0009BE5C0 /* Build configuration list for PBXProject "ScriptureRecorder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C743CE731ED65BC0009BE5C0;
+			productRefGroup = C743CE7D1ED65BC0009BE5C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C743CE7B1ED65BC0009BE5C0 /* ScriptureRecorder */,
+				C743CE8F1ED65BC1009BE5C0 /* ScriptureRecorderTests */,
+				C743CE9A1ED65BC1009BE5C0 /* ScriptureRecorderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C743CE7A1ED65BC0009BE5C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7D69DCD1F3E67B0007DF8B1 /* Richard-G-Scott-banner-2015.jpg in Resources */,
+				C7D69DD31F3E6D2F007DF8B1 /* record.ico in Resources */,
+				C75E98E61F425D6100CDDD7E /* gear.png in Resources */,
+				C743CE8A1ED65BC0009BE5C0 /* LaunchScreen.storyboard in Resources */,
+				C75E98F11F438FEC00CDDD7E /* bookmark.png in Resources */,
+				C76BE3A11F365F0600DD02CC /* GoogleService-Info.plist in Resources */,
+				C75E98EF1F438FE000CDDD7E /* garbage.png in Resources */,
+				C743CE871ED65BC0009BE5C0 /* Assets.xcassets in Resources */,
+				C75E98F51F43B4D500CDDD7E /* Cover2.png in Resources */,
+				C75E98EA1F425E5100CDDD7E /* back.png in Resources */,
+				C743CE851ED65BC0009BE5C0 /* Main.storyboard in Resources */,
+				C7D69DD21F3E6D2F007DF8B1 /* play.png in Resources */,
+				C75E98E41F425C7900CDDD7E /* Icon_512.png in Resources */,
+				C75E98ED1F438FDA00CDDD7E /* go.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C743CE8E1ED65BC1009BE5C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C743CE991ED65BC1009BE5C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FDDAAAAB34F916ABEDBBE71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScriptureRecorder/Pods-ScriptureRecorder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25787215A351FD2C99EBAE1A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScriptureRecorder/Pods-ScriptureRecorder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57880022A62DDFA87303B006 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScriptureRecorderUITests/Pods-ScriptureRecorderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EC1C63AABD4377F59F6B093 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		80EBA12D475A4009F5F0C9A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScriptureRecorderTests/Pods-ScriptureRecorderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B01275E2F2B92CBB68A1E90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A6087B93F7FEB53160403236 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScriptureRecorderUITests/Pods-ScriptureRecorderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE0E568BBD963261FA25E3FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C4C90B2EC5B6A3F1B4163E50 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScriptureRecorderTests/Pods-ScriptureRecorderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C743CE781ED65BC0009BE5C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75E98F31F43A60500CDDD7E /* ViewController_Bookmark.swift in Sources */,
+				C731BCDE1F3BB76D00395A8B /* ViewController_Export.swift in Sources */,
+				C743CE821ED65BC0009BE5C0 /* ViewController.swift in Sources */,
+				C7D69DCF1F3E693C007DF8B1 /* ViewController_Quote.swift in Sources */,
+				C76BE3AC1F36B81500DD02CC /* ViewController_User.swift in Sources */,
+				C743CE801ED65BC0009BE5C0 /* AppDelegate.swift in Sources */,
+				C743CEC01ED79DC5009BE5C0 /* Scripture.swift in Sources */,
+				C743CEC61EDDEFC6009BE5C0 /* ViewController_Settings.swift in Sources */,
+				C743CEAF1ED68526009BE5C0 /* ViewController_Book.swift in Sources */,
+				C7C022FC1F3A506900E05153 /* Utilities.swift in Sources */,
+				C743CEB51ED77F69009BE5C0 /* ViewController_SubBook.swift in Sources */,
+				C743CEB31ED745F0009BE5C0 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C743CE8C1ED65BC1009BE5C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C743CE951ED65BC1009BE5C0 /* ScriptureRecorderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C743CE971ED65BC1009BE5C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C743CEA01ED65BC1009BE5C0 /* ScriptureRecorderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C743CE921ED65BC1009BE5C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C743CE7B1ED65BC0009BE5C0 /* ScriptureRecorder */;
+			targetProxy = C743CE911ED65BC1009BE5C0 /* PBXContainerItemProxy */;
+		};
+		C743CE9D1ED65BC1009BE5C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C743CE7B1ED65BC0009BE5C0 /* ScriptureRecorder */;
+			targetProxy = C743CE9C1ED65BC1009BE5C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C743CE831ED65BC0009BE5C0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C743CE841ED65BC0009BE5C0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C743CE881ED65BC0009BE5C0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C743CE891ED65BC0009BE5C0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C743CEA21ED65BC1009BE5C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C743CEA31ED65BC1009BE5C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C743CEA51ED65BC1009BE5C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B6AB02DA5DA209583E57450 /* Pods-ScriptureRecorder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ScriptureRecorder/ScriptureRecorder.entitlements;
+				DEVELOPMENT_TEAM = U3F376V567;
+				INFOPLIST_FILE = ScriptureRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C743CEA61ED65BC1009BE5C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AC616990760DC71D9577C0E /* Pods-ScriptureRecorder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ScriptureRecorder/ScriptureRecorder.entitlements;
+				DEVELOPMENT_TEAM = U3F376V567;
+				INFOPLIST_FILE = ScriptureRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C743CEA81ED65BC1009BE5C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7113B1CF76E7428FE0D52FEC /* Pods-ScriptureRecorderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U3F376V567;
+				INFOPLIST_FILE = ScriptureRecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScriptureRecorder.app/ScriptureRecorder";
+			};
+			name = Debug;
+		};
+		C743CEA91ED65BC1009BE5C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A722808331F5DAADB9AA2594 /* Pods-ScriptureRecorderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U3F376V567;
+				INFOPLIST_FILE = ScriptureRecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScriptureRecorder.app/ScriptureRecorder";
+			};
+			name = Release;
+		};
+		C743CEAB1ED65BC1009BE5C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4331DC6819F24D4030304C51 /* Pods-ScriptureRecorderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = U3F376V567;
+				INFOPLIST_FILE = ScriptureRecorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ScriptureRecorder;
+			};
+			name = Debug;
+		};
+		C743CEAC1ED65BC1009BE5C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44548B5ED6BA96CC8BBE2AFF /* Pods-ScriptureRecorderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = U3F376V567;
+				INFOPLIST_FILE = ScriptureRecorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ScriptureRecorder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C743CE771ED65BC0009BE5C0 /* Build configuration list for PBXProject "ScriptureRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C743CEA21ED65BC1009BE5C0 /* Debug */,
+				C743CEA31ED65BC1009BE5C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C743CEA41ED65BC1009BE5C0 /* Build configuration list for PBXNativeTarget "ScriptureRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C743CEA51ED65BC1009BE5C0 /* Debug */,
+				C743CEA61ED65BC1009BE5C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C743CEA71ED65BC1009BE5C0 /* Build configuration list for PBXNativeTarget "ScriptureRecorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C743CEA81ED65BC1009BE5C0 /* Debug */,
+				C743CEA91ED65BC1009BE5C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C743CEAA1ED65BC1009BE5C0 /* Build configuration list for PBXNativeTarget "ScriptureRecorderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C743CEAB1ED65BC1009BE5C0 /* Debug */,
+				C743CEAC1ED65BC1009BE5C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C743CE741ED65BC0009BE5C0 /* Project object */;
+}

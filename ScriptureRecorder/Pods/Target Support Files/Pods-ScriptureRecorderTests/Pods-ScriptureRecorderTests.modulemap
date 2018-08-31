@@ -1,0 +1,6 @@
+framework module Pods_ScriptureRecorderTests {
+  umbrella header "Pods-ScriptureRecorderTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
