@@ -424,11 +424,11 @@ struct Utilities {
         
         for i in 0 ..< audioFileUrls.count {
             
-            let compositionAudioTrack :AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaTypeAudio, preferredTrackID: CMPersistentTrackID())
+            let compositionAudioTrack :AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: CMPersistentTrackID())!
             
             let asset = AVURLAsset(url: (audioFileUrls[i] as! NSURL) as URL)
             
-            let track = asset.tracks(withMediaType: AVMediaTypeAudio)[0]
+            let track = asset.tracks(withMediaType: AVMediaType.audio)[0]
             
             let timeRange = CMTimeRange(start: CMTimeMake(0, 600), duration: track.timeRange.duration)
             
@@ -445,7 +445,7 @@ struct Utilities {
         }
         
         let assetExport = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A)
-        assetExport?.outputFileType = AVFileTypeAppleM4A
+        assetExport?.outputFileType = AVFileType.m4a
         assetExport?.outputURL = appDelegate.mergeAudioURL as URL
         assetExport?.exportAsynchronously(completionHandler:
             {
