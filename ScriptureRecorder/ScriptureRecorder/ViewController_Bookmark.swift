@@ -12,6 +12,7 @@ class ViewController_Bookmark: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var Label_Bookmarks: UILabel!
     @IBOutlet var labelCurrentScripture: UILabel!
     @IBOutlet var textBookmark0: UITextView!
     @IBOutlet var textBookmark1: UITextView!
@@ -32,13 +33,27 @@ class ViewController_Bookmark: UIViewController {
         updateTextBox(3)
         updateTextBox(4)
         updateTextBox(5)
+        
+        if appDelegate.Language == .English {
+            Label_Bookmarks.text = "Bookmarks"
+        }else if appDelegate.Language == .Spanish {
+            Label_Bookmarks.text = "Marcadores"
+        }else {
+            fatalError()
+        }
     }
     
     func updateTextBox(_ i: Int) {
         var text = ""
         
         if appDelegate.bookmarks[i].bookString == "" || appDelegate.bookmarks[i].subBookString == ""{
-            text = "<Empty>"
+            if appDelegate.Language == .English {
+                text = "<Empty>"
+            }else if appDelegate.Language == .Spanish {
+                text = "<Vacío>"
+            }else {
+                fatalError()
+            }
         }else {
             text = "\(appDelegate.bookmarks[i].bookString)\n\(appDelegate.bookmarks[i].subBookString) \(appDelegate.bookmarks[i].chapter):\(appDelegate.bookmarks[i].verse)"
         }

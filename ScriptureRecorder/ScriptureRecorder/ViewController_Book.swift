@@ -33,20 +33,20 @@ class ViewController_Book: UIViewController, UITableViewDelegate, UITableViewDat
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return Const.BOOK_LIST.count
+        return Const.BOOK_LIST[appDelegate.Language.rawValue].count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = Const.BOOK_LIST[indexPath.row]
+        cell.textLabel?.text = Const.BOOK_LIST[appDelegate.Language.rawValue][indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         appDelegate.bookEnum = Const.Book(rawValue: indexPath.row)!
-        appDelegate.bookString = Const.BOOK_LIST[indexPath.row]
+        appDelegate.bookString = Const.BOOK_LIST[appDelegate.Language.rawValue][indexPath.row]
         print("Book Selected \(Const.BOOK_LIST[indexPath.row])")
         self.performSegue(withIdentifier: "unwindToMenuWithSegue", sender: self)
     }

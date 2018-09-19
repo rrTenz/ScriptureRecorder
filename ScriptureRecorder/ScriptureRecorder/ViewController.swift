@@ -32,6 +32,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     @IBOutlet var buttonBook: UIButton!
     @IBOutlet var buttonSubBook: UIButton!
     
+    static let text_buttonRecord = ["Record", "Grabar"]
+    static let text_buttonPlay = ["Play", "Tocar"]
+    static let text_buttonShare = ["Share", "Compartir"]
+    static let text_buttonStop = ["Stop", "Parar"]
+    
     //TODO add for ads, !!!will need to drag back in from storyboard !!! 
     //@IBOutlet var bannerView: GADBannerView!
     
@@ -69,6 +74,32 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue)
+    {
+        if appDelegate.didLoadDefaults == false {
+            appDelegate.didLoadDefaults = true
+            Utilities().loadDefaults(loadUser: false)
+        }
+        
+        self.updateBookStrings()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if appDelegate.userName_prev != appDelegate.userName {
+            Utilities().popupMessage(view: self, title: "User changed", message: "User changed to:\n\(appDelegate.userName)", button: "OK")
+            appDelegate.userName_prev = appDelegate.userName
+        }
+        
+        if appDelegate.shareFile {
+            appDelegate.shareFile = false
+            shareFile()
+        }
+        
+        buttonRecord.setTitle(ViewController.text_buttonRecord[appDelegate.Language.rawValue], for: .normal)
+        buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
+        buttonSave.setTitle(ViewController.text_buttonShare[appDelegate.Language.rawValue], for: .normal)
     }
     
     //TODO add for ads
@@ -253,9 +284,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             return
         }
         if !audioRecorder.isRecording{  //don't play when recording
-            if buttonPlay.titleLabel?.text == "Play" || (audioPlayer != nil && audioPlayer.isPlaying == false) {
+            if buttonPlay.titleLabel?.text == ViewController.text_buttonPlay[appDelegate.Language.rawValue] ||
+                (audioPlayer != nil && audioPlayer.isPlaying == false) {
                 buttonRecord.isEnabled = false
-                buttonPlay.setTitle("Stop", for: .normal)
+                buttonPlay.setTitle(ViewController.text_buttonStop[appDelegate.Language.rawValue], for: .normal)
                 
                 imagePlay.isHidden = false
                 imageRecord.isHidden = true
@@ -265,7 +297,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             }else{
                 audioPlayer.stop()
                 buttonRecord.isEnabled = true
-                buttonPlay.setTitle("Play", for: .normal)
+                buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
                 
                 imagePlay.isHidden = true
                 imageRecord.isHidden = true
@@ -277,7 +309,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         if audioRecorder.isRecording{
             stopRecording()
         }
-        if buttonPlay.titleLabel?.text == "Stop" || (audioPlayer != nil && audioPlayer.isPlaying == true) {
+        if buttonPlay.titleLabel?.text == ViewController.text_buttonStop[appDelegate.Language.rawValue] ||
+            (audioPlayer != nil && audioPlayer.isPlaying == true) {
             playActions()   //TODO this needs to be tested
         }
     }
@@ -470,7 +503,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         let subList = Utilities().getCurrentBook().SubBookArray
         if (subBookIndex > 0){
             subBookIndex -= 1
-            appDelegate.subBookString = subList[subBookIndex].Name
+            appDelegate.subBookString = subList[subBookIndex].Name[appDelegate.Language.rawValue]
             appDelegate.chapter = Utilities().getCurrentSubBook().ChapterArray.count
             appDelegate.verse = Utilities().getCurrentChapterObject().verseCount
             appDelegate.subBookString_prev = appDelegate.subBookString
@@ -488,7 +521,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         let subList = Utilities().getCurrentBook().SubBookArray
         if (subBookIndex + 1 < subList.count){
             subBookIndex += 1
-            appDelegate.subBookString = subList[subBookIndex].Name
+            appDelegate.subBookString = subList[subBookIndex].Name[appDelegate.Language.rawValue]
             appDelegate.chapter = 1
             appDelegate.verse = Utilities().getMinVerse()
             appDelegate.subBookString_prev = appDelegate.subBookString
@@ -499,28 +532,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         }
         
         updateUI()
-    }
-    
-    @IBAction func unwindToMenu(segue: UIStoryboardSegue)
-    {
-        if appDelegate.didLoadDefaults == false {
-            appDelegate.didLoadDefaults = true
-            Utilities().loadDefaults(loadUser: false)
-        }
-        
-        self.updateBookStrings()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if appDelegate.userName_prev != appDelegate.userName {
-            Utilities().popupMessage(view: self, title: "User changed", message: "User changed to:\n\(appDelegate.userName)", button: "OK")
-            appDelegate.userName_prev = appDelegate.userName
-        }
-        
-        if appDelegate.shareFile {
-            appDelegate.shareFile = false
-            shareFile()
-        }
     }
     
     // MARK: Main
@@ -579,13 +590,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     func updateRecordButtonTitle(){
         if(audioRecorder.isRecording){
-            buttonRecord.setTitle("Stop", for: .normal)
+            buttonRecord.setTitle(ViewController.text_buttonStop[appDelegate.Language.rawValue], for: .normal)
             buttonPlay.isEnabled = false
             
             imagePlay.isHidden = true
             imageRecord.isHidden = false
         }else{
-            buttonRecord.setTitle("Record", for: .normal)
+            buttonRecord.setTitle(ViewController.text_buttonRecord[appDelegate.Language.rawValue], for: .normal)
             if verifyFileExists() {
                 buttonPlay.isEnabled = true
                 
@@ -620,7 +631,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("audioPlayerDidFinishPlaying")
         buttonRecord.isEnabled = true
-        buttonPlay.setTitle("Play", for: .normal)
+        buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
         
         imagePlay.isHidden = true
         imageRecord.isHidden = true
@@ -654,7 +665,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                 if verifyFileExists() { //see if the new verse exists
                     //if the verse exists, start playing it
                     print("   Start next Continous Play verse")
-                    buttonPlay.setTitle("Play", for: .normal)
+                    buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
                     playActions()
                 }else {
                     print("   Verse does not exist")
@@ -674,7 +685,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             appDelegate.goToBookmark = false
         }else {
             if(appDelegate.bookString != appDelegate.bookString_prev){
-                appDelegate.subBookString = Const.SUB_BOOK_LIST[appDelegate.bookEnum.rawValue][0]
+                let var1 = Const.SUB_BOOK_LIST[appDelegate.Language.rawValue]
+                let var2 = var1[appDelegate.bookEnum.rawValue]
+                var index = Utilities().getCurrentSubBookIndex()
+                if index == -1 {
+                    index = 0
+                }
+                let var3 = var2[index]
+                appDelegate.subBookString = var3    //TODO is this right?
                 resetChapterAndVerse = true
             }
             
@@ -703,7 +721,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         if(audioPlayer != nil && audioPlayer.isPlaying == true) {
             wasPlaying = true
             audioPlayer.stop()
-            buttonPlay.setTitle("Play", for: .normal)
+            buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
             
             imagePlay.isHidden = true
             imageRecord.isHidden = true
@@ -719,25 +737,64 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         var verseString = ""
         let subBook = Utilities().getCurrentSubBook()
         if appDelegate.verse == -1 && appDelegate.chapter == 1 {
-            verseString = " - Book Title and Book Summary"
-        }else if subBook.Name.contains("Intro") || subBook.Name.contains("Title") || subBook.Name.contains("Dedicatory") || subBook.Name.contains(" Testimony") {
+            if appDelegate.Language == .English {
+                verseString = " - Book Title and Book Summary"
+            }else if appDelegate.Language == .Spanish {
+                verseString = " - Título del libro y resumen del libro"
+            }else {
+                fatalError()
+            }
+        }else if subBook.Name.contains("Intro") || subBook.Name.contains("Title") || subBook.Name.contains("Dedicatory") || subBook.Name.contains(" Testimony") ||          subBook.Name.contains("Portada") || subBook.Name.contains("") || subBook.Name.contains("Introducción") || subBook.Name.contains("Testimonio ") {
             verseString = ""
         }else if appDelegate.verse == -1 {
-            verseString = " - Chapter Pre-heading"
-        }else if subBook.Name == Const.PGP_AofF && appDelegate.verse == 0 {
+            if appDelegate.Language == .English {
+                verseString = " - Chapter Pre-heading"
+            }else if appDelegate.Language == .Spanish {
+                verseString = " - Antes del título del capítulo"
+            }else {
+                fatalError()
+            }
+        }else if subBook.Name[appDelegate.Language.rawValue] == Const.PGP_AofF_ARRAY[appDelegate.Language.rawValue] && appDelegate.verse == 0 {
             verseString = " - Articles of Faith Title"
-        }else if (appDelegate.chapter == 116 || appDelegate.chapter == 120) && subBook.Name == Const.DC_SECTIONS && appDelegate.verse == 0 {
-            verseString = " - Chapter Pre-heading"
+            if appDelegate.Language == .English {
+                verseString = " - Articles of Faith Title"
+            }else if appDelegate.Language == .Spanish {
+                verseString = " - Artículos de Fe, Título"
+            }else {
+                fatalError()
+            }
+        }else if (appDelegate.chapter == 116 || appDelegate.chapter == 120) &&
+                    subBook.Name[appDelegate.Language.rawValue] == Const.DC_SECTIONS_ARRAY[appDelegate.Language.rawValue] &&
+                    appDelegate.verse == 0 {
+            if appDelegate.Language == .English {
+                verseString = " - Chapter Pre-heading"
+            }else if appDelegate.Language == .Spanish {
+                verseString = " - Antes del título del capítulo"
+            }else {
+                fatalError()
+            }
         }else if appDelegate.verse == 0 {
             verseString = " - Chapter Heading"
+            if appDelegate.Language == .English {
+                verseString = " - Chapter Heading"
+            }else if appDelegate.Language == .Spanish {
+                verseString = " - Título del Capítulo"
+            }else {
+                fatalError()
+            }
         }else {
             verseString = ":\(appDelegate.verse)"
         }
         
-        textViewVerse.text = "\(appDelegate.subBookString) \(appDelegate.chapter)\(verseString)\n\(Utilities().getCurrentChapterObject().optionalDescription)"
+        let subBookString = Const.SUB_BOOK_LIST[appDelegate.Language.rawValue][appDelegate.bookEnum.rawValue][Utilities().getCurrentSubBookIndex()]
         
-        buttonBook.setTitle(" \(appDelegate.bookString)", for: .normal)
-        buttonSubBook.setTitle(" \(appDelegate.subBookString)", for: .normal)
+        let description = Utilities().getCurrentChapterObject().optionalDescription.Description
+        textViewVerse.text = "\(subBookString) \(appDelegate.chapter)\(verseString)\n\(description[appDelegate.Language.rawValue])"
+        
+//        buttonBook.setTitle(" \(appDelegate.bookString)", for: .normal)
+//        buttonSubBook.setTitle(" \(appDelegate.subBookString)", for: .normal)
+        buttonBook.setTitle(" \(Const.BOOK_LIST[appDelegate.Language.rawValue][appDelegate.bookEnum.rawValue])", for: .normal)
+        buttonSubBook.setTitle(" \(Const.SUB_BOOK_LIST[appDelegate.Language.rawValue][appDelegate.bookEnum.rawValue][Utilities().getCurrentSubBookIndex()])", for: .normal)    //TODO fix
         
         let url = Utilities().getScriptureUrl()
         let currentURL = self.webView.request?.url?.absoluteString
@@ -761,9 +818,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             
         var directory = appDelegate.userName.replacingOccurrences(of: " ", with: "").lowercased()
         createTempDirectory(directory)
-        directory += "/" + Utilities().getCurrentBook().Name.replacingOccurrences(of: " ", with: "")
+        directory += "/" + Utilities().getCurrentBook().Name[AppDelegate.Language.English.rawValue].replacingOccurrences(of: " ", with: "")
         createTempDirectory(directory)
-        directory += "/" + Utilities().getCurrentSubBook().Name.replacingOccurrences(of: " ", with: "")
+        directory += "/" + Utilities().getCurrentSubBook().Name[AppDelegate.Language.English.rawValue].replacingOccurrences(of: " ", with: "")
         createTempDirectory(directory)
         
         audioRecordingName = "\(directory)/S\(chapterString)\(verseString).m4a"

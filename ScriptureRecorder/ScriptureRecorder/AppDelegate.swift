@@ -78,7 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var userName_prev = "Default"
     var userArray: [String] = ["Default"]
     
-    var languageURL = "?lang=eng"
+    var languageURL_array: [String] = ["?lang=eng", "?lang=spa"]
+    var languageURL = "?lang=spa"
     
     var continualPlay = true
     var continualRecord = false
@@ -89,5 +90,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var bookmarks = Array<Scripture.Bookmark>()
     var goToBookmark = false
+    
+    enum Language: Int {
+        case English = 0
+        case Spanish = 1
+    }
+    
+    var Language: Language = .Spanish
 }
 

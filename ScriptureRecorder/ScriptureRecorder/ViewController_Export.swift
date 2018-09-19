@@ -23,12 +23,22 @@ class ViewController_Export: UIViewController, UIPickerViewDataSource, UIPickerV
         super.viewDidLoad()
         appDelegate.shareFile = false
         
-        whatArray[0] = Utilities().getCurrentBook().Name
-        whatArray[1] = Utilities().getCurrentSubBook().Name
-        whatArray[2] = "\(Utilities().getCurrentSubBook().Name) \(appDelegate.chapter)"
-        whatArray[3] = "\(Utilities().getCurrentSubBook().Name) \(appDelegate.chapter):\(appDelegate.verse)"
+        whatArray[0] = Utilities().getCurrentBook().Name[appDelegate.Language.rawValue]
+        whatArray[1] = Utilities().getCurrentSubBook().Name[appDelegate.Language.rawValue]
+        whatArray[2] = "\(Utilities().getCurrentSubBook().Name[appDelegate.Language.rawValue]) \(appDelegate.chapter)"
+        whatArray[3] = "\(Utilities().getCurrentSubBook().Name[appDelegate.Language.rawValue]) \(appDelegate.chapter):\(appDelegate.verse)"
         
         appDelegate.whatToShare = Const.WhatToShare.Book
+        
+        if appDelegate.Language == .English {
+            buttonShare_outlet.setTitle("Share", for: .normal)
+            labelWhatToSend.text = "Choose What to Share"
+        }else if appDelegate.Language == .Spanish {
+            buttonShare_outlet.setTitle("Compartir", for: .normal)
+            labelWhatToSend.text = "Elige qué compartir"
+        }else {
+            fatalError()
+        }
     }
     
     @IBAction func buttonBack(_ sender: Any) {
@@ -37,6 +47,7 @@ class ViewController_Export: UIViewController, UIPickerViewDataSource, UIPickerV
         self.performSegue(withIdentifier: "unwindToMenuWithSegue", sender: self)
     }
     
+    @IBOutlet weak var buttonShare_outlet: UIButton!
     @IBAction func buttonShare(_ sender: Any) {
         appDelegate.shareFile = true
         self.performSegue(withIdentifier: "unwindToMenuWithSegue", sender: self)

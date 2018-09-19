@@ -181,16 +181,17 @@ struct Utilities {
     func getCurrentBook() -> Scripture.Book {
         var book: Scripture.Book? = nil
         
+        appDelegate.bookString = Const.BOOK_LIST[appDelegate.Language.rawValue][appDelegate.bookEnum.rawValue]
         switch appDelegate.bookString {
-        case Const.BOM:
+        case Const.BOM, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.BOM.rawValue]:
             book = Scripture.BOM
-        case Const.PGP:
+        case Const.PGP, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.PGP.rawValue]:
             book = Scripture.PGP
-        case Const.DC:
+        case Const.DC, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.DC.rawValue]:
             book = Scripture.DC
-        case Const.OT:
+        case Const.OT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.OT.rawValue]:
             book = Scripture.OT
-        case Const.NT:
+        case Const.NT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.OT.rawValue]:
             book = Scripture.NT
         default:
             print("Book not added getCurrentBook()")
@@ -203,8 +204,17 @@ struct Utilities {
         
         var subBook: Scripture.SubBook? = nil
         
+        let var1 = Const.SUB_BOOK_LIST[appDelegate.Language.rawValue]
+        let var2 = var1[appDelegate.bookEnum.rawValue]
+        var index = getCurrentSubBookIndex()
+        if index == -1 {
+            index = 0
+        }
+        let var3 = var2[index]
+        appDelegate.subBookString = var3
+        
         for tempSubBook in book.SubBookArray {
-            if tempSubBook.Name == appDelegate.subBookString {
+            if tempSubBook.Name[appDelegate.Language.rawValue] == appDelegate.subBookString {
                 subBook = tempSubBook
                 break
             }
@@ -215,24 +225,24 @@ struct Utilities {
     
     func getBookFromString(_ book_str: String) -> Scripture.Book {
         for book in Scripture.ALL {
-            if(book.Name == book_str) {
+            if(book.Name[AppDelegate.Language.English.rawValue] == book_str || book.Name[appDelegate.Language.rawValue] == book_str) {
                 return book
             }
         }
-        return Scripture.Book(Name: "", SubBookArray: [])
+        return Scripture.Book(Name: ["", ""], SubBookArray: [])
     }
     
     func getSubBookFromStrings(_ book_str: String, _ subBook_str: String) -> Scripture.SubBook {
         for book in Scripture.ALL {
-            if(book.Name == book_str) {
+            if(book.Name[AppDelegate.Language.English.rawValue] == book_str || book.Name[appDelegate.Language.rawValue] == book_str) {
                 for subBook in book.SubBookArray {
-                    if subBook.Name == subBook_str {
+                    if subBook.Name[AppDelegate.Language.English.rawValue] == subBook_str || subBook.Name[appDelegate.Language.rawValue] == subBook_str {
                         return subBook
                     }
                 }
             }
         }
-        return Scripture.SubBook(Name: "", ChapterArray: [])
+        return Scripture.SubBook(Name: ["", ""], ChapterArray: [])
     }
     
     func getCurrentSubBookIndex() -> Int {
@@ -240,7 +250,7 @@ struct Utilities {
         
         var index = 0
         for tempSubBook in book.SubBookArray {
-            if tempSubBook.Name == appDelegate.subBookString {
+            if tempSubBook.Name[appDelegate.Language.rawValue] == appDelegate.subBookString {
                 return index
             }
             index += 1
@@ -255,27 +265,27 @@ struct Utilities {
         var returnString = Const.URL_LDS_SCRIPTURES
         let subBook = getCurrentSubBook()
         
-        if chapter.optionalDescription.contains("Record your testimony") {
+        if chapter.optionalDescription.Description[0].contains("Record your testimony") {
             returnString = Const.URL_LDS_TESTIMONY
             return URL(string: returnString)!
         }
         
         switch appDelegate.bookString {
-        case Const.BOM:
+        case Const.BOM, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.BOM.rawValue]:
             returnString += Const.URL_BOM
-            if chapter.optionalDescription == "Title Page" {
+            if chapter.optionalDescription.Description[0] == "Title Page" {
                 returnString += Const.URL_BOM_TITLE_PAGE
-            }else if chapter.optionalDescription.contains("Title Page of the Book of Mormon") {
+            }else if chapter.optionalDescription.Description[0].contains("Title Page of the Book of Mormon") {
                 returnString += Const.URL_BOM_TITLE
-            }else if chapter.optionalDescription.contains("Introduction") {
+            }else if chapter.optionalDescription.Description[0].contains("Introduction") {
                 returnString += Const.URL_BOM_INTRO
-            }else if chapter.optionalDescription.contains("Testimony of Three") {
+            }else if chapter.optionalDescription.Description[0].contains("Testimony of Three") {
                 returnString += Const.URL_BOM_3_WITNESSES
-            }else if chapter.optionalDescription.contains("Testimony of Eight") {
+            }else if chapter.optionalDescription.Description[0].contains("Testimony of Eight") {
                 returnString += Const.URL_BOM_8_WITNESSES
-            }else if chapter.optionalDescription.contains("Testimony of the Prophet") {
+            }else if chapter.optionalDescription.Description[0].contains("Testimony of the Prophet") {
                 returnString += Const.URL_BOM_JS_TESTIMONY
-            }else if chapter.optionalDescription.contains("A Brief Explanation") {
+            }else if chapter.optionalDescription.Description[0].contains("A Brief Explanation") {
                 returnString += Const.URL_BOM_EXPLANATION
             }else {
                 let index = getCurrentSubBookIndex()
@@ -283,27 +293,27 @@ struct Utilities {
                 returnString += "\(appDelegate.chapter)"
                 //returnString += ".\(appDelegate.verse)"
             }
-        case Const.PGP:
+        case Const.PGP, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.PGP.rawValue]:
             returnString += Const.URL_PGP
-            if subBook.Name == Const.PGP_TITLE {
+            if subBook.Name[appDelegate.Language.rawValue] == Const.PGP_LIST[appDelegate.Language.rawValue][0] {
                 returnString += Const.URL_PGP_TITLE
-            }else if subBook.Name == Const.PGP_INTRO {
+            }else if subBook.Name[appDelegate.Language.rawValue] == Const.PGP_LIST[appDelegate.Language.rawValue][1] {
                 returnString += Const.URL_PGP_INTRO
             }else {
                 let index = getCurrentSubBookIndex()
                 returnString += Const.URL_PGP_LIST[index]
                 returnString += "\(appDelegate.chapter)"
             }
-        case Const.DC:
+        case Const.DC, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.DC.rawValue]:
             returnString += Const.URL_DC
-            if subBook.Name == Const.DC_TITLE {
+            if subBook.Name[appDelegate.Language.rawValue] == Const.DC_LIST[appDelegate.Language.rawValue][0] {
                 returnString += Const.URL_DC_TITLE
-            }else if subBook.Name == Const.DC_INTRO {
+            }else if subBook.Name[appDelegate.Language.rawValue] == Const.DC_LIST[appDelegate.Language.rawValue][1] {
                 returnString += Const.URL_DC_INTRO
-            }else if subBook.Name == Const.DC_DECLARATION_1{
+            }else if subBook.Name[appDelegate.Language.rawValue] == Const.DC_LIST[appDelegate.Language.rawValue][3]{
                 returnString += Const.URL_DC_OFFICIAL_DECLARATIONS
                 returnString += "\(1)"
-            }else if subBook.Name == Const.DC_DECLARATION_2{
+            }else if subBook.Name[appDelegate.Language.rawValue] == Const.DC_LIST[appDelegate.Language.rawValue][4]{
                 returnString += Const.URL_DC_OFFICIAL_DECLARATIONS
                 returnString += "\(2)"
             }else {
@@ -311,20 +321,20 @@ struct Utilities {
                 returnString += Const.URL_DC_LIST[index]
                 returnString += "\(appDelegate.chapter)"
             }
-        case Const.OT:
+        case Const.OT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.OT.rawValue]:
             returnString += Const.URL_OT
-            if subBook.Name == Const.OT_TITLE {
+            if subBook.Name[appDelegate.Language.rawValue] == Const.OT_LIST[appDelegate.Language.rawValue][0] {
                 returnString += Const.URL_OT_TITLE
-            }else if subBook.Name == Const.OT_EPISTLE {
+            }else if subBook.Name[appDelegate.Language.rawValue] == Const.OT_LIST[appDelegate.Language.rawValue][1] {
                 returnString += Const.URL_OT_EPISTLE
             }else {
                 let index = getCurrentSubBookIndex()
                 returnString += Const.URL_OT_LIST[index]
                 returnString += "\(appDelegate.chapter)"
             }
-        case Const.NT:
+        case Const.NT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.NT.rawValue]:
             returnString += Const.URL_NT
-            if subBook.Name == Const.NT_TITLE {
+            if subBook.Name[appDelegate.Language.rawValue] == Const.NT_LIST[appDelegate.Language.rawValue][0] {
                 returnString += Const.URL_NT_TITLE
             }else {
                 let index = getCurrentSubBookIndex()
@@ -335,6 +345,7 @@ struct Utilities {
             print("Book not added getScriptureUrl()")
         }
         
+        appDelegate.languageURL = appDelegate.languageURL_array[appDelegate.Language.rawValue]
         returnString += appDelegate.languageURL
         
         return URL(string: returnString)!
@@ -348,8 +359,8 @@ struct Utilities {
         for book in Scripture.ALL {
             for subBook in book.SubBookArray {
                 var subDirectory = "/" + appDelegate.userName.replacingOccurrences(of: " ", with: "").lowercased()
-                subDirectory += "/" + book.Name.replacingOccurrences(of: " ", with: "")
-                subDirectory += "/" + subBook.Name.replacingOccurrences(of: " ", with: "")
+                subDirectory += "/" + book.Name[AppDelegate.Language.English.rawValue].replacingOccurrences(of: " ", with: "")
+                subDirectory += "/" + subBook.Name[AppDelegate.Language.English.rawValue].replacingOccurrences(of: " ", with: "")
                 let fullDirectory = documentsPath + subDirectory
                 
                 let dirContents = try? fileManager.contentsOfDirectory(atPath: fullDirectory)
@@ -378,8 +389,8 @@ struct Utilities {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         
         var subDirectory = "/" + appDelegate.userName.replacingOccurrences(of: " ", with: "").lowercased()
-        subDirectory += "/" + book.Name.replacingOccurrences(of: " ", with: "")
-        subDirectory += "/" + subBook.Name.replacingOccurrences(of: " ", with: "")
+        subDirectory += "/" + book.Name[AppDelegate.Language.English.rawValue].replacingOccurrences(of: " ", with: "")
+        subDirectory += "/" + subBook.Name[AppDelegate.Language.English.rawValue].replacingOccurrences(of: " ", with: "")
         let fullDirectory = documentsPath + subDirectory
         
         let dirContents = try? fileManager.contentsOfDirectory(atPath: fullDirectory)
@@ -423,6 +434,12 @@ struct Utilities {
         let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! as NSURL
         appDelegate.mergeAudioURL = documentDirectoryURL.appendingPathComponent(fileName)! as URL as NSURL
         
+        do {
+            try FileManager.default.removeItem(at: appDelegate.mergeAudioURL as URL)
+        } catch let error as NSError {
+            print("Error: \(error.domain)")
+        }
+        
         let assetExport = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A)
         assetExport?.outputFileType = AVFileTypeAppleM4A
         assetExport?.outputURL = appDelegate.mergeAudioURL as URL
@@ -455,10 +472,10 @@ struct Utilities {
         let subBook = getSubBookFromStrings(appDelegate.bookString, appDelegate.subBookString)
         
         var subDirectory = "/" + appDelegate.userName.replacingOccurrences(of: " ", with: "").lowercased()
-        subDirectory += "/" + book.Name.replacingOccurrences(of: " ", with: "")
+        subDirectory += "/" + book.Name[AppDelegate.Language.English.rawValue].replacingOccurrences(of: " ", with: "")
         
         if appDelegate.whatToShare == .SubBook || appDelegate.whatToShare == .Chapter {
-            subDirectory += "/" + subBook.Name.replacingOccurrences(of: " ", with: "")
+            subDirectory += "/" + subBook.Name[AppDelegate.Language.English.rawValue].replacingOccurrences(of: " ", with: "")
         }
         
         fullDirectory = documentsPath + subDirectory
@@ -483,7 +500,7 @@ struct Utilities {
                 bookName = ""
                 while i < book.SubBookArray.count {
                     for name in directoryList {
-                        let subBookName = book.SubBookArray[i].Name.replacingOccurrences(of: " ", with: "")
+                        let subBookName = book.SubBookArray[i].Name[AppDelegate.Language.English.rawValue].replacingOccurrences(of: " ", with: "")
                         if name == subBookName {
                             bookName = "/" + name
                             break

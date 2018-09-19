@@ -35,7 +35,7 @@ class ViewController_SubBook: UIViewController, UITableViewDelegate, UITableView
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return Const.SUB_BOOK_LIST[appDelegate.bookEnum.rawValue].count
+        return Const.SUB_BOOK_LIST[appDelegate.Language.rawValue][appDelegate.bookEnum.rawValue].count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -43,16 +43,16 @@ class ViewController_SubBook: UIViewController, UITableViewDelegate, UITableView
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         
         switch appDelegate.bookString {
-        case Const.BOM:
-            cell.textLabel?.text = Const.BOM_LIST[indexPath.row]
-        case Const.PGP:
-            cell.textLabel?.text = Const.PGP_LIST[indexPath.row]
-        case Const.DC:
-            cell.textLabel?.text = Const.DC_LIST[indexPath.row]
-        case Const.OT:
-            cell.textLabel?.text = Const.OT_LIST[indexPath.row]
-        case Const.NT:
-            cell.textLabel?.text = Const.NT_LIST[indexPath.row]
+        case Const.BOM, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.BOM.rawValue] :
+            cell.textLabel?.text = Const.BOM_LIST[appDelegate.Language.rawValue][indexPath.row]
+        case Const.PGP, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.PGP.rawValue]:
+            cell.textLabel?.text = Const.PGP_LIST[appDelegate.Language.rawValue][indexPath.row]
+        case Const.DC, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.DC.rawValue]:
+            cell.textLabel?.text = Const.DC_LIST[appDelegate.Language.rawValue][indexPath.row]
+        case Const.OT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.OT.rawValue]:
+            cell.textLabel?.text = Const.OT_LIST[appDelegate.Language.rawValue][indexPath.row]
+        case Const.NT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.NT.rawValue]:
+            cell.textLabel?.text = Const.NT_LIST[appDelegate.Language.rawValue][indexPath.row]
         default:
             cell.textLabel?.text = "???"
         }
@@ -75,16 +75,16 @@ class ViewController_SubBook: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch appDelegate.bookString {
-        case Const.BOM:
-            appDelegate.subBookString = Const.BOM_LIST[indexPath.row]
-        case Const.PGP:
-            appDelegate.subBookString = Const.PGP_LIST[indexPath.row]
-        case Const.DC:
-            appDelegate.subBookString = Const.DC_LIST[indexPath.row]
-        case Const.OT:
-            appDelegate.subBookString = Const.OT_LIST[indexPath.row]
-        case Const.NT:
-            appDelegate.subBookString = Const.NT_LIST[indexPath.row]
+        case Const.BOM, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.BOM.rawValue]:
+            appDelegate.subBookString = Const.BOM_LIST[appDelegate.Language.rawValue][indexPath.row]
+        case Const.PGP, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.PGP.rawValue]:
+            appDelegate.subBookString = Const.PGP_LIST[appDelegate.Language.rawValue][indexPath.row]
+        case Const.DC, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.DC.rawValue]:
+            appDelegate.subBookString = Const.DC_LIST[appDelegate.Language.rawValue][indexPath.row]
+        case Const.OT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.OT.rawValue]:
+            appDelegate.subBookString = Const.OT_LIST[appDelegate.Language.rawValue][indexPath.row]
+        case Const.NT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.NT.rawValue]:
+            appDelegate.subBookString = Const.NT_LIST[appDelegate.Language.rawValue][indexPath.row]
         default:
             appDelegate.subBookString = "???"
         }

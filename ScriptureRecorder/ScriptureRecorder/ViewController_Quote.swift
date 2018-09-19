@@ -9,11 +9,15 @@
 import UIKit
 
 class ViewController_Quote: UIViewController {
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
+    @IBOutlet weak var TextView_Quote: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        TextView_Quote.text = Const.SCOTT_QUOTE[appDelegate.Language.rawValue]
     }
 
     override func didReceiveMemoryWarning() {

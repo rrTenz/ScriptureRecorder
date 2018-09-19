@@ -32,6 +32,7 @@
 		C75E98F51F43B4D500CDDD7E /* Cover2.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E98F41F43B4D500CDDD7E /* Cover2.png */; };
 		C76BE3A11F365F0600DD02CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C76BE3A01F365F0600DD02CC /* GoogleService-Info.plist */; };
 		C76BE3AC1F36B81500DD02CC /* ViewController_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76BE3AB1F36B81500DD02CC /* ViewController_User.swift */; };
+		C7AF41D6214C6EEE009B6700 /* ViewController_Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF41D5214C6EEE009B6700 /* ViewController_Language.swift */; };
 		C7C022FC1F3A506900E05153 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C022FB1F3A506900E05153 /* Utilities.swift */; };
 		C7C022FF1F3A618F00E05153 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C022FE1F3A618F00E05153 /* CloudKit.framework */; };
 		C7D69DCD1F3E67B0007DF8B1 /* Richard-G-Scott-banner-2015.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7D69DCC1F3E67B0007DF8B1 /* Richard-G-Scott-banner-2015.jpg */; };
@@ -97,6 +98,7 @@
 		C75E98F41F43B4D500CDDD7E /* Cover2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cover2.png; sourceTree = "<group>"; };
 		C76BE3A01F365F0600DD02CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C76BE3AB1F36B81500DD02CC /* ViewController_User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_User.swift; sourceTree = "<group>"; };
+		C7AF41D5214C6EEE009B6700 /* ViewController_Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Language.swift; sourceTree = "<group>"; };
 		C7C022FB1F3A506900E05153 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C7C022FD1F3A618600E05153 /* ScriptureRecorder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScriptureRecorder.entitlements; sourceTree = "<group>"; };
 		C7C022FE1F3A618F00E05153 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -216,6 +218,7 @@
 				C731BCDD1F3BB76D00395A8B /* ViewController_Export.swift */,
 				C7D69DCE1F3E693C007DF8B1 /* ViewController_Quote.swift */,
 				C75E98F21F43A60500CDDD7E /* ViewController_Bookmark.swift */,
+				C7AF41D5214C6EEE009B6700 /* ViewController_Language.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				C743CEC01ED79DC5009BE5C0 /* Scripture.swift in Sources */,
 				C743CEC61EDDEFC6009BE5C0 /* ViewController_Settings.swift in Sources */,
 				C743CEAF1ED68526009BE5C0 /* ViewController_Book.swift in Sources */,
+				C7AF41D6214C6EEE009B6700 /* ViewController_Language.swift in Sources */,
 				C7C022FC1F3A506900E05153 /* Utilities.swift in Sources */,
 				C743CEB51ED77F69009BE5C0 /* ViewController_SubBook.swift in Sources */,
 				C743CEB31ED745F0009BE5C0 /* Constants.swift in Sources */,
