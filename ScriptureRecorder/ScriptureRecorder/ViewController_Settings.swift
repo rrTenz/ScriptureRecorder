@@ -36,14 +36,14 @@ class ViewController_Settings: UIViewController {
             Label_ContinousRecord.text = "Continous Record"
             buttonQuote_outlet.setTitle("Richard G. Scott Quote", for: .normal)
             buttonLanguage_outlet.setTitle("Language", for: .normal)
-            Label_QuestionsComments.text = "Please send questions, comments, or concerns to rrtenz@gmail.com"
+            Label_QuestionsComments.text = "Please send questions, comments, or concerns to rrtenz@gmail.com (including translation errors). And now, if there are faults they are the mistakes of the software programmer."
         }else if appDelegate.Language == .Spanish {
             buttonChangeUser_outlet.setTitle("Cambiar Usuario", for: .normal)
             Label_ContinuousPlay.text = "Juego continuo"
             Label_ContinousRecord.text = "Grabación continua"
             buttonQuote_outlet.setTitle("Cita de Richard G. Scott", for: .normal)
             buttonLanguage_outlet.setTitle("Idioma", for: .normal)
-            Label_QuestionsComments.text = "Por favor envíe sus preguntas, comentarios o inquietudes a rrtenz@gmail.com"
+            Label_QuestionsComments.text = "Envíe preguntas, comentarios o inquietudes a rrtenz@gmail.com (incluidos los errores de traducción). Y ahora bien, si hay faltas, estas son equivocaciones del programador de software..."
         }else {
             fatalError()
         }

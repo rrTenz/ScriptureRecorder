@@ -56,8 +56,8 @@ struct Scripture {
     static let INTRO_TITLE_BOM_2 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TITLE_BOM_2, hasHeading: false, hasPreHeading: false)
     static let INTRO_TITLE_BOM_3 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TITLE_BOM_3, hasHeading: false, hasPreHeading: false)
     
-    static let Description_INTRO_INTRO_1 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 1\n('Introduction - The Book of...')",
-                                                                                      "Introducción - Párrafo 1\n('El Libro de...')"])
+    static let Description_INTRO_INTRO_1 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 1\n('Introduction, The Book of...')",
+                                                                                      "Introducción - Párrafo 1\n('Introducción, El Libro de...')"])
     static let Description_INTRO_INTRO_2 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 2\n('The book was...')",
                                                                                       "Introducción - Párrafo 2\n('Escribieron el...')"])
     static let Description_INTRO_INTRO_3 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 3\n('The crowning event...')",
@@ -485,7 +485,7 @@ struct Scripture {
     static let TITLE_PGP1 = Chapter(verseCount: 1, optionalDescription: Description_TITLE_PGP1, hasHeading: false, hasPreHeading: false)
     
     static let Description_INTRO_PGP1 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 1\n('Introduction, The Pearl of...')",
-                                                                                      "Introducción - Párrafo 1\n('La Perla de...')"])
+                                                                                      "Introducción - Párrafo 1\n('Introducción, La Perla de...')"])
     static let Description_INTRO_PGP2 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 2\n('The first collection...')",
                                                                                       "Introducción - Párrafo 2\n('La primera colección...')"])
     static let Description_INTRO_PGP3 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 3\n('Several revisions have...')",
@@ -855,17 +855,17 @@ struct Scripture {
     static let OT_TITLE1 = Chapter(verseCount: 1, optionalDescription: EMPTY_DESCRIPTION, hasHeading: false, hasPreHeading: false)
     
     static let Description_OT_EPISTLE1 = OptionDescriptionsByLanguage(Description: ["Title 1\n('To the Most High...')",
-                                                                                    "Introducción, La Biblia es"])
+                                                                                    "Introducción - Párrafo 1\n('Introducción, La Biblia es...)"])
     static let Description_OT_EPISTLE2 = OptionDescriptionsByLanguage(Description: ["Title 1\n('King of Great Britain...')",
-                                                                                      "La Biblia se erige"])
+                                                                                      "Introducción - Párrafo 2\n('Introducción, La Biblia se erige...)"])
     static let Description_OT_EPISTLE3 = OptionDescriptionsByLanguage(Description: ["Title 3\n('The Translators of...')",
-                                                                                      "La Biblia se compone"])
+                                                                                      "Introducción - Párrafo 3\n('Introducción, La Biblia se compone...)"])
     static let Description_OT_EPISTLE4 = OptionDescriptionsByLanguage(Description: ["Paragraph 1\n('Great and manifold...')",
-                                                                                      "El Antiguo Testamento fue"])
+                                                                                      "Introducción - Párrafo 4\n('Introducción, El Antiguo Testamento fue...)"])
     static let Description_OT_EPISTLE5 = OptionDescriptionsByLanguage(Description: ["Paragraph 2\n('But among all...')",
-                                                                                      "La Iglesia de Jesucristo"])
+                                                                                      "Introducción - Párrafo 5\n('Introducción, La Iglesia de Jesucristo...)"])
     static let Description_OT_EPISTLE6 = OptionDescriptionsByLanguage(Description: ["Paragraph 3\n('Then not to suffer...')",
-                                                                                      "Estas ayudas para el"])
+                                                                                      "Introducción - Párrafo 6\n('Introducción, Estas ayudas para el...)"])
     static let Description_OT_EPISTLE7 = OptionDescriptionsByLanguage(Description: ["Paragraph 4\n('There are infinite...')",
                                                                                       "Nada/Extra"])
     static let Description_OT_EPISTLE8 = OptionDescriptionsByLanguage(Description: ["Paragraph 5\n('And now at last...')",

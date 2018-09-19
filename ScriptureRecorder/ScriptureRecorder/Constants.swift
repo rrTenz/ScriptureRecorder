@@ -188,7 +188,7 @@ struct Const {
     //Sub Books - Doctrine & Covenants
     static let DC_TITLE = "Title Page"
     static let DC_INTRO = "Introduction"
-    static let DC_SECTIONS = "Sections"
+    static let DC_SECTIONS = "Section"
     static let DC_DECLARATION_1 = "Official Declaration 1"
     static let DC_DECLARATION_2 = "Official Declaration 2"
     static let DC_TESTIMONY = "Doctrine and Covenants Testimony"
@@ -196,7 +196,7 @@ struct Const {
     
     static let DC_TITLE_SPA = "Portada"
     static let DC_INTRO_SPA = "Introducción"
-    static let DC_SECTIONS_SPA = "Secciones"
+    static let DC_SECTIONS_SPA = "Sección"
     static let DC_DECLARATION_1_SPA = "Declaración Oficial 1"
     static let DC_DECLARATION_2_SPA = "Declaración Oficial 2"
     static let DC_TESTIMONY_SPA = "Testimonio de Doctrina y Convenios"
@@ -355,6 +355,7 @@ struct Const {
     static let URL_OT = "ot/"
     static let URL_OT_TITLE = "title-page.html"
     static let URL_OT_EPISTLE = "dedication"
+    static let URL_OT_INTRO = "introduction"
     static let URL_OT_GENESIS = "gen/"
     static let URL_OT_EXODUS = "ex/"
     static let URL_OT_LEVITICUS = "lev/"

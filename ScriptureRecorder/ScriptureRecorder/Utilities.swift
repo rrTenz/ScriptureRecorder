@@ -191,7 +191,7 @@ struct Utilities {
             book = Scripture.DC
         case Const.OT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.OT.rawValue]:
             book = Scripture.OT
-        case Const.NT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.OT.rawValue]:
+        case Const.NT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.NT.rawValue]:
             book = Scripture.NT
         default:
             print("Book not added getCurrentBook()")
@@ -264,9 +264,10 @@ struct Utilities {
         let chapter = getCurrentChapterObject()
         var returnString = Const.URL_LDS_SCRIPTURES
         let subBook = getCurrentSubBook()
+        appDelegate.languageURL = appDelegate.languageURL_array[appDelegate.Language.rawValue]
         
         if chapter.optionalDescription.Description[0].contains("Record your testimony") {
-            returnString = Const.URL_LDS_TESTIMONY
+            returnString = Const.URL_LDS_TESTIMONY + appDelegate.languageURL
             return URL(string: returnString)!
         }
         
@@ -326,7 +327,11 @@ struct Utilities {
             if subBook.Name[appDelegate.Language.rawValue] == Const.OT_LIST[appDelegate.Language.rawValue][0] {
                 returnString += Const.URL_OT_TITLE
             }else if subBook.Name[appDelegate.Language.rawValue] == Const.OT_LIST[appDelegate.Language.rawValue][1] {
-                returnString += Const.URL_OT_EPISTLE
+                if appDelegate.Language == .English {
+                    returnString += Const.URL_OT_EPISTLE
+                }else {
+                    returnString += Const.URL_OT_INTRO
+                }
             }else {
                 let index = getCurrentSubBookIndex()
                 returnString += Const.URL_OT_LIST[index]
@@ -345,7 +350,6 @@ struct Utilities {
             print("Book not added getScriptureUrl()")
         }
         
-        appDelegate.languageURL = appDelegate.languageURL_array[appDelegate.Language.rawValue]
         returnString += appDelegate.languageURL
         
         return URL(string: returnString)!

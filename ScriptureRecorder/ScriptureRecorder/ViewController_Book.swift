@@ -47,7 +47,7 @@ class ViewController_Book: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         appDelegate.bookEnum = Const.Book(rawValue: indexPath.row)!
         appDelegate.bookString = Const.BOOK_LIST[appDelegate.Language.rawValue][indexPath.row]
-        print("Book Selected \(Const.BOOK_LIST[indexPath.row])")
+        print("Book Selected \(Const.BOOK_LIST[appDelegate.Language.rawValue][indexPath.row])")
         self.performSegue(withIdentifier: "unwindToMenuWithSegue", sender: self)
     }
 
