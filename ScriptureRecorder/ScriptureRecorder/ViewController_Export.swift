@@ -30,14 +30,16 @@ class ViewController_Export: UIViewController, UIPickerViewDataSource, UIPickerV
         
         appDelegate.whatToShare = Const.WhatToShare.Book
         
-        if appDelegate.Language == .English {
+        switch appDelegate.Language {
+        case .English:
             buttonShare_outlet.setTitle("Share", for: .normal)
             labelWhatToSend.text = "Choose What to Share"
-        }else if appDelegate.Language == .Spanish {
+        case .Spanish:
             buttonShare_outlet.setTitle("Compartir", for: .normal)
-            labelWhatToSend.text = "Elige qué compartir"
-        }else {
-            fatalError()
+            labelWhatToSend.text = "Elige qué Compartir"
+        case .Portuguese:
+            buttonShare_outlet.setTitle("Compartilhar", for: .normal)
+            labelWhatToSend.text = "Escolha o que Compartilhar"
         }
     }
     

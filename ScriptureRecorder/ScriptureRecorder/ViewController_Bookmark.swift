@@ -34,12 +34,13 @@ class ViewController_Bookmark: UIViewController {
         updateTextBox(4)
         updateTextBox(5)
         
-        if appDelegate.Language == .English {
+        switch appDelegate.Language {
+        case .English:
             Label_Bookmarks.text = "Bookmarks"
-        }else if appDelegate.Language == .Spanish {
+        case .Spanish:
             Label_Bookmarks.text = "Marcadores"
-        }else {
-            fatalError()
+        case .Portuguese:
+            Label_Bookmarks.text = "Favoritos"
         }
     }
     
@@ -47,12 +48,13 @@ class ViewController_Bookmark: UIViewController {
         var text = ""
         
         if appDelegate.bookmarks[i].bookString == "" || appDelegate.bookmarks[i].subBookString == ""{
-            if appDelegate.Language == .English {
+            switch appDelegate.Language {
+            case .English:
                 text = "<Empty>"
-            }else if appDelegate.Language == .Spanish {
+            case .Spanish:
                 text = "<Vacío>"
-            }else {
-                fatalError()
+            case .Portuguese:
+                text = "<Vazio>"
             }
         }else {
             text = "\(appDelegate.bookmarks[i].bookString)\n\(appDelegate.bookmarks[i].subBookString) \(appDelegate.bookmarks[i].chapter):\(appDelegate.bookmarks[i].verse)"

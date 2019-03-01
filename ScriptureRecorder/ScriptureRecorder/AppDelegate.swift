@@ -78,8 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var userName_prev = "Default"
     var userArray: [String] = ["Default"]
     
-    var languageURL_array: [String] = ["?lang=eng", "?lang=spa"]
-    var languageURL = "?lang=spa"
+    var languageURL_array: [String] = ["?lang=eng", "?lang=spa", "?lang=por"]
+    var languageURL = "?lang=eng"
     
     var continualPlay = true
     var continualRecord = false
@@ -94,8 +94,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     enum Language: Int {
         case English = 0
         case Spanish = 1
+        case Portuguese = 2
     }
     
-    var Language: Language = .Spanish
+    var Language: Language = .English
 }
 

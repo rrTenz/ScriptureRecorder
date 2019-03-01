@@ -27,7 +27,7 @@ struct Const {
         case Verse = 3
     }
     
-    static let LANGUAGE = ["English", "Español"]
+    static let LANGUAGE = ["English", "Español", "Português"]
     
     static let BOOKMARK_COUNT = 6
     
@@ -43,14 +43,21 @@ struct Const {
     static let DC_SPA = "Doctrina y Convenios"
     static let OT_SPA = "Antiguo Testamento"
     static let NT_SPA = "Nuevo Testamento"
-    static let BOOK_LIST: [[String]] = [[BOM, PGP, DC, OT, NT],
-                                        [BOM_SPA, PGP_SPA, DC_SPA, OT_SPA, NT_SPA]]
     
-    static let BOM_ARRAY = [BOM, BOM_SPA]
-    static let PGP_ARRAY = [PGP, PGP_SPA]
-    static let DC_ARRAY = [DC, DC_SPA]
-    static let OT_ARRAY = [OT, OT_SPA]
-    static let NT_ARRAY = [NT, NT_SPA]
+    static let BOM_POR = "Livro de Mórmon"
+    static let PGP_POR = "Pérola de Grande Valor"
+    static let DC_POR = "Doutrina e Convênios"
+    static let OT_POR = "Velho Testamento"
+    static let NT_POR = "Novo Testamento"
+    static let BOOK_LIST: [[String]] = [[BOM, PGP, DC, OT, NT],
+                                        [BOM_SPA, PGP_SPA, DC_SPA, OT_SPA, NT_SPA],
+                                        [BOM_POR, PGP_POR, DC_POR, OT_POR, NT_POR]]
+    
+    static let BOM_ARRAY = [BOM, BOM_SPA, BOM_POR]
+    static let PGP_ARRAY = [PGP, PGP_SPA, PGP_POR]
+    static let DC_ARRAY = [DC, DC_SPA, DC_POR]
+    static let OT_ARRAY = [OT, OT_SPA, OT_POR]
+    static let NT_ARRAY = [NT, NT_SPA, NT_POR]
     
     
     //Sub Books - Book of Mormon
@@ -92,24 +99,43 @@ struct Const {
     static let BOM_TESTIMONY_SPA = "Testimonio del Libro de Mormón"
     static let BOM_LIST_SPA: [String] = [BOM_INTRO_SPA, BOM_1NE_SPA, BOM_2NE_SPA, BOM_JAC_SPA, BOM_ENO_SPA, BOM_JAR_SPA, BOM_OMN_SPA, BOM_WofM_SPA, BOM_MSH_SPA, BOM_ALM_SPA, BOM_HEL_SPA, BOM_3NE_SPA, BOM_4NE_SPA, BOM_MOR_SPA, BOM_ETH_SPA, BOM_MNI_SPA, BOM_TESTIMONY_SPA]
     
-    static let BOM_LIST = [BOM_LIST_ENG, BOM_LIST_SPA]
-    static let BOM_INTRO_ARRAY = [BOM_LIST[0][0], BOM_LIST[1][0]]
-    static let BOM_1NE_ARRAY = [BOM_LIST[0][1], BOM_LIST[1][1]]
-    static let BOM_2NE_ARRAY = [BOM_LIST[0][2], BOM_LIST[1][2]]
-    static let BOM_JAC_ARRAY = [BOM_LIST[0][3], BOM_LIST[1][3]]
-    static let BOM_ENO_ARRAY = [BOM_LIST[0][4], BOM_LIST[1][4]]
-    static let BOM_JAR_ARRAY = [BOM_LIST[0][5], BOM_LIST[1][5]]
-    static let BOM_OMN_ARRAY = [BOM_LIST[0][6], BOM_LIST[1][6]]
-    static let BOM_WofM_ARRAY = [BOM_LIST[0][7], BOM_LIST[1][7]]
-    static let BOM_MSH_ARRAY = [BOM_LIST[0][8], BOM_LIST[1][8]]
-    static let BOM_ALM_ARRAY = [BOM_LIST[0][8], BOM_LIST[1][9]]
-    static let BOM_HEL_ARRAY = [BOM_LIST[0][10], BOM_LIST[1][10]]
-    static let BOM_3NE_ARRAY = [BOM_LIST[0][11], BOM_LIST[1][11]]
-    static let BOM_4NE_ARRAY = [BOM_LIST[0][12], BOM_LIST[1][12]]
-    static let BOM_MOR_ARRAY = [BOM_LIST[0][13], BOM_LIST[1][13]]
-    static let BOM_ETH_ARRAY = [BOM_LIST[0][14], BOM_LIST[1][14]]
-    static let BOM_MNI_ARRAY = [BOM_LIST[0][15], BOM_LIST[1][15]]
-    static let BOM_TESTIMONY_ARRAY = [BOM_LIST[0][16], BOM_LIST[1][16]]
+    static let BOM_INTRO_POR = "Introdução e Testemunhas"
+    static let BOM_1NE_POR = "1 Néfi"
+    static let BOM_2NE_POR = "2 Néfi"
+    static let BOM_JAC_POR = "Jacó"
+    static let BOM_ENO_POR = "EnOs"
+    static let BOM_JAR_POR = "Jarom"
+    static let BOM_OMN_POR = "Ômni"
+    static let BOM_WofM_POR = "Palavras de Mórmon"
+    static let BOM_MSH_POR = "Mosias"
+    static let BOM_ALM_POR = "Alma"
+    static let BOM_HEL_POR = "Helamã"
+    static let BOM_3NE_POR = "3 Néfi"
+    static let BOM_4NE_POR = "4 Néfi"
+    static let BOM_MOR_POR = "Mórmon"
+    static let BOM_ETH_POR = "Éter"
+    static let BOM_MNI_POR = "Morôni"
+    static let BOM_TESTIMONY_POR = "Testemunho do Livro de Mórmon"
+    static let BOM_LIST_POR: [String] = [BOM_INTRO_POR, BOM_1NE_POR, BOM_2NE_POR, BOM_JAC_POR, BOM_ENO_POR, BOM_JAR_POR, BOM_OMN_POR, BOM_WofM_POR, BOM_MSH_POR, BOM_ALM_POR, BOM_HEL_POR, BOM_3NE_POR, BOM_4NE_POR, BOM_MOR_POR, BOM_ETH_POR, BOM_MNI_POR, BOM_TESTIMONY_POR]
+    
+    static let BOM_LIST = [BOM_LIST_ENG, BOM_LIST_SPA, BOM_LIST_POR]
+    static let BOM_INTRO_ARRAY = [BOM_LIST[0][0], BOM_LIST[1][0], BOM_LIST[2][0]]
+    static let BOM_1NE_ARRAY = [BOM_LIST[0][1], BOM_LIST[1][1], BOM_LIST[2][1]]
+    static let BOM_2NE_ARRAY = [BOM_LIST[0][2], BOM_LIST[1][2], BOM_LIST[2][2]]
+    static let BOM_JAC_ARRAY = [BOM_LIST[0][3], BOM_LIST[1][3], BOM_LIST[2][3]]
+    static let BOM_ENO_ARRAY = [BOM_LIST[0][4], BOM_LIST[1][4], BOM_LIST[2][4]]
+    static let BOM_JAR_ARRAY = [BOM_LIST[0][5], BOM_LIST[1][5], BOM_LIST[2][5]]
+    static let BOM_OMN_ARRAY = [BOM_LIST[0][6], BOM_LIST[1][6], BOM_LIST[2][6]]
+    static let BOM_WofM_ARRAY = [BOM_LIST[0][7], BOM_LIST[1][7], BOM_LIST[2][7]]
+    static let BOM_MSH_ARRAY = [BOM_LIST[0][8], BOM_LIST[1][8], BOM_LIST[2][8]]
+    static let BOM_ALM_ARRAY = [BOM_LIST[0][8], BOM_LIST[1][9], BOM_LIST[2][9]]
+    static let BOM_HEL_ARRAY = [BOM_LIST[0][10], BOM_LIST[1][10], BOM_LIST[2][10]]
+    static let BOM_3NE_ARRAY = [BOM_LIST[0][11], BOM_LIST[1][11], BOM_LIST[2][11]]
+    static let BOM_4NE_ARRAY = [BOM_LIST[0][12], BOM_LIST[1][12], BOM_LIST[2][12]]
+    static let BOM_MOR_ARRAY = [BOM_LIST[0][13], BOM_LIST[1][13], BOM_LIST[2][13]]
+    static let BOM_ETH_ARRAY = [BOM_LIST[0][14], BOM_LIST[1][14], BOM_LIST[2][14]]
+    static let BOM_MNI_ARRAY = [BOM_LIST[0][15], BOM_LIST[1][15], BOM_LIST[2][15]]
+    static let BOM_TESTIMONY_ARRAY = [BOM_LIST[0][16], BOM_LIST[1][16], BOM_LIST[2][16]]
     
     
     static let URL_LDS_SCRIPTURES = "https://www.lds.org/scriptures/"
@@ -164,15 +190,25 @@ struct Const {
     static let PGP_TESTIMONY_SPA = "Testimonio de La Perla de Gran Precio"
     static let PGP_LIST_SPA: [String] = [PGP_TITLE_SPA, PGP_INTRO_SPA, PGP_MOSES_SPA, PGP_ABRAHAM_SPA, PGP_JS_MATT_SPA, PGP_JS_HIST_SPA, PGP_AofF_SPA, PGP_TESTIMONY_SPA]
     
-    static let PGP_LIST = [PGP_LIST_ENG, PGP_LIST_SPA]
-    static let PGP_TITLE_ARRAY = [PGP_LIST[0][0], PGP_LIST[1][0]]
-    static let PGP_INTRO_ARRAY = [PGP_LIST[0][1], PGP_LIST[1][1]]
-    static let PGP_MOSES_ARRAY = [PGP_LIST[0][2], PGP_LIST[1][2]]
-    static let PGP_ABRAHAM_ARRAY = [PGP_LIST[0][3], PGP_LIST[1][3]]
-    static let PGP_JS_MATT_ARRAY = [PGP_LIST[0][4], PGP_LIST[1][4]]
-    static let PGP_JS_HIST_ARRAY = [PGP_LIST[0][5], PGP_LIST[1][5]]
-    static let PGP_AofF_ARRAY = [PGP_LIST[0][6], PGP_LIST[1][6]]
-    static let PGP_TESTIMONY_ARRAY = [PGP_LIST[0][7], PGP_LIST[1][7]]
+    static let PGP_TITLE_POR = "Página de Título"
+    static let PGP_INTRO_POR = "Introdução"
+    static let PGP_MOSES_POR = "Moisés"
+    static let PGP_ABRAHAM_POR = "Abraão"
+    static let PGP_JS_MATT_POR = "Joseph Smith—Mateus"
+    static let PGP_JS_HIST_POR = "Joseph Smith—História"
+    static let PGP_AofF_POR = "Regras de Fé"
+    static let PGP_TESTIMONY_POR = "Testemunho da Pérola de Grande Valor"
+    static let PGP_LIST_POR: [String] = [PGP_TITLE_POR, PGP_INTRO_POR, PGP_MOSES_POR, PGP_ABRAHAM_POR, PGP_JS_MATT_POR, PGP_JS_HIST_POR, PGP_AofF_POR, PGP_TESTIMONY_POR]
+    
+    static let PGP_LIST = [PGP_LIST_ENG, PGP_LIST_SPA, PGP_LIST_POR]
+    static let PGP_TITLE_ARRAY = [PGP_LIST[0][0], PGP_LIST[1][0], PGP_LIST[2][0]]
+    static let PGP_INTRO_ARRAY = [PGP_LIST[0][1], PGP_LIST[1][1], PGP_LIST[2][1]]
+    static let PGP_MOSES_ARRAY = [PGP_LIST[0][2], PGP_LIST[1][2], PGP_LIST[2][2]]
+    static let PGP_ABRAHAM_ARRAY = [PGP_LIST[0][3], PGP_LIST[1][3], PGP_LIST[2][3]]
+    static let PGP_JS_MATT_ARRAY = [PGP_LIST[0][4], PGP_LIST[1][4], PGP_LIST[2][4]]
+    static let PGP_JS_HIST_ARRAY = [PGP_LIST[0][5], PGP_LIST[1][5], PGP_LIST[2][5]]
+    static let PGP_AofF_ARRAY = [PGP_LIST[0][6], PGP_LIST[1][6], PGP_LIST[2][6]]
+    static let PGP_TESTIMONY_ARRAY = [PGP_LIST[0][7], PGP_LIST[1][7], PGP_LIST[2][7]]
     
     //Sub Book URLs - Pearl of Great Price
     static let URL_PGP = "pgp/"
@@ -202,13 +238,21 @@ struct Const {
     static let DC_TESTIMONY_SPA = "Testimonio de Doctrina y Convenios"
     static let DC_LIST_SPA: [String] = [DC_TITLE_SPA, DC_INTRO_SPA, DC_SECTIONS_SPA, DC_DECLARATION_1_SPA, DC_DECLARATION_2_SPA, DC_TESTIMONY_SPA]
     
-    static let DC_LIST = [DC_LIST_ENG, DC_LIST_SPA]
-    static let DC_TITLE_ARRAY = [DC_LIST[0][0], DC_LIST[1][0]]
-    static let DC_INTRO_ARRAY = [DC_LIST[0][1], DC_LIST[1][1]]
-    static let DC_SECTIONS_ARRAY = [DC_LIST[0][2], DC_LIST[1][2]]
-    static let DC_DECLARATION_1_ARRAY = [DC_LIST[0][3], DC_LIST[1][3]]
-    static let DC_DECLARATION_2_ARRAY = [DC_LIST[0][4], DC_LIST[1][4]]
-    static let DC_TESTIMONY_ARRAY = [DC_LIST[0][5], DC_LIST[1][5]]
+    static let DC_TITLE_POR = "Página de Título"
+    static let DC_INTRO_POR = "Introdução"
+    static let DC_SECTIONS_POR = "Seção"
+    static let DC_DECLARATION_1_POR = "Declarações Oficiais 1"
+    static let DC_DECLARATION_2_POR = "Declarações Oficiais 2"
+    static let DC_TESTIMONY_POR = "Testemunho de Doutrina e Convênios"
+    static let DC_LIST_POR: [String] = [DC_TITLE_POR, DC_INTRO_POR, DC_SECTIONS_POR, DC_DECLARATION_1_POR, DC_DECLARATION_2_POR, DC_TESTIMONY_POR]
+    
+    static let DC_LIST = [DC_LIST_ENG, DC_LIST_SPA, DC_LIST_POR]
+    static let DC_TITLE_ARRAY = [DC_LIST[0][0], DC_LIST[1][0], DC_LIST[2][0]]
+    static let DC_INTRO_ARRAY = [DC_LIST[0][1], DC_LIST[1][1], DC_LIST[2][1]]
+    static let DC_SECTIONS_ARRAY = [DC_LIST[0][2], DC_LIST[1][2], DC_LIST[2][2]]
+    static let DC_DECLARATION_1_ARRAY = [DC_LIST[0][3], DC_LIST[1][3], DC_LIST[2][3]]
+    static let DC_DECLARATION_2_ARRAY = [DC_LIST[0][4], DC_LIST[1][4], DC_LIST[2][4]]
+    static let DC_TESTIMONY_ARRAY = [DC_LIST[0][5], DC_LIST[1][5], DC_LIST[2][5]]
     
     //Sub Books URLs - Doctrine & Covenants
     static let URL_DC = "dc-testament/"
@@ -307,49 +351,93 @@ struct Const {
     static let OT_TESTIMONY_SPA = "Testimonio del Antiguo Testamento"
     static let OT_LIST_SPA: [String] = [OT_TITLE_SPA, OT_EPISTLE_SPA, OT_GENESIS_SPA, OT_EXODUS_SPA, OT_LEVITICUS_SPA, OT_NUMBERS_SPA, OT_DEUTERONOMY_SPA, OT_JOSHUA_SPA, OT_JUDGES_SPA, OT_RUTH_SPA, OT_1SAM_SPA, OT_2SAM_SPA, OT_1KINGS_SPA, OT_2KINGS_SPA, OT_1CHRON_SPA, OT_2CHRON_SPA, OT_EZRA_SPA, OT_NEHEMIAH_SPA, OT_ESTHER_SPA, OT_JOB_SPA, OT_PSALMS_SPA, OT_PROVERBS_SPA, OT_ECCLESIASTES_SPA, OT_SONGofSOLOMON_SPA, OT_ISAIAH_SPA, OT_JEREMIAH_SPA, OT_LAMENTATIONS_SPA, OT_EZEKIEL_SPA, OT_DANIEL_SPA, OT_HOSEA_SPA, OT_JOEL_SPA, OT_AMOS_SPA, OT_OBADIAH_SPA, OT_JONAH_SPA, OT_MICAH_SPA, OT_NAHUM_SPA, OT_HABAKKUK_SPA, OT_ZEPHANIAH_SPA, OT_HAGGAI_SPA, OT_ZECHARIAH_SPA, OT_MALACHI_SPA, OT_TESTIMONY_SPA]
     
-    static let OT_LIST = [OT_LIST_ENG, OT_LIST_SPA]
-    static let OT_TITLE_ARRAY = [OT_LIST[0][0], OT_LIST[1][0]]
-    static let OT_EPISTLE_ARRAY = [OT_LIST[0][1], OT_LIST[1][1]]
-    static let OT_GENESIS_ARRAY = [OT_LIST[0][2], OT_LIST[1][2]]
-    static let OT_EXODUS_ARRAY = [OT_LIST[0][3], OT_LIST[1][3]]
-    static let OT_LEVITICUS_ARRAY = [OT_LIST[0][4], OT_LIST[1][4]]
-    static let OT_NUMBERS_ARRAY = [OT_LIST[0][5], OT_LIST[1][5]]
-    static let OT_DEUTERONOMY_ARRAY = [OT_LIST[0][6], OT_LIST[1][6]]
-    static let OT_JOSHUA_ARRAY = [OT_LIST[0][7], OT_LIST[1][7]]
-    static let OT_JUDGES_ARRAY = [OT_LIST[0][8], OT_LIST[1][8]]
-    static let OT_RUTH_ARRAY = [OT_LIST[0][9], OT_LIST[1][9]]
-    static let OT_1SAM_ARRAY = [OT_LIST[0][10], OT_LIST[1][10]]
-    static let OT_2SAM_ARRAY = [OT_LIST[0][11], OT_LIST[1][11]]
-    static let OT_1KINGS_ARRAY = [OT_LIST[0][12], OT_LIST[1][12]]
-    static let OT_2KINGS_ARRAY = [OT_LIST[0][13], OT_LIST[1][13]]
-    static let OT_1CHRON_ARRAY = [OT_LIST[0][14], OT_LIST[1][14]]
-    static let OT_2CHRON_ARRAY = [OT_LIST[0][15], OT_LIST[1][15]]
-    static let OT_EZRA_ARRAY = [OT_LIST[0][16], OT_LIST[1][16]]
-    static let OT_NEHEMIAH_ARRAY = [OT_LIST[0][17], OT_LIST[1][17]]
-    static let OT_ESTHER_ARRAY = [OT_LIST[0][18], OT_LIST[1][18]]
-    static let OT_JOB_ARRAY = [OT_LIST[0][19], OT_LIST[1][19]]
-    static let OT_PSALMS_ARRAY = [OT_LIST[0][20], OT_LIST[1][20]]
-    static let OT_PROVERBS_ARRAY = [OT_LIST[0][21], OT_LIST[1][21]]
-    static let OT_ECCLESIASTES_ARRAY = [OT_LIST[0][22], OT_LIST[1][22]]
-    static let OT_SONGofSOLOMON_ARRAY = [OT_LIST[0][23], OT_LIST[1][23]]
-    static let OT_ISAIAH_ARRAY = [OT_LIST[0][24], OT_LIST[1][24]]
-    static let OT_JEREMIAH_ARRAY = [OT_LIST[0][25], OT_LIST[1][25]]
-    static let OT_LAMENTATIONS_ARRAY = [OT_LIST[0][26], OT_LIST[1][26]]
-    static let OT_EZEKIEL_ARRAY = [OT_LIST[0][27], OT_LIST[1][27]]
-    static let OT_DANIEL_ARRAY = [OT_LIST[0][28], OT_LIST[1][28]]
-    static let OT_HOSEA_ARRAY = [OT_LIST[0][29], OT_LIST[1][29]]
-    static let OT_JOEL_ARRAY = [OT_LIST[0][30], OT_LIST[1][30]]
-    static let OT_AMOS_ARRAY = [OT_LIST[0][31], OT_LIST[1][31]]
-    static let OT_OBADIAH_ARRAY = [OT_LIST[0][32], OT_LIST[1][32]]
-    static let OT_JONAH_ARRAY = [OT_LIST[0][33], OT_LIST[1][33]]
-    static let OT_MICAH_ARRAY = [OT_LIST[0][34], OT_LIST[1][34]]
-    static let OT_NAHUM_ARRAY = [OT_LIST[0][35], OT_LIST[1][35]]
-    static let OT_HABAKKUK_ARRAY = [OT_LIST[0][36], OT_LIST[1][36]]
-    static let OT_ZEPHANIAH_ARRAY = [OT_LIST[0][37], OT_LIST[1][37]]
-    static let OT_HAGGAI_ARRAY = [OT_LIST[0][38], OT_LIST[1][38]]
-    static let OT_ZECHARIAH_ARRAY = [OT_LIST[0][39], OT_LIST[1][39]]
-    static let OT_MALACHI_ARRAY = [OT_LIST[0][40], OT_LIST[1][40]]
-    static let OT_TESTIMONY_ARRAY = [OT_LIST[0][41], OT_LIST[1][41]]
+    static let OT_TITLE_POR = "Página-título"
+    static let OT_EPISTLE_POR = "Introdução"
+    static let OT_GENESIS_POR = "Gênesis"
+    static let OT_EXODUS_POR = "Êxodo"
+    static let OT_LEVITICUS_POR = "Levítico"
+    static let OT_NUMBERS_POR = "Números"
+    static let OT_DEUTERONOMY_POR = "Deuteronômio"
+    static let OT_JOSHUA_POR = "Josué"
+    static let OT_JUDGES_POR = "Juízes"
+    static let OT_RUTH_POR = "Rute"
+    static let OT_1SAM_POR = "1 Samuel"
+    static let OT_2SAM_POR = "2 Samuel"
+    static let OT_1KINGS_POR = "1 Reis"
+    static let OT_2KINGS_POR = "2 Reis"
+    static let OT_1CHRON_POR = "1 Crônicas"
+    static let OT_2CHRON_POR = "2 Crônicas"
+    static let OT_EZRA_POR = "Esdras"
+    static let OT_NEHEMIAH_POR = "Neemias"
+    static let OT_ESTHER_POR = "Ester"
+    static let OT_JOB_POR = "Jó"
+    static let OT_PSALMS_POR = "Salmos"
+    static let OT_PROVERBS_POR = "Provérbios"
+    static let OT_ECCLESIASTES_POR = "Eclesiastes"
+    static let OT_SONGofSOLOMON_POR = "Cantares de Salomão"
+    static let OT_ISAIAH_POR = "Isaías"
+    static let OT_JEREMIAH_POR = "Jeremias"
+    static let OT_LAMENTATIONS_POR = "Lamentações"
+    static let OT_EZEKIEL_POR = "Ezequiel"
+    static let OT_DANIEL_POR = "Daniel"
+    static let OT_HOSEA_POR = "Oseias"
+    static let OT_JOEL_POR = "Joel"
+    static let OT_AMOS_POR = "Amós"
+    static let OT_OBADIAH_POR = "Obadias"
+    static let OT_JONAH_POR = "Jonas"
+    static let OT_MICAH_POR = "Miqueias"
+    static let OT_NAHUM_POR = "Naum"
+    static let OT_HABAKKUK_POR = "Habacuque"
+    static let OT_ZEPHANIAH_POR = "Sofonias"
+    static let OT_HAGGAI_POR = "Ageu"
+    static let OT_ZECHARIAH_POR = "Zacarias"
+    static let OT_MALACHI_POR = "Malaquias"
+    static let OT_TESTIMONY_POR = "Testemunho do Antigo Testamento"
+    static let OT_LIST_POR: [String] = [OT_TITLE_POR, OT_EPISTLE_POR, OT_GENESIS_POR, OT_EXODUS_POR, OT_LEVITICUS_POR, OT_NUMBERS_POR, OT_DEUTERONOMY_POR, OT_JOSHUA_POR, OT_JUDGES_POR, OT_RUTH_POR, OT_1SAM_POR, OT_2SAM_POR, OT_1KINGS_POR, OT_2KINGS_POR, OT_1CHRON_POR, OT_2CHRON_POR, OT_EZRA_POR, OT_NEHEMIAH_POR, OT_ESTHER_POR, OT_JOB_POR, OT_PSALMS_POR, OT_PROVERBS_POR, OT_ECCLESIASTES_POR, OT_SONGofSOLOMON_POR, OT_ISAIAH_POR, OT_JEREMIAH_POR, OT_LAMENTATIONS_POR, OT_EZEKIEL_POR, OT_DANIEL_POR, OT_HOSEA_POR, OT_JOEL_POR, OT_AMOS_POR, OT_OBADIAH_POR, OT_JONAH_POR, OT_MICAH_POR, OT_NAHUM_POR, OT_HABAKKUK_POR, OT_ZEPHANIAH_POR, OT_HAGGAI_POR, OT_ZECHARIAH_POR, OT_MALACHI_POR, OT_TESTIMONY_POR]
+    
+    static let OT_LIST = [OT_LIST_ENG, OT_LIST_SPA, OT_LIST_POR]
+    static let OT_TITLE_ARRAY = [OT_LIST[0][0], OT_LIST[1][0], OT_LIST[2][0]]
+    static let OT_EPISTLE_ARRAY = [OT_LIST[0][1], OT_LIST[1][1], OT_LIST[2][1]]
+    static let OT_GENESIS_ARRAY = [OT_LIST[0][2], OT_LIST[1][2], OT_LIST[2][2]]
+    static let OT_EXODUS_ARRAY = [OT_LIST[0][3], OT_LIST[1][3], OT_LIST[2][3]]
+    static let OT_LEVITICUS_ARRAY = [OT_LIST[0][4], OT_LIST[1][4], OT_LIST[2][4]]
+    static let OT_NUMBERS_ARRAY = [OT_LIST[0][5], OT_LIST[1][5], OT_LIST[2][5]]
+    static let OT_DEUTERONOMY_ARRAY = [OT_LIST[0][6], OT_LIST[1][6], OT_LIST[2][6]]
+    static let OT_JOSHUA_ARRAY = [OT_LIST[0][7], OT_LIST[1][7], OT_LIST[2][7]]
+    static let OT_JUDGES_ARRAY = [OT_LIST[0][8], OT_LIST[1][8], OT_LIST[2][8]]
+    static let OT_RUTH_ARRAY = [OT_LIST[0][9], OT_LIST[1][9], OT_LIST[2][9]]
+    static let OT_1SAM_ARRAY = [OT_LIST[0][10], OT_LIST[1][10], OT_LIST[2][10]]
+    static let OT_2SAM_ARRAY = [OT_LIST[0][11], OT_LIST[1][11], OT_LIST[2][11]]
+    static let OT_1KINGS_ARRAY = [OT_LIST[0][12], OT_LIST[1][12], OT_LIST[2][12]]
+    static let OT_2KINGS_ARRAY = [OT_LIST[0][13], OT_LIST[1][13], OT_LIST[2][13]]
+    static let OT_1CHRON_ARRAY = [OT_LIST[0][14], OT_LIST[1][14], OT_LIST[2][14]]
+    static let OT_2CHRON_ARRAY = [OT_LIST[0][15], OT_LIST[1][15], OT_LIST[2][15]]
+    static let OT_EZRA_ARRAY = [OT_LIST[0][16], OT_LIST[1][16], OT_LIST[2][16]]
+    static let OT_NEHEMIAH_ARRAY = [OT_LIST[0][17], OT_LIST[1][17], OT_LIST[2][17]]
+    static let OT_ESTHER_ARRAY = [OT_LIST[0][18], OT_LIST[1][18], OT_LIST[2][18]]
+    static let OT_JOB_ARRAY = [OT_LIST[0][19], OT_LIST[1][19], OT_LIST[2][19]]
+    static let OT_PSALMS_ARRAY = [OT_LIST[0][20], OT_LIST[1][20], OT_LIST[2][20]]
+    static let OT_PROVERBS_ARRAY = [OT_LIST[0][21], OT_LIST[1][21], OT_LIST[2][21]]
+    static let OT_ECCLESIASTES_ARRAY = [OT_LIST[0][22], OT_LIST[1][22], OT_LIST[2][22]]
+    static let OT_SONGofSOLOMON_ARRAY = [OT_LIST[0][23], OT_LIST[1][23], OT_LIST[2][23]]
+    static let OT_ISAIAH_ARRAY = [OT_LIST[0][24], OT_LIST[1][24], OT_LIST[2][24]]
+    static let OT_JEREMIAH_ARRAY = [OT_LIST[0][25], OT_LIST[1][25], OT_LIST[2][25]]
+    static let OT_LAMENTATIONS_ARRAY = [OT_LIST[0][26], OT_LIST[1][26], OT_LIST[2][26]]
+    static let OT_EZEKIEL_ARRAY = [OT_LIST[0][27], OT_LIST[1][27], OT_LIST[2][27]]
+    static let OT_DANIEL_ARRAY = [OT_LIST[0][28], OT_LIST[1][28], OT_LIST[2][28]]
+    static let OT_HOSEA_ARRAY = [OT_LIST[0][29], OT_LIST[1][29], OT_LIST[2][29]]
+    static let OT_JOEL_ARRAY = [OT_LIST[0][30], OT_LIST[1][30], OT_LIST[2][30]]
+    static let OT_AMOS_ARRAY = [OT_LIST[0][31], OT_LIST[1][31], OT_LIST[2][31]]
+    static let OT_OBADIAH_ARRAY = [OT_LIST[0][32], OT_LIST[1][32], OT_LIST[2][32]]
+    static let OT_JONAH_ARRAY = [OT_LIST[0][33], OT_LIST[1][33], OT_LIST[2][33]]
+    static let OT_MICAH_ARRAY = [OT_LIST[0][34], OT_LIST[1][34], OT_LIST[2][34]]
+    static let OT_NAHUM_ARRAY = [OT_LIST[0][35], OT_LIST[1][35], OT_LIST[2][35]]
+    static let OT_HABAKKUK_ARRAY = [OT_LIST[0][36], OT_LIST[1][36], OT_LIST[2][36]]
+    static let OT_ZEPHANIAH_ARRAY = [OT_LIST[0][37], OT_LIST[1][37], OT_LIST[2][37]]
+    static let OT_HAGGAI_ARRAY = [OT_LIST[0][38], OT_LIST[1][38], OT_LIST[2][38]]
+    static let OT_ZECHARIAH_ARRAY = [OT_LIST[0][39], OT_LIST[1][39], OT_LIST[2][39]]
+    static let OT_MALACHI_ARRAY = [OT_LIST[0][40], OT_LIST[1][40], OT_LIST[2][40]]
+    static let OT_TESTIMONY_ARRAY = [OT_LIST[0][41], OT_LIST[1][41], OT_LIST[2][41]]
     
     //Sub Books URLs - Old Testament
     static let URL_OT = "ot/"
@@ -460,36 +548,67 @@ struct Const {
     static let NT_TESTIMONY_SPA = "Testimonio del Nuevo Testamento"
     static let NT_LIST_SPA: [String] = [NT_TITLE_SPA, NT_MATTHEW_SPA, NT_MARK_SPA, NT_LUKE_SPA, NT_JOHN_SPA, NT_ACTS_SPA, NT_ROMANS_SPA, NT_1COR_SPA, NT_2COR_SPA, NT_GALATIANS_SPA, NT_EPHESIANS_SPA, NT_PHILIPPIANS_SPA, NT_COLOSSIANS_SPA, NT_1THES_SPA, NT_2THES_SPA, NT_1TIM_SPA, NT_2TIM_SPA, NT_TITUS_SPA, NT_PHILEMON_SPA, NT_HEBREWS_SPA, NT_JAMES_SPA, NT_1PETER_SPA, NT_2PETER_SPA, NT_1JOHN_SPA, NT_2JOHN_SPA, NT_3JOHN_SPA, NT_JUDE_SPA, NT_REVELATION_SPA, NT_TESTIMONY_SPA]
     
-    static let NT_LIST = [NT_LIST_ENG, NT_LIST_SPA]
-    static let NT_TITLE_ARRAY = [NT_LIST[0][0], NT_LIST[1][0]]
-    static let NT_MATTHEW_ARRAY = [NT_LIST[0][1], NT_LIST[1][1]]
-    static let NT_MARK_ARRAY = [NT_LIST[0][2], NT_LIST[1][2]]
-    static let NT_LUKE_ARRAY = [NT_LIST[0][3], NT_LIST[1][3]]
-    static let NT_JOHN_ARRAY = [NT_LIST[0][4], NT_LIST[1][4]]
-    static let NT_ACTS_ARRAY = [NT_LIST[0][5], NT_LIST[1][5]]
-    static let NT_ROMANS_ARRAY = [NT_LIST[0][6], NT_LIST[1][6]]
-    static let NT_1COR_ARRAY = [NT_LIST[0][7], NT_LIST[1][7]]
-    static let NT_2COR_ARRAY = [NT_LIST[0][8], NT_LIST[1][8]]
-    static let NT_GALATIANS_ARRAY = [NT_LIST[0][9], NT_LIST[1][9]]
-    static let NT_EPHESIANS_ARRAY = [NT_LIST[0][10], NT_LIST[1][10]]
-    static let NT_PHILIPPIANS_ARRAY = [NT_LIST[0][11], NT_LIST[1][11]]
-    static let NT_COLOSSIANS_ARRAY = [NT_LIST[0][12], NT_LIST[1][12]]
-    static let NT_1THES_ARRAY = [NT_LIST[0][13], NT_LIST[1][13]]
-    static let NT_2THES_ARRAY = [NT_LIST[0][14], NT_LIST[1][14]]
-    static let NT_1TIM_ARRAY = [NT_LIST[0][15], NT_LIST[1][15]]
-    static let NT_2TIM_ARRAY = [NT_LIST[0][16], NT_LIST[1][16]]
-    static let NT_TITUS_ARRAY = [NT_LIST[0][17], NT_LIST[1][17]]
-    static let NT_PHILEMON_ARRAY = [NT_LIST[0][18], NT_LIST[1][18]]
-    static let NT_HEBREWS_ARRAY = [NT_LIST[0][19], NT_LIST[1][19]]
-    static let NT_JAMES_ARRAY = [NT_LIST[0][20], NT_LIST[1][20]]
-    static let NT_1PETER_ARRAY = [NT_LIST[0][21], NT_LIST[1][21]]
-    static let NT_2PETER_ARRAY = [NT_LIST[0][22], NT_LIST[1][22]]
-    static let NT_1JOHN_ARRAY = [NT_LIST[0][23], NT_LIST[1][23]]
-    static let NT_2JOHN_ARRAY = [NT_LIST[0][24], NT_LIST[1][24]]
-    static let NT_3JOHN_ARRAY = [NT_LIST[0][25], NT_LIST[1][25]]
-    static let NT_JUDE_ARRAY = [NT_LIST[0][26], NT_LIST[1][26]]
-    static let NT_REVELATION_ARRAY = [NT_LIST[0][27], NT_LIST[1][27]]
-    static let NT_TESTIMONY_ARRAY = [NT_LIST[0][28], NT_LIST[1][28]]
+    static let NT_TITLE_POR = "Página-título"
+    static let NT_MATTHEW_POR = "Mateus"
+    static let NT_MARK_POR = "Marcos"
+    static let NT_LUKE_POR = "Lucas"
+    static let NT_JOHN_POR = "João"
+    static let NT_ACTS_POR = "Atos"
+    static let NT_ROMANS_POR = "Romanos"
+    static let NT_1COR_POR = "1 Coríntios"
+    static let NT_2COR_POR = "2 Coríntios"
+    static let NT_GALATIANS_POR = "Gálatas"
+    static let NT_EPHESIANS_POR = "Efésios"
+    static let NT_PHILIPPIANS_POR = "Filipenses"
+    static let NT_COLOSSIANS_POR = "Colossenses"
+    static let NT_1THES_POR = "1 Tessalonicenses"
+    static let NT_2THES_POR = "2 Tessalonicenses"
+    static let NT_1TIM_POR = "1 Timóteo"
+    static let NT_2TIM_POR = "2 Timóteo"
+    static let NT_TITUS_POR = "Tito"
+    static let NT_PHILEMON_POR = "Filemom"
+    static let NT_HEBREWS_POR = "Hebreus"
+    static let NT_JAMES_POR = "Tiago"
+    static let NT_1PETER_POR = "1 Pedro"
+    static let NT_2PETER_POR = "2 Pedro"
+    static let NT_1JOHN_POR = "1 João"
+    static let NT_2JOHN_POR = "2 João"
+    static let NT_3JOHN_POR = "3 João"
+    static let NT_JUDE_POR = "Judas"
+    static let NT_REVELATION_POR = "Apocalipse"
+    static let NT_TESTIMONY_POR = "Testemunho do Novo Testamento"
+    static let NT_LIST_POR: [String] = [NT_TITLE_POR, NT_MATTHEW_POR, NT_MARK_POR, NT_LUKE_POR, NT_JOHN_POR, NT_ACTS_POR, NT_ROMANS_POR, NT_1COR_POR, NT_2COR_POR, NT_GALATIANS_POR, NT_EPHESIANS_POR, NT_PHILIPPIANS_POR, NT_COLOSSIANS_POR, NT_1THES_POR, NT_2THES_POR, NT_1TIM_POR, NT_2TIM_POR, NT_TITUS_POR, NT_PHILEMON_POR, NT_HEBREWS_POR, NT_JAMES_POR, NT_1PETER_POR, NT_2PETER_POR, NT_1JOHN_POR, NT_2JOHN_POR, NT_3JOHN_POR, NT_JUDE_POR, NT_REVELATION_POR, NT_TESTIMONY_POR]
+    
+    static let NT_LIST = [NT_LIST_ENG, NT_LIST_SPA, NT_LIST_POR]
+    static let NT_TITLE_ARRAY = [NT_LIST[0][0], NT_LIST[1][0], NT_LIST[2][0]]
+    static let NT_MATTHEW_ARRAY = [NT_LIST[0][1], NT_LIST[1][1], NT_LIST[2][1]]
+    static let NT_MARK_ARRAY = [NT_LIST[0][2], NT_LIST[1][2], NT_LIST[2][2]]
+    static let NT_LUKE_ARRAY = [NT_LIST[0][3], NT_LIST[1][3], NT_LIST[2][3]]
+    static let NT_JOHN_ARRAY = [NT_LIST[0][4], NT_LIST[1][4], NT_LIST[2][4]]
+    static let NT_ACTS_ARRAY = [NT_LIST[0][5], NT_LIST[1][5], NT_LIST[2][5]]
+    static let NT_ROMANS_ARRAY = [NT_LIST[0][6], NT_LIST[1][6], NT_LIST[2][6]]
+    static let NT_1COR_ARRAY = [NT_LIST[0][7], NT_LIST[1][7], NT_LIST[2][7]]
+    static let NT_2COR_ARRAY = [NT_LIST[0][8], NT_LIST[1][8], NT_LIST[2][8]]
+    static let NT_GALATIANS_ARRAY = [NT_LIST[0][9], NT_LIST[1][9], NT_LIST[2][9]]
+    static let NT_EPHESIANS_ARRAY = [NT_LIST[0][10], NT_LIST[1][10], NT_LIST[2][10]]
+    static let NT_PHILIPPIANS_ARRAY = [NT_LIST[0][11], NT_LIST[1][11], NT_LIST[2][11]]
+    static let NT_COLOSSIANS_ARRAY = [NT_LIST[0][12], NT_LIST[1][12], NT_LIST[2][12]]
+    static let NT_1THES_ARRAY = [NT_LIST[0][13], NT_LIST[1][13], NT_LIST[2][13]]
+    static let NT_2THES_ARRAY = [NT_LIST[0][14], NT_LIST[1][14], NT_LIST[2][14]]
+    static let NT_1TIM_ARRAY = [NT_LIST[0][15], NT_LIST[1][15], NT_LIST[2][15]]
+    static let NT_2TIM_ARRAY = [NT_LIST[0][16], NT_LIST[1][16], NT_LIST[2][16]]
+    static let NT_TITUS_ARRAY = [NT_LIST[0][17], NT_LIST[1][17], NT_LIST[2][17]]
+    static let NT_PHILEMON_ARRAY = [NT_LIST[0][18], NT_LIST[1][18], NT_LIST[2][18]]
+    static let NT_HEBREWS_ARRAY = [NT_LIST[0][19], NT_LIST[1][19], NT_LIST[2][19]]
+    static let NT_JAMES_ARRAY = [NT_LIST[0][20], NT_LIST[1][20], NT_LIST[2][20]]
+    static let NT_1PETER_ARRAY = [NT_LIST[0][21], NT_LIST[1][21], NT_LIST[2][21]]
+    static let NT_2PETER_ARRAY = [NT_LIST[0][22], NT_LIST[1][22], NT_LIST[2][22]]
+    static let NT_1JOHN_ARRAY = [NT_LIST[0][23], NT_LIST[1][23], NT_LIST[2][23]]
+    static let NT_2JOHN_ARRAY = [NT_LIST[0][24], NT_LIST[1][24], NT_LIST[2][24]]
+    static let NT_3JOHN_ARRAY = [NT_LIST[0][25], NT_LIST[1][25], NT_LIST[2][25]]
+    static let NT_JUDE_ARRAY = [NT_LIST[0][26], NT_LIST[1][26], NT_LIST[2][26]]
+    static let NT_REVELATION_ARRAY = [NT_LIST[0][27], NT_LIST[1][27], NT_LIST[2][27]]
+    static let NT_TESTIMONY_ARRAY = [NT_LIST[0][28], NT_LIST[1][28], NT_LIST[2][28]]
     
     //Sub Books URLs - New Testament
     static let URL_NT = "nt/"
@@ -524,12 +643,14 @@ struct Const {
     static let URL_NT_LIST: [String] = [URL_NT_TITLE, URL_NT_MATTHEW, URL_NT_MARK, URL_NT_LUKE, URL_NT_JOHN, URL_NT_ACTS, URL_NT_ROMANS, URL_NT_1COR, URL_NT_2COR, URL_NT_GALATIANS, URL_NT_EPHESIANS, URL_NT_PHILIPPIANS, URL_NT_COLOSSIANS, URL_NT_1THES, URL_NT_2THES, URL_NT_1TIM, URL_NT_2TIM, URL_NT_TITUS, URL_NT_PHILEMON, URL_NT_HEBREWS, URL_NT_JAMES, URL_NT_1PETER, URL_NT_2PETER, URL_NT_1JOHN, URL_NT_2JOHN, URL_NT_3JOHN, URL_NT_JUDE, URL_NT_REVELATION]
     
     static let SUB_BOOK_LIST = [[BOM_LIST_ENG, PGP_LIST_ENG, DC_LIST_ENG, OT_LIST_ENG, NT_LIST_ENG],
-                                [BOM_LIST_SPA, PGP_LIST_SPA, DC_LIST_SPA, OT_LIST_SPA, NT_LIST_SPA]]
+                                [BOM_LIST_SPA, PGP_LIST_SPA, DC_LIST_SPA, OT_LIST_SPA, NT_LIST_SPA],
+                                [BOM_LIST_POR, PGP_LIST_POR, DC_LIST_POR, OT_LIST_POR, NT_LIST_POR]]
     
     //https://www.lds.org/general-conference/2011/10/the-power-of-scripture?lang=eng
     //http://storiesforseminary.wikispaces.com/Richard+G.+Scott+makes+audio+recording+of+the+Book+of+Mormon+for+his+family
     static let SCOTT_QUOTE: [String] =
         ["My precious wife, Jeanene, loved the Book of Mormon. In her youth, as a teenager, it became the foundation of her life. It was a source of testimony and teaching during her full-time missionary service in the northwest United States. When we served in the mission field in Córdoba, Argentina, she strongly encouraged the use of the Book of Mormon in our proselytizing efforts. Jeanene confirmed early in her life that those who consistently read the Book of Mormon are blessed with an added measure of the Spirit of the Lord, a greater resolve to obey His commandments, and a stronger testimony of the divinity of the Son of God. 1 For I don’t know how many years, as the end of the year approached, I would see her sitting quietly, carefully finishing the entire Book of Mormon yet another time before year’s end.\n\nIn 1991 I wanted to give a special Christmas gift to my family. In recording the fulfillment of that desire, my personal journal states: “It is 12:38 p.m., Wednesday, December 18, 1991. I’ve just concluded an audio recording of the Book of Mormon for my family. This has been an experience that has increased my testimony of this divine work and strengthened in me a desire to be more familiar with its pages to distill from these scriptures truths to be used in my service to the Lord. I love this book. I testify with my soul that it is true, that it was prepared for the blessing of the House of Israel, and all of its component parts spread throughout the world. All who will study its message in humility, in faith believing in Jesus Christ, will know of its truthfulness and will find a treasure to lead them to greater happiness, peace, and attainment in this life. I testify by all that is sacred, this book is true.\n\nThe Power of Scripture\n\nRichard G. Scott, October 2011 General Conference",
-         "Mi querida esposa Jeanene amaba el Libro de Mormón. En su juventud, de adolecente, llegó a ser el cimiento de su vida y una fuente de testimonio y enseñanza durante su servicio misional de tiempo completo en los estados del noroeste de los Estados Unidos. Cuando servimos en el campo misional en Córdoba, Argentina, ella alentaba con gran firmeza el uso del Libro de Mormón en nuestro esfuerzo proselitista. Jeanene confirmó desde muy joven que quienes leían en forma consecuente el Libro de Mormón eran bendecidos con una porción más del Espíritu del Señor, con una gran resolución de obedecer Sus mandamientos y un firme testimonio de la divinidad del Hijo de Dios1. No sé por cuántos años, al acercarse el fin del año, la veía sentada muy callada terminando de leer detenidamente el Libro de Mormón una vez más antes de que terminase el año.\n\nEn 1991, quise dar a mi familia un regalo especial de Navidad. Al registrar el logro de ese deseo, en mi diario personal anoté: “Son las 12:38 de la noche del miércoles 18 de diciembre de 1991. He terminado recién la grabación en audio del Libro de Mormón para mi familia. Ésta ha sido una experiencia que ha acrecentado mi testimonio de esta divina obra y fortalecido mi deseo de familiarizarme más con sus páginas, para extraer de estas Escrituras verdades para utilizar en mi servicio al Señor. Amo este libro. Testifico con toda mi alma que es verdadero, que fue preparado para bendecir la Casa de Israel y que todas sus partes se propagan por el mundo. Todos los que estudien su mensaje con humildad, con fe, creyendo en Jesucristo, sabrán de su veracidad y encontrarán un tesoro que les conducirá a una mayor felicidad, paz y logro en esta vida. Testifico, por todo lo que es sagrado, que este libro es verdadero.\n\nEl poder de las Escrituras\n\nRichard G. Scott, Octubre 2011, Conferencia general"]
+         "Mi querida esposa Jeanene amaba el Libro de Mormón. En su juventud, de adolecente, llegó a ser el cimiento de su vida y una fuente de testimonio y enseñanza durante su servicio misional de tiempo completo en los estados del noroeste de los Estados Unidos. Cuando servimos en el campo misional en Córdoba, Argentina, ella alentaba con gran firmeza el uso del Libro de Mormón en nuestro esfuerzo proselitista. Jeanene confirmó desde muy joven que quienes leían en forma consecuente el Libro de Mormón eran bendecidos con una porción más del Espíritu del Señor, con una gran resolución de obedecer Sus mandamientos y un firme testimonio de la divinidad del Hijo de Dios1. No sé por cuántos años, al acercarse el fin del año, la veía sentada muy callada terminando de leer detenidamente el Libro de Mormón una vez más antes de que terminase el año.\n\nEn 1991, quise dar a mi familia un regalo especial de Navidad. Al registrar el logro de ese deseo, en mi diario personal anoté: “Son las 12:38 de la noche del miércoles 18 de diciembre de 1991. He terminado recién la grabación en audio del Libro de Mormón para mi familia. Ésta ha sido una experiencia que ha acrecentado mi testimonio de esta divina obra y fortalecido mi deseo de familiarizarme más con sus páginas, para extraer de estas Escrituras verdades para utilizar en mi servicio al Señor. Amo este libro. Testifico con toda mi alma que es verdadero, que fue preparado para bendecir la Casa de Israel y que todas sus partes se propagan por el mundo. Todos los que estudien su mensaje con humildad, con fe, creyendo en Jesucristo, sabrán de su veracidad y encontrarán un tesoro que les conducirá a una mayor felicidad, paz y logro en esta vida. Testifico, por todo lo que es sagrado, que este libro es verdadero.\n\nEl poder de las Escrituras\n\nRichard G. Scott, Octubre 2011, Conferencia general",
+         "Minha querida esposa, Jeanene, amava o Livro de Mórmon. Em sua juventude, quando ela era adolescente, ele tornou-se o alicerce de sua vida. Foi uma fonte de testemunho e ensinamento durante o seu serviço missionário de tempo integral no noroeste dos Estados Unidos. Quando servimos no campo missionário em Córdoba, Argentina, ela incentivou intensamente o uso do Livro de Mórmon em nosso trabalho de proselitismo. Jeanene confirmou no início de sua vida que aqueles que leem constantemente o Livro de Mórmon são abençoados com uma medida a mais do Espírito do Senhor, uma maior determinação de obedecer aos Seus mandamentos, e um forte testemunho da divindade do Filho de Deus.1Não sei por quantos anos, ao aproximar-se o fim do ano, eu a vi sentada em silêncio, terminando diligentemente de ler o Livro de Mórmon inteiro mais uma vez antes do final do ano.\n\nEm 1991, eu queria dar um presente de Natal especial para a minha família. Para registrar o cumprimento desse desejo, escrevi em meu diário pessoal: “São 12h38, quarta-feira, 18 de dezembro de 1991. Acabei de concluir uma gravação de áudio do Livro de Mórmon para a minha família. Essa foi uma experiência que aumentou meu testemunho desta obra divina e fortaleceu em mim o desejo de estar mais familiarizado com suas páginas, a fim de destilar, a partir dessas escrituras, verdades para serem usadas em meu serviço para o Senhor. Amo este livro. Testifico do fundo de minha alma que é verdadeiro, e que foi preparado para abençoar a casa de Israel e todas as suas partes espalhadas pelo mundo. Todos os que estudarem sua mensagem com humildade, com fé, acreditando em Jesus Cristo, saberão de sua veracidade e encontrarão um tesouro que os levará a ter mais felicidade, paz e realização nesta vida. Testifico por tudo o que é sagrado que este livro é verdadeiro\n\nO Poder das Escrituras\n\nRichard G. Scott, Outubro 2011, Conferência Geral"]
     
 }

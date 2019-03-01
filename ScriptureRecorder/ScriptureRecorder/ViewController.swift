@@ -32,10 +32,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     @IBOutlet var buttonBook: UIButton!
     @IBOutlet var buttonSubBook: UIButton!
     
-    static let text_buttonRecord = ["Record", "Grabar"]
-    static let text_buttonPlay = ["Play", "Tocar"]
-    static let text_buttonShare = ["Share", "Compartir"]
-    static let text_buttonStop = ["Stop", "Parar"]
+    static let text_buttonRecord = ["Record", "Grabar", "Gravar"]
+    static let text_buttonPlay = ["Play", "Tocar", "Tocar"]
+    static let text_buttonShare = ["Share", "Compartir", "Compartilhar"]
+    static let text_buttonStop = ["Stop", "Parar", "Parar"]
     
     //TODO add for ads, !!!will need to drag back in from storyboard !!! 
     //@IBOutlet var bannerView: GADBannerView!
@@ -88,7 +88,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     override func viewDidAppear(_ animated: Bool) {
         if appDelegate.userName_prev != appDelegate.userName {
-            Utilities().popupMessage(view: self, title: "User changed", message: "User changed to:\n\(appDelegate.userName)", button: "OK")
+            switch appDelegate.Language {
+            case .English:
+                Utilities().popupMessage(view: self, title: "User changed", message: "User changed to:\n\(appDelegate.userName)", button: "OK")
+            case .Spanish:
+                Utilities().popupMessage(view: self, title: "Usuario cambiado", message: "El usuario cambió a:\n\(appDelegate.userName)", button: "Bueno")
+            case .Portuguese:
+                Utilities().popupMessage(view: self, title: "Usuário alterado", message: "Usuário alterado para:\n\(appDelegate.userName)", button: "OK")
+            }
             appDelegate.userName_prev = appDelegate.userName
         }
         
@@ -145,7 +152,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             fileExists = verifyFileExists()
         }else {
             if Utilities().combineFile() == false {
-                Utilities().popupMessage(view: self, title: "Error", message: "The combined file could not be created", button: "OK")
+                switch appDelegate.Language {
+                case .English:
+                    Utilities().popupMessage(view: self, title: "Error", message: "The combined file could not be created", button: "OK")
+                case .Spanish:
+                    Utilities().popupMessage(view: self, title: "Error", message: "El archivo combinado no pudo ser creado", button: "Bueno")
+                case .Portuguese:
+                    Utilities().popupMessage(view: self, title: "Erro", message: "O arquivo combinado não pôde ser criado", button: "OK")
+                }
             }else {
                 fileExists = true
             }
@@ -166,7 +180,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             
             self.present(activityVC, animated: true, completion: nil)
         }else{
-            Utilities().popupMessage(view: self, title: "Oops", message: "File does not exisit", button: "OK")
+            switch appDelegate.Language {
+            case .English:
+                Utilities().popupMessage(view: self, title: "Oops", message: "File does not exisit", button: "OK")
+            case .Spanish:
+                Utilities().popupMessage(view: self, title: "Ups", message: "El archivo no existe", button: "Bueno")
+            case .Portuguese:
+                Utilities().popupMessage(view: self, title: "Opa", message: "Arquivo não existe", button: "OK")
+            }
         }
     }
     
@@ -280,7 +301,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     func playActions() {
         if verifyFileExists() == false {
-            Utilities().popupMessage(view: self, title: "Oops", message: "The file does not exist", button: "Done")
+            switch appDelegate.Language {
+            case .English:
+                Utilities().popupMessage(view: self, title: "Oops", message: "File does not exisit", button: "OK")
+            case .Spanish:
+                Utilities().popupMessage(view: self, title: "Ups", message: "El archivo no existe", button: "Bueno")
+            case .Portuguese:
+                Utilities().popupMessage(view: self, title: "Opa", message: "Arquivo não existe", button: "OK")
+            }
             return
         }
         if !audioRecorder.isRecording{  //don't play when recording
@@ -430,7 +458,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                 
                 if verifyFileExists() { //see if the new verse has been recorded before
                     //if the verse exists, don't try to record over it
-                    Utilities().popupMessage(view: self, title: "Recording Stopped", message: "This verse has previously been recorded. Continual Record has stopped.", button: "OK")
+                    switch appDelegate.Language {
+                    case .English:
+                        Utilities().popupMessage(view: self, title: "Recording Stopped", message: "This verse has previously been recorded. Continual Record has stopped.", button: "OK")
+                    case .Spanish:
+                        Utilities().popupMessage(view: self, title: "Grabación detenida", message: "Este verso ha sido previamente grabado. El registro continuo se ha detenido.", button: "Bueno")
+                    case .Portuguese:
+                        Utilities().popupMessage(view: self, title: "Gravação interrompida", message: "Este verso foi previamente gravado. O registro contínuo foi interrompido.", button: "OK")
+                    }
                 }else {
                     print("   Start recording for continous record")
                     startRecording()
@@ -468,7 +503,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                 
                 if verifyFileExists() { //see if the new verse has been recorded before
                     //if the verse exists, don't try to record over it
-                    Utilities().popupMessage(view: self, title: "Recording Stopped", message: "This verse has previously been recorded. Continual Record has stopped.", button: "OK")
+                    switch appDelegate.Language {
+                    case .English:
+                        Utilities().popupMessage(view: self, title: "Recording Stopped", message: "This verse has previously been recorded. Continual Record has stopped.", button: "OK")
+                    case .Spanish:
+                        Utilities().popupMessage(view: self, title: "Grabación detenida", message: "Este verso ha sido previamente grabado. El registro continuo se ha detenido.", button: "Bueno")
+                    case .Portuguese:
+                        Utilities().popupMessage(view: self, title: "Gravação interrompida", message: "Este verso foi previamente gravado. O registro contínuo foi interrompido.", button: "OK")
+                    }
                 }else {
                     print("   Start recording for continous record")
                     startRecording()
@@ -508,7 +550,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             appDelegate.verse = Utilities().getCurrentChapterObject().verseCount
             appDelegate.subBookString_prev = appDelegate.subBookString
         }else{
-            Utilities().popupMessage(view: self, title: "Beginning of Book", message: "There is not a previous chapter or verse in this book", button: "OK")
+            switch appDelegate.Language {
+            case .English:
+                Utilities().popupMessage(view: self, title: "Beginning of Book", message: "There is not a previous chapter or verse in this book", button: "OK")
+            case .Spanish:
+                Utilities().popupMessage(view: self, title: "Principio de libro", message: "No hay un capítulo o verso anterior en este libro", button: "Bueno")
+            case .Portuguese:
+                Utilities().popupMessage(view: self, title: "Início do livro", message: "Não há um capítulo ou verso anterior neste livro", button: "OK")
+            }
             appDelegate.chapter = chapter_prev
             appDelegate.verse = verse_prev
         }
@@ -526,7 +575,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             appDelegate.verse = Utilities().getMinVerse()
             appDelegate.subBookString_prev = appDelegate.subBookString
         }else{
-            Utilities().popupMessage(view: self, title: "End of Book", message: "There is not another chapter or verse in this book", button: "OK")
+            switch appDelegate.Language {
+            case .English:
+                Utilities().popupMessage(view: self, title: "End of Book", message: "There is not another chapter or verse in this book", button: "OK")
+            case .Spanish:
+                Utilities().popupMessage(view: self, title: "Fin de Libro", message: "No hay otro capítulo o verso en este libro.", button: "Bueno")
+            case .Portuguese:
+                Utilities().popupMessage(view: self, title: "Fim do Livro", message: "Não há outro capítulo ou verso neste livro", button: "OK")
+            }
             appDelegate.chapter = chapter_prev
             appDelegate.verse = verse_prev
         }
@@ -553,7 +609,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     func preparePlayer(){
         if verifyFileExists() == false {
-            Utilities().popupMessage(view: self, title: "Oops", message: "The file does not exist", button: "Done")
+            switch appDelegate.Language {
+            case .English:
+                Utilities().popupMessage(view: self, title: "Oops", message: "The file does not exist", button: "Done")
+            case .Spanish:
+                Utilities().popupMessage(view: self, title: "Ups", message: "El archivo no existe", button: "Bueno")
+            case .Portuguese:
+                Utilities().popupMessage(view: self, title: "Opa", message: "O arquivo não existe", button: "OK")
+            }
             return
         }
         
@@ -669,10 +732,24 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                     playActions()
                 }else {
                     print("   Verse does not exist")
-                    Utilities().popupMessage(view: self, title: "Playing Stopped", message: "Continuous Play stopped because you reached a verse that has not been recorded.", button: "OK")
+                    switch appDelegate.Language {
+                    case .English:
+                        Utilities().popupMessage(view: self, title: "Playing Stopped", message: "Continuous Play stopped because you reached a verse that has not been recorded.", button: "OK")
+                    case .Spanish:
+                        Utilities().popupMessage(view: self, title: "Jugando detenido", message: "El juego continuo se detuvo porque llegaste a un verso que no se ha grabado.", button: "Bueno")
+                    case .Portuguese:
+                        Utilities().popupMessage(view: self, title: "Jogando parado", message: "A Reprodução Contínua parou porque você chegou a um versículo que não foi gravado.", button: "OK")
+                    }
                 }
             }else {
-                Utilities().popupMessage(view: self, title: "Playing Stopped", message: "Continuous Play stopped because you reached the end of the book.", button: "OK")
+                switch appDelegate.Language {
+                case .English:
+                    Utilities().popupMessage(view: self, title: "Playing Stopped", message: "Continuous Play stopped because you reached the end of the book.", button: "OK")
+                case .Spanish:
+                    Utilities().popupMessage(view: self, title: "Jugando detenido", message: "El juego continuo se detuvo porque llegaste al final del libro.", button: "Bueno")
+                case .Portuguese:
+                    Utilities().popupMessage(view: self, title: "Jogando parado", message: "A Reprodução Contínua foi interrompida porque você chegou ao final do livro.", button: "OK")
+                }
             }
         }
     }
@@ -737,50 +814,53 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         var verseString = ""
         let subBook = Utilities().getCurrentSubBook()
         if appDelegate.verse == -1 && appDelegate.chapter == 1 {
-            if appDelegate.Language == .English {
+            switch appDelegate.Language {
+            case .English:
                 verseString = " - Book Title and Book Summary"
-            }else if appDelegate.Language == .Spanish {
+            case .Spanish:
                 verseString = " - Título del libro y resumen del libro"
-            }else {
-                fatalError()
+            case .Portuguese:
+                verseString = " - Título do livro e resumo do livro"
             }
         }else if subBook.Name.contains("Intro") || subBook.Name.contains("Title") || subBook.Name.contains("Dedicatory") || subBook.Name.contains(" Testimony") ||          subBook.Name.contains("Portada") || subBook.Name.contains("") || subBook.Name.contains("Introducción") || subBook.Name.contains("Testimonio ") {
             verseString = ""
         }else if appDelegate.verse == -1 {
-            if appDelegate.Language == .English {
+            switch appDelegate.Language {
+            case .English:
                 verseString = " - Chapter Pre-heading"
-            }else if appDelegate.Language == .Spanish {
+            case .Spanish:
                 verseString = " - Antes del título del capítulo"
-            }else {
-                fatalError()
+            case .Portuguese:
+                verseString = " - Capítulo Pré-cabeçalho"
             }
         }else if subBook.Name[appDelegate.Language.rawValue] == Const.PGP_AofF_ARRAY[appDelegate.Language.rawValue] && appDelegate.verse == 0 {
-            verseString = " - Articles of Faith Title"
-            if appDelegate.Language == .English {
+            switch appDelegate.Language {
+            case .English:
                 verseString = " - Articles of Faith Title"
-            }else if appDelegate.Language == .Spanish {
+            case .Spanish:
                 verseString = " - Artículos de Fe, Título"
-            }else {
-                fatalError()
+            case .Portuguese:
+                verseString = " - Regras de Fé, Título"
             }
         }else if (appDelegate.chapter == 116 || appDelegate.chapter == 120) &&
                     subBook.Name[appDelegate.Language.rawValue] == Const.DC_SECTIONS_ARRAY[appDelegate.Language.rawValue] &&
                     appDelegate.verse == 0 {
-            if appDelegate.Language == .English {
+            switch appDelegate.Language {
+            case .English:
                 verseString = " - Chapter Pre-heading"
-            }else if appDelegate.Language == .Spanish {
+            case .Spanish:
                 verseString = " - Antes del título del capítulo"
-            }else {
-                fatalError()
+            case .Portuguese:
+                verseString = " - Capítulo Pré-cabeçalho"
             }
         }else if appDelegate.verse == 0 {
-            verseString = " - Chapter Heading"
-            if appDelegate.Language == .English {
+            switch appDelegate.Language {
+            case .English:
                 verseString = " - Chapter Heading"
-            }else if appDelegate.Language == .Spanish {
+            case .Spanish:
                 verseString = " - Título del Capítulo"
-            }else {
-                fatalError()
+            case .Portuguese:
+                verseString = " - Título do Capítulo"
             }
         }else {
             verseString = ":\(appDelegate.verse)"

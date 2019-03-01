@@ -39,41 +39,54 @@ struct Scripture {
         var verse = 1
     }
     
-    static let EMPTY_DESCRIPTION = OptionDescriptionsByLanguage(Description: ["", ""])
+    static let EMPTY_DESCRIPTION = OptionDescriptionsByLanguage(Description: ["", "", ""])
     
     //*** BOM
     static let Description_INTRO_TITLE_PAGE = OptionDescriptionsByLanguage(Description: ["Title Page",
-                                                                                         "Portada"])
+                                                                                         "Portada",
+                                                                                         "Página de Título"])
     static let INTRO_TITLE_PAGE = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TITLE_PAGE, hasHeading: false, hasPreHeading: false)
     
     static let Description_INTRO_TITLE_BOM_1 = OptionDescriptionsByLanguage(Description: ["Title Page of the Book of Mormon\n(Title - 'The Book of...')",
-                                                                                          "Portada del Libro de Mormón\n(Titulo - 'El Libro de...')"])
+                                                                                          "Portada del Libro de Mormón\n(Titulo - 'El Libro de...')",
+                                                                                          "Página de Título do Livro de Mórmon\n(Titulo - 'O Livro de...')"])
     static let Description_INTRO_TITLE_BOM_2 = OptionDescriptionsByLanguage(Description: ["Title Page of the Book of Mormon\n('Wherefore, it is...')",
-                                                                                          "Portada del Libro de Mormón\n('Por tanto, es un...')"])
+                                                                                          "Portada del Libro de Mormón\n('Por tanto, es un...')",
+                                                                                          "Página de Título do Livro de Mórmon\n('É, portanto, um resumo...')"])
     static let Description_INTRO_TITLE_BOM_3 = OptionDescriptionsByLanguage(Description: ["Title Page of the Book of Mormon\n('An abridgement taken...')",
-                                                                                          "Portada del Libro de Mormón\n('Contiene también un...')"])
+                                                                                          "Portada del Libro de Mormón\n('Contiene también un...')",
+                                                                                          "Página de Título do Livro de Mórmon\n('Contém ainda um...')"])
     static let INTRO_TITLE_BOM_1 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TITLE_BOM_1, hasHeading: false, hasPreHeading: false)
     static let INTRO_TITLE_BOM_2 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TITLE_BOM_2, hasHeading: false, hasPreHeading: false)
     static let INTRO_TITLE_BOM_3 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TITLE_BOM_3, hasHeading: false, hasPreHeading: false)
     
     static let Description_INTRO_INTRO_1 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 1\n('Introduction, The Book of...')",
-                                                                                      "Introducción - Párrafo 1\n('Introducción, El Libro de...')"])
+                                                                                      "Introducción - Párrafo 1\n('Introducción, El Libro de...')",
+                                                                                      "Introdução - Parágrafo 1\n('Introdução, O Livro de...')"])
     static let Description_INTRO_INTRO_2 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 2\n('The book was...')",
-                                                                                      "Introducción - Párrafo 2\n('Escribieron el...')"])
+                                                                                      "Introducción - Párrafo 2\n('Escribieron el...')",
+                                                                                      "Introdução - Parágrafo 2\n('O livro foi escrito...')"])
     static let Description_INTRO_INTRO_3 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 3\n('The crowning event...')",
-                                                                                      "Introducción - Párrafo 3\n('El acontecimiento...')"])
+                                                                                      "Introducción - Párrafo 3\n('El acontecimiento...')",
+                                                                                      "Introdução - Parágrafo 4\n('O acontecimento...')"])
     static let Description_INTRO_INTRO_4 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 4\n('After Mormon...')",
-                                                                                      "Introducción - Párrafo 4\n('Después de...')"])
+                                                                                      "Introducción - Párrafo 4\n('Después de...')",
+                                                                                      "Introdução - Parágrafo 4\n('Depois de...')"])
     static let Description_INTRO_INTRO_5 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 5\n('In due course...')",
-                                                                                      "Introducción - Párrafo 5\n('En la ocasión...')"])
+                                                                                      "Introducción - Párrafo 5\n('En la ocasión...')",
+                                                                                      "Introdução - Parágrafo 5\n('No devido tempo...')"])
     static let Description_INTRO_INTRO_6 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 6\n('Concerning this...')",
-                                                                                      "Introducción - Párrafo 6\n('Concerniente a esta...')"])
+                                                                                      "Introducción - Párrafo 6\n('Concerniente a esta...')",
+                                                                                      "Introdução - Parágrafo 6\n('Com respeito a esse...')"])
     static let Description_INTRO_INTRO_7 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 7\n('In addition to...')",
-                                                                                      "Introducción - Párrafo 7\n('Además de...')"])
+                                                                                      "Introducción - Párrafo 7\n('Además de...')",
+                                                                                      "Introdução - Parágrafo 7\n('O Senhor providenciou...')"])
     static let Description_INTRO_INTRO_8 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 8\n('We invite all...')",
-                                                                                      "Introducción - Párrafo 8\n('Invitamos a toda persona...')"])
+                                                                                      "Introducción - Párrafo 8\n('Invitamos a toda persona...')",
+                                                                                      "Introdução - Parágrafo 8\n('Convidamos todos os homens...')"])
     static let Description_INTRO_INTRO_9 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 9\n('Those who gain...')",
-                                                                                      "Introducción - Párrafo 9\n('Aquellos que obtengan...')"])
+                                                                                      "Introducción - Párrafo 9\n('Aquellos que obtengan...')",
+                                                                                      "Introdução - Parágrafo 9\n('Os que obtiverem...')"])
     static let INTRO_INTRO_1 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_INTRO_1, hasHeading: false, hasPreHeading: false)
     static let INTRO_INTRO_2 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_INTRO_2, hasHeading: false, hasPreHeading: false)
     static let INTRO_INTRO_3 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_INTRO_3, hasHeading: false, hasPreHeading: false)
@@ -85,63 +98,90 @@ struct Scripture {
     static let INTRO_INTRO_9 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_INTRO_9, hasHeading: false, hasPreHeading: false)
     
     static let Description_INTRO_TEST_3 = OptionDescriptionsByLanguage(Description: ["Testimony of Three Witnesses",
-                                                                                      "El Testimonio de Tres Testigos"])
+                                                                                      "El Testimonio de Tres Testigos",
+                                                                                      "Depoimento de Três Testemunhas"])
     static let INTRO_TEST_3 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TEST_3, hasHeading: false, hasPreHeading: false)
     
     static let Description_INTRO_TEST_8 = OptionDescriptionsByLanguage(Description: ["Testimony of Eight Witnesses",
-                                                                                      "El Testimonio de Ocho Testigos"])
+                                                                                      "El Testimonio de Ocho Testigos",
+                                                                                      "Depoimento de Oito Testemunhas"])
     static let INTRO_TEST_8 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TEST_8, hasHeading: false, hasPreHeading: false)
     
     static let Description_INTRO_TEST_JS_1 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 1\n('The Prophet Joseph...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 1\n('Las propias palabras...')"])
+                                                                                        "El Testimonio del profeta José Smith - Párrafo 1\n('Las propias palabras...')",
+                                                                                        "Testemunho do Profeta Joseph Smith - Parágrafo 1\n('As palavras do próprio...')"])
     static let Description_INTRO_TEST_JS_2 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 2\n('On the evening...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 2\n('En la noche...')"])
+                                                                                        "El Testimonio del profeta José Smith - Párrafo 2\n('En la noche...')",
+                                                                                        "Testemunho do Profeta Joseph Smith - Parágrafo 2\n('Na noite de...')"])
     static let Description_INTRO_TEST_JS_3 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 3\n('While I was thus...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 3\n('Encontrándome así...')"])
+                                                                                        "El Testimonio del profeta José Smith - Párrafo 3\n('Encontrándome así...')",
+                                                                                        "Testemunho do Profeta Joseph Smith - Parágrafo 3\n('Enquanto estava assim...')"])
     static let Description_INTRO_TEST_JS_4 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 4\n('He had on a...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 4\n('Llevaba puesta una...')"])
+                                                                                        "El Testimonio del profeta José Smith - Párrafo 4\n('Llevaba puesta una...')",
+                                                                                        "Testemunho do Profeta Joseph Smith - Parágrafo 4\n('Ele vestia uma...')"])
     static let Description_INTRO_TEST_JS_5 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 5\n('Not only was...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 5\n('No solo tenía...')"])
+                                                                                        "El Testimonio del profeta José Smith - Párrafo 5\n('No solo tenía...')",
+                                                                                        "Testemunho do Profeta Joseph Smith - Parágrafo 5\n('Não somente a...')"])
     static let Description_INTRO_TEST_JS_6 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 6\n('He called me...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 6\n('Me llamó por...')"])
+                                                                                        "El Testimonio del profeta José Smith - Párrafo 6\n('Me llamó por...')",
+                                                                                        "Testemunho do Profeta Joseph Smith - Parágrafo 6\n('Ele chamou-me pelo...')"])
     static let Description_INTRO_TEST_JS_7 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 7\n('He said there...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 7\n('Dijo que se hallaba...')"])
+                                                                                        "El Testimonio del profeta José Smith - Párrafo 7\n('Dijo que se hallaba...')",
+                                                                                        "Testemunho do Profeta Joseph Smith - Parágrafo 7\n('Disse-me ele que...')"])
     static let Description_INTRO_TEST_JS_8 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 8\n('Also, that there...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 8\n('Asimismo, que...')"])
+                                                                                        "El Testimonio del profeta José Smith - Párrafo 8\n('Asimismo, que...')",
+                                                                                        "Testemunho do Profeta Joseph Smith - Parágrafo 8\n('Disse também ele...')"])
     static let Description_INTRO_TEST_JS_9 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 9\n('Again, he told...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 9\n('Por otra parte...')"])
+                                                                                        "El Testimonio del profeta José Smith - Párrafo 9\n('Por otra parte...')",
+                                                                                        "Testemunho do Profeta Joseph Smith - Parágrafo 9\n('Disse-me ainda...')"])
     static let Description_INTRO_TEST_JS_10 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 10\n('After this...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 10\n('Después de esta...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 10\n('Después de esta...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 10\n('Após essa comunicação...')"])
     static let Description_INTRO_TEST_JS_11 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 11\n('I lay musing...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 11\n('Me quedé reflexionando...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 11\n('Me quedé reflexionando...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 11\n('Fiquei meditando...')"])
     static let Description_INTRO_TEST_JS_12 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 12\n('He commenced...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 12\n('Empezó, y otra vez...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 12\n('Empezó, y otra vez...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 12\n('Relatou-me novamente...')"])
     static let Description_INTRO_TEST_JS_13 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 13\n('By this time...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 13\n('Ya para entonces...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 13\n('Ya para entonces...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 13\n('Naquele momento...')"])
     static let Description_INTRO_TEST_JS_14 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 14\n('After this third...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 14\n('Después de esta tercera...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 14\n('Después de esta tercera...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 14\n('Após essa terceira...')"])
     static let Description_INTRO_TEST_JS_15 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 15\n('I shortly after...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 15\n('Poco después me levanté...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 15\n('Poco después me levanté...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 15\n('Pouco depois me levantei...')"])
     static let Description_INTRO_TEST_JS_16 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 16\n('The first thing...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 16\n('Lo primero que pude...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 16\n('Lo primero que pude...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 16\n('A primeira coisa de...')"])
     static let Description_INTRO_TEST_JS_17 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 17\n('I obeyed...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 17\n('Obedecí...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 17\n('Obedecí...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 17\n('Obedeci...')"])
     static let Description_INTRO_TEST_JS_18 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 18\n('Convenient to the...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 18\n('Cerca de la aldea...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 18\n('Cerca de la aldea...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 18\n('Próximo à vila...')"])
     static let Description_INTRO_TEST_JS_19 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 19\n('Having removed...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 19\n('Habiendo quitado...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 19\n('Habiendo quitado...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 19\n('Tendo removido...')"])
     static let Description_INTRO_TEST_JS_20 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 20\n('I made an...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 20\n('Intenté sacarlas...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 20\n('Intenté sacarlas...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 20\n('Fiz uma tentativa...')"])
     static let Description_INTRO_TEST_JS_21 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 21\n('Accordingly, as I...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 21\n('De acuerdo con...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 21\n('De acuerdo con...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 21\n('De acordo com...')"])
     static let Description_INTRO_TEST_JS_22 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 22\n('At length the...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 22\n('Por fin llegó...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 22\n('Por fin llegó...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 22\n('Finalmente chegou...')"])
     static let Description_INTRO_TEST_JS_23 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 23\n('I soon found...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 23\n('Pronto supe...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 23\n('Pronto supe...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 23\n('Logo verifiquei...')"])
     static let Description_INTRO_TEST_JS_24 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 24\n('For a more...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 24\n('Para una narración...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 24\n('Para una narración...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 24\n('Para a história...')"])
     static let Description_INTRO_TEST_JS_25 = OptionDescriptionsByLanguage(Description: ["Testimony of the Prophet Joseph Smith - Paragraph 25\n('The ancient record...')",
-                                                                                      "El Testimonio del profeta José Smith - Párrafo 25\n('La historia antigua...')"])
+                                                                                         "El Testimonio del profeta José Smith - Párrafo 25\n('La historia antigua...')",
+                                                                                         "Testemunho do Profeta Joseph Smith - Parágrafo 25\n('O registro antigo...')"])
     static let INTRO_TEST_JS_1 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TEST_JS_1, hasHeading: false, hasPreHeading: false)
     static let INTRO_TEST_JS_2 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TEST_JS_2, hasHeading: false, hasPreHeading: false)
     static let INTRO_TEST_JS_3 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TEST_JS_3, hasHeading: false, hasPreHeading: false)
@@ -169,25 +209,35 @@ struct Scripture {
     static let INTRO_TEST_JS_25 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_TEST_JS_25, hasHeading: false, hasPreHeading: false)
     
     static let Description_INTRO_BREIF_1 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 1\n('The Book of Mormon is sacred...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 1\n('El Libro de Mormón es una...')"])
+                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 1\n('El Libro de Mormón es una...')",
+                                                                                      "Breve Explicação sobre o Livro de Mórmon - Parágrafo 1\n('O Livro de Mórmon é um...')"])
     static let Description_INTRO_BREIF_2 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 2\n('The Plates of Nephi...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 2\n('Las Planchas de Nefi...')"])
+                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 2\n('Las Planchas de Nefi...')",
+                                                                                      "Breve Explicação sobre o Livro de Mórmon - Parágrafo 2\n('As Placas de Néfi...')"])
     static let Description_INTRO_BREIF_3 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 3\n('The Plates of Mormon...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 3\n('Las Planchas de Mormón...')"])
+                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 3\n('Las Planchas de Mormón...')",
+                                                                                      "Breve Explicação sobre o Livro de Mórmon - Parágrafo 3\n('As Placas de Mórmon...')"])
     static let Description_INTRO_BREIF_4 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 4\n('The Plates of Ether...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 4\n('Las Planchas de Éter...')"])
+                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 4\n('Las Planchas de Éter...')",
+                                                                                      "Breve Explicação sobre o Livro de Mórmon - Parágrafo 4\n('As Placas de Éter...')"])
     static let Description_INTRO_BREIF_5 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 5\n('The Plates of Brass...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 5\n('Las Planchas de Bronce...')"])
+                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 5\n('Las Planchas de Bronce...')",
+                                                                                      "Breve Explicação sobre o Livro de Mórmon - Parágrafo 5\n('As Placas de Latão...')"])
     static let Description_INTRO_BREIF_6 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 6\n('The Book of Mormon comprises...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 6\n('El Libro de Mormón se compone...')"])
+                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 6\n('El Libro de Mormón se compone...')",
+                                                                                      "Breve Explicação sobre o Livro de Mórmon - Parágrafo 6\n('O Livro de Mórmon contém...')"])
     static let Description_INTRO_BREIF_7 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 7\n('The longest portion...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 7\n('La parte más extensa...')"])
+                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 7\n('La parte más extensa...')",
+                                                                                      "Breve Explicação sobre o Livro de Mórmon - Parágrafo 7\n('A parte mais longa...')"])
     static let Description_INTRO_BREIF_8 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 8\n('In or about...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 8\n('Alrededor del año...')"])
+                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 8\n('Alrededor del año...')",
+                                                                                      "Breve Explicação sobre o Livro de Mórmon - Parágrafo 8\n('Por volta do ano...')"])
     static let Description_INTRO_BREIF_9 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 9\n('About this edition...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 9\n('Con respecto a esta edición...')"])
+                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 9\n('Con respecto a esta edición...')",
+                                                                                      "Breve Explicação sobre o Livro de Mórmon - Parágrafo 9\n('Com respeito a esta edição...')"])
     static let Description_INTRO_BREIF_10 = OptionDescriptionsByLanguage(Description: ["A Brief Explanation about the Book of Mormon - Paragraph 10\n('Some minor errors...')",
-                                                                                      "Una breve explicación acerca del Libro de Mormón - Párrafo 10\n('En ediciones anteriores...')"])
+                                                                                       "Una breve explicación acerca del Libro de Mormón - Párrafo 10\n('En ediciones anteriores...')",
+                                                                                       "Breve Explicação sobre o Livro de Mórmon - Parágrafo 10\n('Nas edições anteriores...')"])
     static let INTRO_BREIF_1 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_BREIF_1, hasHeading: false, hasPreHeading: false)
     static let INTRO_BREIF_2 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_BREIF_2, hasHeading: false, hasPreHeading: false)
     static let INTRO_BREIF_3 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_BREIF_3, hasHeading: false, hasPreHeading: false)
@@ -455,7 +505,8 @@ struct Scripture {
     static let MORONI_10 = Chapter(verseCount: 34, optionalDescription: EMPTY_DESCRIPTION, hasHeading: true, hasPreHeading: false)
     
     static let Description_TESTIMONY_1 = OptionDescriptionsByLanguage(Description: ["Record your testimony, thoughts, or feelings here",
-                                                                                      "Registre su testimonio, pensamientos o sentimientos aquí"])
+                                                                                      "Registre su testimonio, pensamientos o sentimientos aquí",
+                                                                                      "Registre seu testemunho, pensamentos ou sentimentos aqui"])
     static let TESTIMONY_1 = Chapter(verseCount: 1, optionalDescription: Description_TESTIMONY_1, hasHeading: false, hasPreHeading: false)
     
     static let BOM_INTRO = SubBook(Name: Const.BOM_INTRO_ARRAY, ChapterArray: [INTRO_TITLE_PAGE, INTRO_TITLE_BOM_1, INTRO_TITLE_BOM_2, INTRO_TITLE_BOM_3, INTRO_INTRO_1, INTRO_INTRO_2, INTRO_INTRO_3, INTRO_INTRO_4, INTRO_INTRO_5, INTRO_INTRO_6, INTRO_INTRO_7, INTRO_INTRO_8, INTRO_INTRO_9, INTRO_TEST_3, INTRO_TEST_8, INTRO_TEST_JS_1, INTRO_TEST_JS_2, INTRO_TEST_JS_3, INTRO_TEST_JS_4, INTRO_TEST_JS_5, INTRO_TEST_JS_6, INTRO_TEST_JS_7, INTRO_TEST_JS_8, INTRO_TEST_JS_9, INTRO_TEST_JS_10, INTRO_TEST_JS_11, INTRO_TEST_JS_12, INTRO_TEST_JS_13, INTRO_TEST_JS_14, INTRO_TEST_JS_15, INTRO_TEST_JS_16, INTRO_TEST_JS_17, INTRO_TEST_JS_18, INTRO_TEST_JS_19, INTRO_TEST_JS_20, INTRO_TEST_JS_21, INTRO_TEST_JS_22, INTRO_TEST_JS_23, INTRO_TEST_JS_24, INTRO_TEST_JS_25, INTRO_BREIF_1, INTRO_BREIF_2, INTRO_BREIF_3, INTRO_BREIF_4, INTRO_BREIF_5, INTRO_BREIF_6, INTRO_BREIF_7, INTRO_BREIF_8, INTRO_BREIF_9, INTRO_BREIF_10])
@@ -481,27 +532,37 @@ struct Scripture {
     
     //*** PGP
     static let Description_TITLE_PGP1 = OptionDescriptionsByLanguage(Description: ["Title Page",
-                                                                                      "Portada"])
+                                                                                      "Portada",
+                                                                                      "Página de Título"])
     static let TITLE_PGP1 = Chapter(verseCount: 1, optionalDescription: Description_TITLE_PGP1, hasHeading: false, hasPreHeading: false)
     
     static let Description_INTRO_PGP1 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 1\n('Introduction, The Pearl of...')",
-                                                                                      "Introducción - Párrafo 1\n('Introducción, La Perla de...')"])
+                                                                                   "Introducción - Párrafo 1\n('Introducción, La Perla de...')",
+                                                                                   "Introdução - Parágrafo 1\n('Introdução, A Pérola de...')"])
     static let Description_INTRO_PGP2 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 2\n('The first collection...')",
-                                                                                      "Introducción - Párrafo 2\n('La primera colección...')"])
+                                                                                   "Introducción - Párrafo 2\n('La primera colección...')",
+                                                                                   "Introdução - Parágrafo 2\n('A primeira coletânea...')"])
     static let Description_INTRO_PGP3 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 3\n('Several revisions have...')",
-                                                                                      "Introducción - Párrafo 3\n('De acuerdo con...')"])
+                                                                                   "Introducción - Párrafo 3\n('De acuerdo con...')",
+                                                                                   "Introdução - Parágrafo 3\n('Várias revisões foram...')"])
     static let Description_INTRO_PGP4 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 4\n('Following is a...')",
-                                                                                      "Introducción - Párrafo 4\n('A continuación aparece...')"])
+                                                                                   "Introducción - Párrafo 4\n('A continuación aparece...')",
+                                                                                   "Introdução - Parágrafo 4\n('Segue-se uma...')"])
     static let Description_INTRO_PGP5 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 5\n('Selections from the Book of Moses...')",
-                                                                                      "Introducción - Párrafo 5\n('Selecciones del Libro de Moisés...')"])
+                                                                                   "Introducción - Párrafo 5\n('Selecciones del Libro de Moisés...')",
+                                                                                   "Introdução - Parágrafo 5\n('Seleções do Livro de Moisés...')"])
     static let Description_INTRO_PGP6 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 6\n('The Book of Abraham...')",
-                                                                                      "Introducción - Párrafo 6\n('El Libro de Abraham...')"])
+                                                                                   "Introducción - Párrafo 6\n('El Libro de Abraham...')",
+                                                                                   "Introdução - Parágrafo 6\n('Livro de Abraão...')"])
     static let Description_INTRO_PGP7 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 7\n('Joseph Smith—Matthew...')",
-                                                                                      "Introducción - Párrafo 7\n('José Smith—Mateo...')"])
+                                                                                   "Introducción - Párrafo 7\n('José Smith—Mateo...')",
+                                                                                   "Introdução - Parágrafo 7\n('Joseph Smith—Mateus...')"])
     static let Description_INTRO_PGP8 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 8\n('Joseph Smith—History...')",
-                                                                                      "Introducción - Párrafo 8\n('José Smith—Historia...')"])
+                                                                                   "Introducción - Párrafo 8\n('José Smith—Historia...')",
+                                                                                   "Introdução - Parágrafo 8\n('Joseph Smith—História...')"])
     static let Description_INTRO_PGP9 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 9\n('The Articles of Faith...')",
-                                                                                      "Introducción - Párrafo 9\n('Los Artículos de Fe...')"])
+                                                                                   "Introducción - Párrafo 9\n('Los Artículos de Fe...')",
+                                                                                   "Introdução - Parágrafo 9\n('Regras de Fé...')"])
     static let INTRO_PGP1 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_PGP1, hasHeading: false, hasPreHeading: false)
     static let INTRO_PGP2 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_PGP2, hasHeading: false, hasPreHeading: false)
     static let INTRO_PGP3 = Chapter(verseCount: 1, optionalDescription: Description_INTRO_PGP3, hasHeading: false, hasPreHeading: false)
@@ -549,45 +610,65 @@ struct Scripture {
     static let TITLE1 = Chapter(verseCount: 1, optionalDescription: EMPTY_DESCRIPTION, hasHeading: false, hasPreHeading: false)
     
     static let Description_INTRO1 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 1\n('Introduction, The Doctrine and...')",
-                                                                                      "Introducción - Párrafo 1\n('Introducción, El libro de...')"])
+                                                                               "Introducción - Párrafo 1\n('Introducción, El libro de...')",
+                                                                               "Introdução - Parágrafo 1\n('Introdução, Doutrina e Convênios...')"])
     static let Description_INTRO2 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 2\n('Most of the revelations...')",
-                                                                                      "Introducción - Párrafo 2\n('La mayor parte...')"])
+                                                                               "Introducción - Párrafo 2\n('La mayor parte...')",
+                                                                               "Introdução - Parágrafo 2\n('A maior parte...')"])
     static let Description_INTRO3 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 3\n('The book of Doctrine...')",
-                                                                                      "Introducción - Párrafo 3\n('El libro de Doctrina...')"])
+                                                                               "Introducción - Párrafo 3\n('El libro de Doctrina...')",
+                                                                               "Introdução - Parágrafo 3\n('O livro de Doutrina...')"])
     static let Description_INTRO4 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 4\n('Joseph Smith Jr. was...')",
-                                                                                      "Introducción - Párrafo 4\n('José Smith, hijo...')"])
+                                                                               "Introducción - Párrafo 4\n('José Smith, hijo...')",
+                                                                               "Introdução - Parágrafo 4\n('Joseph Smith Júnior...')"])
     static let Description_INTRO5 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 5\n('In the course of...')",
-                                                                                      "Introducción - Párrafo 5\n('Con el transcurso...')"])
+                                                                               "Introducción - Párrafo 5\n('Con el transcurso...')",
+                                                                               "Introdução - Parágrafo 5\n('Com o decorrer...')"])
     static let Description_INTRO6 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 6\n('These sacred revelations...')",
-                                                                                      "Introducción - Párrafo 6\n('Estas revelaciones sagradas...')"])
+                                                                               "Introducción - Párrafo 6\n('Estas revelaciones sagradas...')",
+                                                                               "Introdução - Parágrafo 6\n('Estas revelações sagradas...')"])
     static let Description_INTRO7 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 7\n('Several of the earlier...')",
-                                                                                      "Introducción - Párrafo 7\n('Varias de las primeras...')"])
+                                                                               "Introducción - Párrafo 7\n('Varias de las primeras...')",
+                                                                               "Introdução - Parágrafo 7\n('Várias das primeiras...')"])
     static let Description_INTRO8 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 8\n('In the revelations...')",
-                                                                                      "Introducción - Párrafo 8\n('En las revelaciones...')"])
+                                                                               "Introducción - Párrafo 8\n('En las revelaciones...')",
+                                                                               "Introdução - Parágrafo 8\n('Nas revelações...')"])
     static let Description_INTRO9 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 9\n('The revelations were...')",
-                                                                                      "Introducción - Párrafo 9\n('Las revelaciones fueron...')"])
+                                                                               "Introducción - Párrafo 9\n('Las revelaciones fueron...')",
+                                                                               "Introdução - Parágrafo 9\n('As revelações foram...')"])
     static let Description_INTRO10 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 10\n('After the revelations...')",
-                                                                                      "Introducción - Párrafo 10\n('Después que las revelaciones...')"])
+                                                                                "Introducción - Párrafo 10\n('Después que las revelaciones...')",
+                                                                                "Introdução - Parágrafo 10\n('Após as revelações...')"])
     static let Description_INTRO11 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 11\n('Upon hearing of the...')",
-                                                                                      "Introducción - Párrafo 11\n('Al enterarse de la...')"])
+                                                                                "Introducción - Párrafo 11\n('Al enterarse de la...')",
+                                                                                "Introdução - Parágrafo 11\n('Após ouvirem a...')"])
     static let Description_INTRO12 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 12\n('The early Latter-day Saints...')",
-                                                                                      "Introducción - Párrafo 12\n('Los primeros Santos...')"])
+                                                                                "Introducción - Párrafo 12\n('Los primeros Santos...')",
+                                                                                "Introdução - Parágrafo 12\n('Os primeiros santos...')"])
     static let Description_INTRO13 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 13\n('Testimony of the Twelve...')",
-                                                                                      "Introducción - Párrafo 13\n('Testimonio de los Doce...')"])
+                                                                                "Introducción - Párrafo 13\n('Testimonio de los Doce...')",
+                                                                                "Introdução - Parágrafo 13\n('Testemunho dos Doze...')"])
     static let Description_INTRO14 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 14\n('We, therefore, feel...')",
-                                                                                      "Introducción - Párrafo 14\n('Estamos dispuestos, pues...')"])
+                                                                                "Introducción - Párrafo 14\n('Estamos dispuestos, pues...')",
+                                                                                "Introdução - Parágrafo 14\n('Nós, portanto, desejamos...')"])
     static let Description_INTRO15 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 15\n('We give this testimony...')",
-                                                                                      "Introducción - Párrafo 15\n('Damos este testimonio...')"])
+                                                                                "Introducción - Párrafo 15\n('Damos este testimonio...')",
+                                                                                "Introdução - Parágrafo 15\n('Prestamos este testemunho...')"])
     static let Description_INTRO16 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 16\n('The names of the Twelve...')",
-                                                                                      "Introducción - Párrafo 16\n('Los nombres de los Doce..')"])
+                                                                                "Introducción - Párrafo 16\n('Los nombres de los Doce..')",
+                                                                                "Introdução - Parágrafo 16\n('Os nomes dos Doze...')"])
     static let Description_INTRO17 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 17\n('In successive editions...')",
-                                                                                      "Introducción - Párrafo 17\n('En ediciones sucesivas...')"])
+                                                                                "Introducción - Párrafo 17\n('En ediciones sucesivas...')",
+                                                                                "Introdução - Parágrafo 17\n('Em edições posteriores...')"])
     static let Description_INTRO18 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 18\n('Beginning with the...')",
-                                                                                      "Introducción - Párrafo 18\n('Empezando con la...')"])
+                                                                                "Introducción - Párrafo 18\n('Empezando con la...')",
+                                                                                "Introdução - Parágrafo 18\n('A partir da edição...')"])
     static let Description_INTRO19 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 19\n('In the 1981 edition...')",
-                                                                                      "Introducción - Párrafo 19\n('En la edición de 1981...')"])
+                                                                                "Introducción - Párrafo 19\n('En la edición de 1981...')",
+                                                                                "Introdução - Parágrafo 19\n('Na edição de 1981...')"])
     static let Description_INTRO20 = OptionDescriptionsByLanguage(Description: ["Introduction - Paragraph 20\n('Each new edition...')",
-                                                                                      "Introducción - Párrafo 20\n('En cada edición nueva...')"])
+                                                                                "Introducción - Párrafo 20\n('En cada edición nueva...')",
+                                                                                "Introdução - Parágrafo 20\n('Em cada nova edição...')"])
     static let INTRO1 = Chapter(verseCount: 1, optionalDescription: Description_INTRO1, hasHeading: false, hasPreHeading: false)
     static let INTRO2 = Chapter(verseCount: 1, optionalDescription: Description_INTRO2, hasHeading: false, hasPreHeading: false)
     static let INTRO3 = Chapter(verseCount: 1, optionalDescription: Description_INTRO3, hasHeading: false, hasPreHeading: false)
@@ -749,41 +830,59 @@ struct Scripture {
     static let DC_138 = Chapter(verseCount: 60, optionalDescription: EMPTY_DESCRIPTION, hasHeading: true, hasPreHeading: true)
     
     static let Description_DECLARATION1_1 = OptionDescriptionsByLanguage(Description: ["Paragraph 1\n('Official Declaration 1, The Bible and...')",
-                                                                                       "Párrafo 1\n('Declaración Oficial 1, En la Biblia y...')"])
+                                                                                       "Párrafo 1\n('Declaración Oficial 1, En la Biblia y...')",
+                                                                                       "Parágrafo 1\n('Declaração Oficial 1, A Bíblia e o...')"])
     static let Description_DECLARATION1_2 = OptionDescriptionsByLanguage(Description: ["Paragraph 2\n('To Whom It May Concern: Press dispatches...')",
-                                                                                       "Párrafo 2\n('A quien corresponda:, Por cuanto se han...')"])
+                                                                                       "Párrafo 2\n('A quien corresponda:, Por cuanto se han...')",
+                                                                                       "Parágrafo 2\n('A Quem Interessar Possa:, Notícias da imprensa...')"])
     static let Description_DECLARATION1_3 = OptionDescriptionsByLanguage(Description: ["Paragraph 3\n('I, therefore, as President...')",
-                                                                                      "Párrafo 3\n('Por consiguiente, yo, como Presidente...')"])
+                                                                                       "Párrafo 3\n('Por consiguiente, yo, como Presidente...')",
+                                                                                       "Parágrafo 3\n('Eu, portanto, como presidente...')"])
     static let Description_DECLARATION1_4 = OptionDescriptionsByLanguage(Description: ["Paragraph 4\n('One case has been...')",
-                                                                                      "Párrafo 4\n('Se ha tenido conocimiento...')"])
+                                                                                       "Párrafo 4\n('Se ha tenido conocimiento...')",
+                                                                                       "Parágrafo 4\n('Relatou-se um caso em...')"])
     static let Description_DECLARATION1_5 = OptionDescriptionsByLanguage(Description: ["Paragraph 5\n('Inasmuch as laws...')",
-                                                                                      "Párrafo 5\n('Por cuanto el Congreso...')"])
+                                                                                       "Párrafo 5\n('Por cuanto el Congreso...')",
+                                                                                       "Parágrafo 5\n('Sendo que o Congresso...')"])
     static let Description_DECLARATION1_6 = OptionDescriptionsByLanguage(Description: ["Paragraph 6\n('There is nothing...')",
-                                                                                      "Párrafo 6\n('Ni en mis enseñanzas...')"])
+                                                                                       "Párrafo 6\n('Ni en mis enseñanzas...')",
+                                                                                       "Parágrafo 6\n('Nada há em meus...')"])
     static let Description_DECLARATION1_7 = OptionDescriptionsByLanguage(Description: ["Paragraph 7\n('Wilford Woodruff President of...')",
-                                                                                       "Párrafo 7\n('Wilford Woodruff, Presidente de...')"])
+                                                                                       "Párrafo 7\n('Wilford Woodruff, Presidente de...')",
+                                                                                       "Parágrafo 7\n('Wilford Woodruff, Presidente de...')"])
     static let Description_DECLARATION1_8 = OptionDescriptionsByLanguage(Description: ["Paragraph 8\n('President Lorenzo Snow offered the following: “I move that...')",
-                                                                                       "Párrafo 8\n('El presidente Lorenzo Snow presentó lo siguiente: “Propongo que...')"])
+                                                                                       "Párrafo 8\n('El presidente Lorenzo Snow presentó lo siguiente: “Propongo que...')",
+                                                                                       "Parágrafo 8\n('O Presidente Lorenzo Snow apresentou o seguinte:, “Reconhecendo...')"])
     static let Description_DECLARATION1_9 = OptionDescriptionsByLanguage(Description: ["Paragraph 9\n('Excerpts from Three...')",
-                                                                                      "Párrafo 9\n('Selecciones de tres discursos...')"])
+                                                                                       "Párrafo 9\n('Selecciones de tres discursos...')",
+                                                                                       "Parágrafo 9\n('Trechos de Três Discursos...')"])
     static let Description_DECLARATION1_10 = OptionDescriptionsByLanguage(Description: ["Paragraph 10\n('The Lord will never...')",
-                                                                                      "Párrafo 10\n('El Señor jamás permitirá...')"])
+                                                                                        "Párrafo 10\n('El Señor jamás permitirá...')",
+                                                                                        "Parágrafo 10\n('O Senhor jamais permitirá...')"])
     static let Description_DECLARATION1_11 = OptionDescriptionsByLanguage(Description: ["Paragraph 11\n('It matters not who...')",
-                                                                                      "Párrafo 11\n('No importa quién...')"])
+                                                                                        "Párrafo 11\n('No importa quién...')",
+                                                                                        "Parágrafo 11\n('Não importa quem...')"])
     static let Description_DECLARATION1_12 = OptionDescriptionsByLanguage(Description: ["Paragraph 12\n('I have had some revelations...')",
-                                                                                      "Párrafo 12\n('He recibido algunas revelaciones...')"])
+                                                                                        "Párrafo 12\n('He recibido algunas revelaciones...')",
+                                                                                        "Parágrafo 12\n('Ultimamente tenho recebido...')"])
     static let Description_DECLARATION1_13 = OptionDescriptionsByLanguage(Description: ["Paragraph 13\n('The Lord has told...')",
-                                                                                      "Párrafo 13\n('El Señor me ha dicho...')"])
+                                                                                        "Párrafo 13\n('El Señor me ha dicho...')",
+                                                                                        "Parágrafo 13\n('O Senhor pediu-me que fizesse...')"])
     static let Description_DECLARATION1_14 = OptionDescriptionsByLanguage(Description: ["Paragraph 14\n('The question is this...')",
-                                                                                      "Párrafo 14\n('La pregunta es esta...')"])
+                                                                                        "Párrafo 14\n('La pregunta es esta...')",
+                                                                                        "Parágrafo 14\n('A pergunta é...')"])
     static let Description_DECLARATION1_15 = OptionDescriptionsByLanguage(Description: ["Paragraph 15\n('The Lord showed me...')",
-                                                                                      "Párrafo 15\n('El Señor me mostró...')"])
+                                                                                        "Párrafo 15\n('El Señor me mostró...')",
+                                                                                        "Parágrafo 15\n('O Senhor mostrou-me...')"])
     static let Description_DECLARATION1_16 = OptionDescriptionsByLanguage(Description: ["Paragraph 16\n('… I saw exactly...')",
-                                                                                      "Párrafo 16\n('…Vi exactamente lo que...')"])
+                                                                                        "Párrafo 16\n('…Vi exactamente lo que...')",
+                                                                                        "Parágrafo 16\n('(…) Vi exatamente o que...')"])
     static let Description_DECLARATION1_17 = OptionDescriptionsByLanguage(Description: ["Paragraph 17\n('I leave this with...')",
-                                                                                      "Párrafo 17\n('Dejo esto con vosotros...')"])
+                                                                                        "Párrafo 17\n('Dejo esto con vosotros...')",
+                                                                                        "Parágrafo 17\n('Deixo-vos isto...')"])
     static let Description_DECLARATION1_18 = OptionDescriptionsByLanguage(Description: ["Paragraph 18\n('Now I will tell you...')",
-                                                                                      "Párrafo 18\n('Ahora os diré lo...')"])
+                                                                                        "Párrafo 18\n('Ahora os diré lo...')",
+                                                                                        "Parágrafo 18\n('Agora vos direi...')"])
     static let DECLARATION1_1 = Chapter(verseCount: 1, optionalDescription: Description_DECLARATION1_1, hasHeading: false, hasPreHeading: false)
     static let DECLARATION1_2 = Chapter(verseCount: 1, optionalDescription: Description_DECLARATION1_2, hasHeading: false, hasPreHeading: false)
     static let DECLARATION1_3 = Chapter(verseCount: 1, optionalDescription: Description_DECLARATION1_3, hasHeading: false, hasPreHeading: false)
@@ -804,29 +903,41 @@ struct Scripture {
     static let DECLARATION1_18 = Chapter(verseCount: 1, optionalDescription: Description_DECLARATION1_18, hasHeading: false, hasPreHeading: false)
     
     static let Description_DECLARATION2_1 = OptionDescriptionsByLanguage(Description: ["Paragraph 1\n('Official Declaration 2, The Book of...')",
-                                                                                       "Párrafo 1\n('Declaración Oficial 2, En el libro de...')"])
+                                                                                       "Párrafo 1\n('Declaración Oficial 2, En el libro de...')",
+                                                                                       "Parágrafo 1\n('Declaração Oficial 2, O Livro de...')"])
     static let Description_DECLARATION2_2 = OptionDescriptionsByLanguage(Description: ["Paragraph 2\n('To Whom It May Concern: On Sept...')",
-                                                                                       "Párrafo 2\n('A quien corresponda: El 30 de...')"])
+                                                                                       "Párrafo 2\n('A quien corresponda: El 30 de...')",
+                                                                                       "Parágrafo 2\n('A Quem Interessar Possa: Em 30 de...')"])
     static let Description_DECLARATION2_3 = OptionDescriptionsByLanguage(Description: ["Paragraph 3\n('In early June...')",
-                                                                                      "Párrafo 3\n('A principios de junio...')"])
+                                                                                       "Párrafo 3\n('A principios de junio...')",
+                                                                                       "Parágrafo 3\n('No início de junho...')"])
     static let Description_DECLARATION2_4 = OptionDescriptionsByLanguage(Description: ["Paragraph 4\n('President Kimball has...')",
-                                                                                      "Párrafo 4\n('El presidente Kimball...')"])
+                                                                                       "Párrafo 4\n('El presidente Kimball...')",
+                                                                                       "Parágrafo 4\n('O Presidente Kimball...')"])
     static let Description_DECLARATION2_5 = OptionDescriptionsByLanguage(Description: ["Paragraph 5\n('June 8, 1978 To all...')",
-                                                                                       "Párrafo 5\n('8 de junio de 1978, A todos...')"])
+                                                                                       "Párrafo 5\n('8 de junio de 1978, A todos...')",
+                                                                                       "Parágrafo 5\n('8 de junho de 1978, A todos...')"])
     static let Description_DECLARATION2_6 = OptionDescriptionsByLanguage(Description: ["Paragraph 6\n('Dear Brethren: As we have...')",
-                                                                                       "Párrafo 6\n('Estimados hermanos: Al observar...')"])
+                                                                                       "Párrafo 6\n('Estimados hermanos: Al observar...')",
+                                                                                       "Parágrafo 6\n('Caros Irmãos: Ao testemunharmos...')"])
     static let Description_DECLARATION2_7 = OptionDescriptionsByLanguage(Description: ["Paragraph 7\n('Aware of the promises...')",
-                                                                                      "Párrafo 7\n('Enterados de las promesas...')"])
+                                                                                       "Párrafo 7\n('Enterados de las promesas...')",
+                                                                                       "Parágrafo 7\n('Cônscios das promessas...')"])
     static let Description_DECLARATION2_8 = OptionDescriptionsByLanguage(Description: ["Paragraph 8\n('He has heard our prayers...')",
-                                                                                      "Párrafo 8\n('Él ha escuchado nuestras oraciones...')"])
+                                                                                       "Párrafo 8\n('Él ha escuchado nuestras oraciones...')",
+                                                                                       "Parágrafo 8\n('Ele ouviu nossas orações...')"])
     static let Description_DECLARATION2_9 = OptionDescriptionsByLanguage(Description: ["Paragraph 9\n('We declare with soberness...')",
-                                                                                      "Párrafo 9\n('Declaramos solemnemente...')"])
+                                                                                       "Párrafo 9\n('Declaramos solemnemente...')",
+                                                                                       "Parágrafo 9\n('Declaramos solenemente...')"])
     static let Description_DECLARATION2_10 = OptionDescriptionsByLanguage(Description: ["Paragraph 10\n('Sincerely yours, Spencer...')",
-                                                                                        "Párrafo 10\n('Atentamente, Spencer...')"])
+                                                                                        "Párrafo 10\n('Atentamente, Spencer...')",
+                                                                                        "Parágrafo 10\n('Sinceramente, Spencer...')"])
     static let Description_DECLARATION2_11 = OptionDescriptionsByLanguage(Description: ["Paragraph 11\n('Recognizing Spencer W. Kimball...')",
-                                                                                      "Párrafo 11\n('Reconociendo a Spencer W. Kimball...')"])
+                                                                                        "Párrafo 11\n('Reconociendo a Spencer W. Kimball...')",
+                                                                                        "Parágrafo 11\n('Reconhecendo Spencer W. Kimball...')"])
     static let Description_DECLARATION2_12 = OptionDescriptionsByLanguage(Description: ["Paragraph 12\n('The vote to sustain...')",
-                                                                                      "Párrafo 12\n('El voto a favor de...')"])
+                                                                                        "Párrafo 12\n('El voto a favor de...')",
+                                                                                        "Parágrafo 12\n('O voto para apoiar...')"])
     static let DECLARATION2_1 = Chapter(verseCount: 1, optionalDescription: Description_DECLARATION2_1, hasHeading: false, hasPreHeading: false)
     static let DECLARATION2_2 = Chapter(verseCount: 1, optionalDescription: Description_DECLARATION2_2, hasHeading: false, hasPreHeading: false)
     static let DECLARATION2_3 = Chapter(verseCount: 1, optionalDescription: Description_DECLARATION2_3, hasHeading: false, hasPreHeading: false)
@@ -855,23 +966,32 @@ struct Scripture {
     static let OT_TITLE1 = Chapter(verseCount: 1, optionalDescription: EMPTY_DESCRIPTION, hasHeading: false, hasPreHeading: false)
     
     static let Description_OT_EPISTLE1 = OptionDescriptionsByLanguage(Description: ["Title 1\n('To the Most High...')",
-                                                                                    "Introducción - Párrafo 1\n('Introducción, La Biblia es...)"])
+                                                                                    "Introducción - Párrafo 1\n('Introducción, La Biblia es...)",
+                                                                                    "Introdução - Parágrafo 1\n('Introdução, Esta edição da Bíblia...')"])
     static let Description_OT_EPISTLE2 = OptionDescriptionsByLanguage(Description: ["Title 1\n('King of Great Britain...')",
-                                                                                      "Introducción - Párrafo 2\n('Introducción, La Biblia se erige...)"])
+                                                                                    "Introducción - Párrafo 2\n('Introducción, La Biblia se erige...)",
+                                                                                    "Introdução - Parágrafo 2, 3, 4\n('É uma revisão...', 'A edição Revista...', 'Nesta edição...')"])
     static let Description_OT_EPISTLE3 = OptionDescriptionsByLanguage(Description: ["Title 3\n('The Translators of...')",
-                                                                                      "Introducción - Párrafo 3\n('Introducción, La Biblia se compone...)"])
+                                                                                    "Introducción - Párrafo 3\n('Introducción, La Biblia se compone...)",
+                                                                                    "Introdução - Parágrafo 5, 6, 7, 8\n('Foram mantidas...', 'A acentuação...', 'Os termos cujo...', 'Todas as modificações...')"])
     static let Description_OT_EPISTLE4 = OptionDescriptionsByLanguage(Description: ["Paragraph 1\n('Great and manifold...')",
-                                                                                      "Introducción - Párrafo 4\n('Introducción, El Antiguo Testamento fue...)"])
+                                                                                    "Introducción - Párrafo 4\n('Introducción, El Antiguo Testamento fue...)",
+                                                                                    "Introdução - Parágrafo 9\n('A Bíblia é uma coletânea...')"])
     static let Description_OT_EPISTLE5 = OptionDescriptionsByLanguage(Description: ["Paragraph 2\n('But among all...')",
-                                                                                      "Introducción - Párrafo 5\n('Introducción, La Iglesia de Jesucristo...)"])
+                                                                                    "Introducción - Párrafo 5\n('Introducción, La Iglesia de Jesucristo...)",
+                                                                                    "Introdução - Parágrafo 10\n('A Bíblia é um testemunho...')"])
     static let Description_OT_EPISTLE6 = OptionDescriptionsByLanguage(Description: ["Paragraph 3\n('Then not to suffer...')",
-                                                                                      "Introducción - Párrafo 6\n('Introducción, Estas ayudas para el...)"])
+                                                                                    "Introducción - Párrafo 6\n('Introducción, Estas ayudas para el...)",
+                                                                                    "Introdução - Parágrafo 11\n('A Bíblia é composta de 66...')"])
     static let Description_OT_EPISTLE7 = OptionDescriptionsByLanguage(Description: ["Paragraph 4\n('There are infinite...')",
-                                                                                      "Nada/Extra"])
+                                                                                    "Nada/Extra",
+                                                                                    "Introdução - Parágrafo 12\n('O Velho Testamento foi escrito...')"])
     static let Description_OT_EPISTLE8 = OptionDescriptionsByLanguage(Description: ["Paragraph 5\n('And now at last...')",
-                                                                                      "Nada/Extra"])
+                                                                                    "Nada/Extra",
+                                                                                    "Introdução - Parágrafo 13\n('A Igreja de Jesus Cristo...')"])
     static let Description_OT_EPISTLE9 = OptionDescriptionsByLanguage(Description: ["Paragraph 6\n('The Lord of heaven...')",
-                                                                                      "Nada/Extra"])
+                                                                                    "Nada/Extra",
+                                                                                    "Introdução - Parágrafo 14\n('Esses auxílios de estudo...')"])
     static let OT_EPISTLE1 = Chapter(verseCount: 1, optionalDescription: Description_OT_EPISTLE1, hasHeading: false, hasPreHeading: false)
     static let OT_EPISTLE2 = Chapter(verseCount: 1, optionalDescription: Description_OT_EPISTLE2, hasHeading: false, hasPreHeading: false)
     static let OT_EPISTLE3 = Chapter(verseCount: 1, optionalDescription: Description_OT_EPISTLE3, hasHeading: false, hasPreHeading: false)

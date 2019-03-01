@@ -30,22 +30,29 @@ class ViewController_Settings: UIViewController {
         switchContRecord_attr.isOn = appDelegate.continualRecord
         labelVersion.text = "\(appDelegate.VERSION)"
         
-        if appDelegate.Language == .English {
+        switch appDelegate.Language {
+        case .English:
             buttonChangeUser_outlet.setTitle("Change User", for: .normal)
             Label_ContinuousPlay.text = "Continuous Play"
             Label_ContinousRecord.text = "Continous Record"
             buttonQuote_outlet.setTitle("Richard G. Scott Quote", for: .normal)
             buttonLanguage_outlet.setTitle("Language", for: .normal)
-            Label_QuestionsComments.text = "Please send questions, comments, or concerns to rrtenz@gmail.com (including translation errors). And now, if there are faults they are the mistakes of the software programmer."
-        }else if appDelegate.Language == .Spanish {
+            Label_QuestionsComments.text = "Please send questions, comments, or concerns to rrtenz@gmail.com (including translation errors). And now, if there are faults they are the mistakes of the software programmer."    //https://www.lds.org/scriptures/bofm/bofm-title?lang=eng
+        case .Spanish:
             buttonChangeUser_outlet.setTitle("Cambiar Usuario", for: .normal)
-            Label_ContinuousPlay.text = "Juego continuo"
-            Label_ContinousRecord.text = "Grabación continua"
+            Label_ContinuousPlay.text = "Juego Continuo"
+            Label_ContinousRecord.text = "Grabación Continua"
             buttonQuote_outlet.setTitle("Cita de Richard G. Scott", for: .normal)
             buttonLanguage_outlet.setTitle("Idioma", for: .normal)
-            Label_QuestionsComments.text = "Envíe preguntas, comentarios o inquietudes a rrtenz@gmail.com (incluidos los errores de traducción). Y ahora bien, si hay faltas, estas son equivocaciones del programador de software..."
-        }else {
-            fatalError()
+            Label_QuestionsComments.text = "Envíe preguntas, comentarios o inquietudes a rrtenz@gmail.com (incluidos los errores de traducción). Y ahora bien, si hay faltas, estas son equivocaciones del programador de software."
+        case .Portuguese:
+            buttonChangeUser_outlet.setTitle("Mudar Usuário", for: .normal)
+            Label_ContinuousPlay.text = "Jogo Contínuo"
+            Label_ContinousRecord.text = "Gravação Contínua"
+            buttonQuote_outlet.setTitle("Citação de Richard G. Scott", for: .normal)
+            buttonLanguage_outlet.setTitle("Língua", for: .normal)
+            Label_QuestionsComments.text = "Por favor, envie perguntas, comentários ou preocupações para rrtenz@gmail.com (incluindo erros de tradução). E agora, se há falhas, são erros do programador de software."
+        
         }
     }
 
@@ -92,22 +99,24 @@ class ViewController_Settings: UIViewController {
     }
     
     @IBAction func buttonInfoPlay(_ sender: UIButton) {
-        if appDelegate.Language == .English {
+        switch appDelegate.Language {
+        case .English:
             showAlert(title: "Continuous Play", message: "The 'Continuous Play' option allows the app to continue playing one verse right after another. It will continue to do so until it finds a verse that has not been recorded, the user presses 'Stop', or 'Continuous Play' is disabled.")
-        }else if appDelegate.Language == .Spanish {
+        case .Spanish:
             showAlert(title: "Juego continuo", message: "La opción 'Juego continuo' permite que la aplicación continúe reproduciendo un verso inmediatamente después de otro. Continuará haciéndolo hasta que encuentre un versículo que no se ha grabado, el usuario presiona 'Parar' o 'Reproducción continua' está desactivado.")
-        }else {
-            fatalError()
+        case .Portuguese:
+            showAlert(title: "Jogo Contínuo", message: "A opção 'Jogo Contínuo' permite que o app continue tocando um verso após o outro. Ele continuará a fazê-lo até encontrar um verso que não tenha sido gravado, o usuário pressionar 'Parar' ou 'Jogo Contínuo' será desativado.")
         }
     }
     
     @IBAction func buttonInfoRecord(_ sender: UIButton) {
-        if appDelegate.Language == .English {
+        switch appDelegate.Language {
+        case .English:
             showAlert(title: "Continuous Record", message: "The 'Continuous Record' option will record continually as the user navigates from verse to verse. It will continue to do so until the user presses 'Stop' or 'Continuous Record' is disabled.")
-        }else if appDelegate.Language == .Spanish {
+        case .Spanish:
             showAlert(title: "Grabación continua", message: "La opción 'Grabación continua' registrará continuamente mientras el usuario navega de verso a verso. Continuará haciéndolo hasta que el usuario presione 'Parar' o 'Grabación continua' esté desactivado.")
-        }else {
-            fatalError()
+        case .Portuguese:
+            showAlert(title: "Gravação Contínua", message: "A opção 'Gravação Contínua' grava continuamente à medida que o usuário navega de verso a verso. Continuará a fazê-lo até que o usuário pressione 'Parar' ou 'Gravação Contínua' está desabilitado.")
         }
     }
     
