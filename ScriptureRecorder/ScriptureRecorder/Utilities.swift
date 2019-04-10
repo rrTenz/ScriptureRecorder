@@ -430,7 +430,7 @@ struct Utilities {
             
             let track = asset.tracks(withMediaType: AVMediaType.audio)[0]
             
-            let timeRange = CMTimeRange(start: CMTimeMake(0, 600), duration: track.timeRange.duration)
+            let timeRange = CMTimeRange(start: CMTimeMake(value: 0, timescale: 600), duration: track.timeRange.duration)
             
             try! compositionAudioTrack.insertTimeRange(timeRange, of: track, at: composition.duration)
         }

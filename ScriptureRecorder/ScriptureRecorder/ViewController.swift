@@ -595,7 +595,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         let audioSession = AVAudioSession.sharedInstance()
         
         do{
-            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try audioSession.setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord)))
             let location = audioFileLocation()
             let mySettings = self.audioRecordingSettings()
             let myUrl = URL(string: location)!
@@ -950,3 +950,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
 
 //TODO ***
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
+}

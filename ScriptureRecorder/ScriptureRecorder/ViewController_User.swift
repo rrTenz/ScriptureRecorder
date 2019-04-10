@@ -81,11 +81,11 @@ class ViewController_User: UIViewController, UITableViewDelegate, UITableViewDat
         let alert = UIAlertController(
             title: title,
             message: message,
-            preferredStyle: UIAlertControllerStyle.alert
+            preferredStyle: UIAlertController.Style.alert
         )
         let ok = UIAlertAction(
             title: "OK",
-            style: UIAlertActionStyle.default,
+            style: UIAlertAction.Style.default,
             handler: nil
         )
         alert.addAction(ok)

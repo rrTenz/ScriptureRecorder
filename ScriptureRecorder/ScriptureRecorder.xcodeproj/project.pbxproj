@@ -353,7 +353,7 @@
 					C743CE7B1ED65BC0009BE5C0 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = U3F376V567;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -367,14 +367,14 @@
 					C743CE8F1ED65BC1009BE5C0 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = U3F376V567;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C743CE7B1ED65BC0009BE5C0;
 					};
 					C743CE9A1ED65BC1009BE5C0 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = U3F376V567;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C743CE7B1ED65BC0009BE5C0;
 					};
@@ -382,10 +382,9 @@
 			};
 			buildConfigurationList = C743CE771ED65BC0009BE5C0 /* Build configuration list for PBXProject "ScriptureRecorder" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 				es,
@@ -797,8 +796,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -814,8 +812,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -830,8 +827,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScriptureRecorder.app/ScriptureRecorder";
 			};
 			name = Debug;
@@ -847,8 +843,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScriptureRecorder.app/ScriptureRecorder";
 			};
 			name = Release;
@@ -863,8 +858,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = ScriptureRecorder;
 			};
 			name = Debug;
@@ -879,8 +873,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rrtenz.ScriptureRecorder.ScriptureRecorderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = ScriptureRecorder;
 			};
 			name = Release;
