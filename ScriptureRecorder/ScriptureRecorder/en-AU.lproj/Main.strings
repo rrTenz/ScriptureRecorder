@@ -1,0 +1,129 @@
+
+/* Class = "UIButton"; normalTitle = ">"; ObjectID = "1NC-5R-zus"; */
+"1NC-5R-zus.normalTitle" = ">";
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "2Mh-Yv-WvP"; */
+"2Mh-Yv-WvP.normalTitle" = "Share";
+
+/* Class = "UIViewController"; title = "ViewController_Book"; ObjectID = "3rn-yd-sNd"; */
+"3rn-yd-sNd.title" = "ViewController_Book";
+
+/* Class = "UIViewController"; title = "ViewController_Bookmark"; ObjectID = "4NT-gJ-Kfe"; */
+"4NT-gJ-Kfe.title" = "ViewController_Bookmark";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "512-Lc-Zje"; */
+"512-Lc-Zje.text" = ":";
+
+/* Class = "UIButton"; normalTitle = "Richard G. Scott Quote"; ObjectID = "9cD-3h-PBB"; */
+"9cD-3h-PBB.normalTitle" = "Richard G. Scott Quote";
+
+/* Class = "UITextView"; text = "Book of Mormon 1 Neph 3:7"; ObjectID = "9pI-Im-Ti0"; */
+"9pI-Im-Ti0.text" = "Book of Mormon 1 Neph 3:7";
+
+/* Class = "UIButton"; normalTitle = "Add User"; ObjectID = "ATY-hK-EpI"; */
+"ATY-hK-EpI.normalTitle" = "Add User";
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "CV1-Wy-blq"; */
+"CV1-Wy-blq.title" = "Settings";
+
+/* Class = "UITextView"; text = "<Empty>"; ObjectID = "Crq-vf-XTN"; */
+"Crq-vf-XTN.text" = "<Empty>";
+
+/* Class = "UIButton"; normalTitle = "Change User"; ObjectID = "EDY-OR-cWe"; */
+"EDY-OR-cWe.normalTitle" = "Change User";
+
+/* Class = "UILabel"; text = "Bookmarks"; ObjectID = "EVX-bH-KEg"; */
+"EVX-bH-KEg.text" = "Bookmarks";
+
+/* Class = "UITextView"; text = "Introduction and Witnesses\nDesciption 1\nDescription 2"; ObjectID = "GI7-3d-tEn"; */
+"GI7-3d-tEn.text" = "Introduction and Witnesses\nDesciption 1\nDescription 2";
+
+/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "H9G-wg-wWT"; */
+"H9G-wg-wWT.placeholder" = "User Name";
+
+/* Class = "UIButton"; normalTitle = ">>"; ObjectID = "HRq-eq-Xkv"; */
+"HRq-eq-Xkv.normalTitle" = ">>";
+
+/* Class = "UIViewController"; title = "User"; ObjectID = "Kvg-5E-aoZ"; */
+"Kvg-5E-aoZ.title" = "User";
+
+/* Class = "UILabel"; text = "Choose What to Share"; ObjectID = "LLz-US-Vqt"; */
+"LLz-US-Vqt.text" = "Choose What to Share";
+
+/* Class = "UIButton"; normalTitle = "Record"; ObjectID = "LTa-Ut-9LL"; */
+"LTa-Ut-9LL.normalTitle" = "Record";
+
+/* Class = "UIViewController"; title = "ViewController_SubBook"; ObjectID = "QvO-lx-uAI"; */
+"QvO-lx-uAI.title" = "ViewController_SubBook";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "R1K-VM-N2w"; */
+"R1K-VM-N2w.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "<<"; ObjectID = "Rnz-Fy-dhk"; */
+"Rnz-Fy-dhk.normalTitle" = "<<";
+
+/* Class = "UITextView"; text = "Book of Mormon Helaman 5:12"; ObjectID = "S1p-DP-Qjp"; */
+"S1p-DP-Qjp.text" = "Book of Mormon Helaman 5:12";
+
+/* Class = "UITextView"; text = "<Empty>"; ObjectID = "U8F-r9-OBw"; */
+"U8F-r9-OBw.text" = "<Empty>";
+
+/* Class = "UITextView"; text = "<Empty>"; ObjectID = "UNT-Ce-WK7"; */
+"UNT-Ce-WK7.text" = "<Empty>";
+
+/* Class = "UITextView"; text = "Please send questions, comments, or concerns to rrtenz@gmail.com"; ObjectID = "VqF-l8-QHu"; */
+"VqF-l8-QHu.text" = "Please send questions, comments, or concerns to rrtenz@gmail.com";
+
+/* Class = "UITextField"; placeholder = "Verse"; ObjectID = "ZF3-U7-MdZ"; */
+"ZF3-U7-MdZ.placeholder" = "Verse";
+
+/* Class = "UIViewController"; title = "Quote"; ObjectID = "a0A-Iq-pDN"; */
+"a0A-Iq-pDN.title" = "Quote";
+
+/* Class = "UITextField"; placeholder = "Chapter"; ObjectID = "cJM-SC-7OD"; */
+"cJM-SC-7OD.placeholder" = "Chapter";
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "cdl-RA-icP"; */
+"cdl-RA-icP.normalTitle" = "Share";
+
+/* Class = "UIViewController"; title = "ViewController_Export"; ObjectID = "ctJ-3R-IC1"; */
+"ctJ-3R-IC1.title" = "ViewController_Export";
+
+/* Class = "UIButton"; normalTitle = "Sub Book"; ObjectID = "da5-k9-sid"; */
+"da5-k9-sid.normalTitle" = "Sub Book";
+
+/* Class = "UILabel"; text = "Helaman 5:12"; ObjectID = "ebg-fW-01S"; */
+"ebg-fW-01S.text" = "Helaman 5:12";
+
+/* Class = "UIButton"; normalTitle = "Play"; ObjectID = "fog-A2-baW"; */
+"fog-A2-baW.normalTitle" = "Play";
+
+/* Class = "UIButton"; normalTitle = "Book"; ObjectID = "jiH-SM-93D"; */
+"jiH-SM-93D.normalTitle" = "Book";
+
+/* Class = "UIButton"; normalTitle = "<"; ObjectID = "lLa-lc-4fq"; */
+"lLa-lc-4fq.normalTitle" = "<";
+
+/* Class = "UIButton"; normalTitle = "Language"; ObjectID = "ltB-nc-JVJ"; */
+"ltB-nc-JVJ.normalTitle" = "Language";
+
+/* Class = "UILabel"; text = "Default"; ObjectID = "rVw-Aj-E1g"; */
+"rVw-Aj-E1g.text" = "Default";
+
+/* Class = "UILabel"; text = "Continous Record"; ObjectID = "rfq-4P-M5t"; */
+"rfq-4P-M5t.text" = "Continous Record";
+
+/* Class = "UILabel"; text = "10000/12000 = 83.3%"; ObjectID = "t5g-pR-Ofe"; */
+"t5g-pR-Ofe.text" = "10000/12000 = 83.3%";
+
+/* Class = "UILabel"; text = "Continuous Play"; ObjectID = "uw8-lx-mzB"; */
+"uw8-lx-mzB.text" = "Continuous Play";
+
+/* Class = "UILabel"; text = "1.0.170816"; ObjectID = "xLu-nB-w1S"; */
+"xLu-nB-w1S.text" = "1.0.170816";
+
+/* Class = "UITextView"; text = "<Empty>"; ObjectID = "xOj-5J-OgD"; */
+"xOj-5J-OgD.text" = "<Empty>";
+
+/* Class = "UITextView"; text = "\"My precious wife, Jeanene, loved the Book of Mormon. In her youth, as a teenager, it became the foundation of her life. It was a source of testimony and teaching during her full-time missionary service in the northwest United States. When we served in the mission field in Córdoba, Argentina, she strongly encouraged the use of the Book of Mormon in our proselytizing efforts. Jeanene confirmed early in her life that those who consistently read the Book of Mormon are blessed with an added measure of the Spirit of the Lord, a greater resolve to obey His commandments, and a stronger testimony of the divinity of the Son of God. For I don’t know how many years, as the end of the year approached, I would see her sitting quietly, carefully finishing the entire Book of Mormon yet another time before year’s end.\n\nIn 1991 I wanted to give a special Christmas gift to my family. In recording the fulfillment of that desire, my personal journal states: “It is 12:38 p.m., Wednesday, December 18, 1991. I’ve just concluded an audio recording of the Book of Mormon for my family. This has been an experience that has increased my testimony of this divine work and strengthened in me a desire to be more familiar with its pages to distill from these scriptures truths to be used in my service to the Lord. I love this book. I testify with my soul that it is true, that it was prepared for the blessing of the House of Israel, and all of its component parts spread throughout the world. All who will study its message in humility, in faith believing in Jesus Christ, will know of its truthfulness and will find a treasure to lead them to greater happiness, peace, and attainment in this life. I testify by all that is sacred, this book is true.”\"\n\nThe Power of Scripture \nRichard G. Scott, October 2011 General Conference"; ObjectID = "ztf-DP-a4L"; */
+"ztf-DP-a4L.text" = "\"My precious wife, Jeanene, loved the Book of Mormon. In her youth, as a teenager, it became the foundation of her life. It was a source of testimony and teaching during her full-time missionary service in the northwest United States. When we served in the mission field in Córdoba, Argentina, she strongly encouraged the use of the Book of Mormon in our proselytizing efforts. Jeanene confirmed early in her life that those who consistently read the Book of Mormon are blessed with an added measure of the Spirit of the Lord, a greater resolve to obey His commandments, and a stronger testimony of the divinity of the Son of God. For I don’t know how many years, as the end of the year approached, I would see her sitting quietly, carefully finishing the entire Book of Mormon yet another time before year’s end.\n\nIn 1991 I wanted to give a special Christmas gift to my family. In recording the fulfillment of that desire, my personal journal states: “It is 12:38 p.m., Wednesday, December 18, 1991. I’ve just concluded an audio recording of the Book of Mormon for my family. This has been an experience that has increased my testimony of this divine work and strengthened in me a desire to be more familiar with its pages to distill from these scriptures truths to be used in my service to the Lord. I love this book. I testify with my soul that it is true, that it was prepared for the blessing of the House of Israel, and all of its component parts spread throughout the world. All who will study its message in humility, in faith believing in Jesus Christ, will know of its truthfulness and will find a treasure to lead them to greater happiness, peace, and attainment in this life. I testify by all that is sacred, this book is true.”\"\n\nThe Power of Scripture \nRichard G. Scott, October 2011 General Conference";
