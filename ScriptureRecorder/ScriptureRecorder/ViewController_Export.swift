@@ -23,14 +23,14 @@ class ViewController_Export: UIViewController, UIPickerViewDataSource, UIPickerV
         super.viewDidLoad()
         appDelegate.shareFile = false
         
-        whatArray[0] = Utilities().getCurrentBook().Name[appDelegate.Language.rawValue]
-        whatArray[1] = Utilities().getCurrentSubBook().Name[appDelegate.Language.rawValue]
-        whatArray[2] = "\(Utilities().getCurrentSubBook().Name[appDelegate.Language.rawValue]) \(appDelegate.chapter)"
-        whatArray[3] = "\(Utilities().getCurrentSubBook().Name[appDelegate.Language.rawValue]) \(appDelegate.chapter):\(appDelegate.verse)"
+        whatArray[0] = Utilities().getCurrentBook().Name[appDelegate.userLanguage.rawValue]
+        whatArray[1] = Utilities().getCurrentSubBook().Name[appDelegate.userLanguage.rawValue]
+        whatArray[2] = "\(Utilities().getCurrentSubBook().Name[appDelegate.userLanguage.rawValue]) \(appDelegate.chapter)"
+        whatArray[3] = "\(Utilities().getCurrentSubBook().Name[appDelegate.userLanguage.rawValue]) \(appDelegate.chapter):\(appDelegate.verse)"
         
         appDelegate.whatToShare = Const.WhatToShare.Book
         
-        switch appDelegate.Language {
+        switch appDelegate.userLanguage {
         case .English:
             buttonShare_outlet.setTitle("Share", for: .normal)
             labelWhatToSend.text = "Choose What to Share"

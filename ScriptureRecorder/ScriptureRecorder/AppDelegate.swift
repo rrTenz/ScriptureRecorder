@@ -87,6 +87,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var shareFile = false
     var whatToShare: Const.WhatToShare = Const.WhatToShare.Book
     var mergeAudioURL = NSURL()
+    var doneMergingFile = false
+    var mergeSuccess = false
+    var Combine_Message = ""
+    var TotalSize_String = ""
     
     var bookmarks = Array<Scripture.Bookmark>()
     var goToBookmark = false
@@ -97,6 +101,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case Portuguese = 2
     }
     
-    var Language: Language = .English
+    var userLanguage: Language = .English
 }
 

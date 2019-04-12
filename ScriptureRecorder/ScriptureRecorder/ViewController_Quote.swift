@@ -17,7 +17,7 @@ class ViewController_Quote: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        TextView_Quote.text = Const.SCOTT_QUOTE[appDelegate.Language.rawValue]
+        TextView_Quote.text = Const.SCOTT_QUOTE[appDelegate.userLanguage.rawValue]
     }
 
     override func didReceiveMemoryWarning() {

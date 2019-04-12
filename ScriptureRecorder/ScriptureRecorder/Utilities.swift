@@ -33,6 +33,8 @@ struct Utilities {
         static let key_subBookString_bm = "subBookString_bm"
         static let key_chapter_bm = "chapter_bm"
         static let key_verse_bm = "verse_bm"
+        
+        static let key_Language = "key_Language"
     }
     
     func loadDefaults(loadUser: Bool) {
@@ -68,6 +70,8 @@ struct Utilities {
         appDelegate.languageURL = defaults.string(forKey: appDelegate.userName + defaultsKeys.key_languageURL)!
         appDelegate.continualPlay = defaults.bool(forKey: appDelegate.userName + defaultsKeys.key_continualPlay)
         appDelegate.continualRecord = defaults.bool(forKey: appDelegate.userName + defaultsKeys.key_continualRecord)
+        
+        appDelegate.userLanguage = AppDelegate.Language(rawValue: defaults.integer(forKey: appDelegate.userName + defaultsKeys.key_Language))!
         
         appDelegate.bookString_prev = appDelegate.bookString
         appDelegate.subBookString_prev = appDelegate.subBookString
@@ -119,6 +123,9 @@ struct Utilities {
         defaults.set(appDelegate.languageURL, forKey: appDelegate.userName + defaultsKeys.key_languageURL)
         defaults.set(appDelegate.continualPlay, forKey: appDelegate.userName + defaultsKeys.key_continualPlay)
         defaults.set(appDelegate.continualRecord, forKey: appDelegate.userName + defaultsKeys.key_continualRecord)
+        
+        let val = appDelegate.userLanguage.rawValue
+        defaults.set(val, forKey: appDelegate.userName + defaultsKeys.key_Language)
         
         saveBookmarks()
     }
@@ -181,17 +188,17 @@ struct Utilities {
     func getCurrentBook() -> Scripture.Book {
         var book: Scripture.Book? = nil
         
-        appDelegate.bookString = Const.BOOK_LIST[appDelegate.Language.rawValue][appDelegate.bookEnum.rawValue]
+        appDelegate.bookString = Const.BOOK_LIST[appDelegate.userLanguage.rawValue][appDelegate.bookEnum.rawValue]
         switch appDelegate.bookString {
-        case Const.BOM, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.BOM.rawValue]:
+        case Const.BOM, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.BOM.rawValue]:
             book = Scripture.BOM
-        case Const.PGP, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.PGP.rawValue]:
+        case Const.PGP, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.PGP.rawValue]:
             book = Scripture.PGP
-        case Const.DC, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.DC.rawValue]:
+        case Const.DC, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.DC.rawValue]:
             book = Scripture.DC
-        case Const.OT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.OT.rawValue]:
+        case Const.OT, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.OT.rawValue]:
             book = Scripture.OT
-        case Const.NT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.NT.rawValue]:
+        case Const.NT, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.NT.rawValue]:
             book = Scripture.NT
         default:
             print("Book not added getCurrentBook()")
@@ -204,7 +211,7 @@ struct Utilities {
         
         var subBook: Scripture.SubBook? = nil
         
-        let var1 = Const.SUB_BOOK_LIST[appDelegate.Language.rawValue]
+        let var1 = Const.SUB_BOOK_LIST[appDelegate.userLanguage.rawValue]
         let var2 = var1[appDelegate.bookEnum.rawValue]
         var index = getCurrentSubBookIndex()
         if index == -1 {
@@ -214,7 +221,7 @@ struct Utilities {
         appDelegate.subBookString = var3
         
         for tempSubBook in book.SubBookArray {
-            if tempSubBook.Name[appDelegate.Language.rawValue] == appDelegate.subBookString {
+            if tempSubBook.Name[appDelegate.userLanguage.rawValue] == appDelegate.subBookString {
                 subBook = tempSubBook
                 break
             }
@@ -225,7 +232,7 @@ struct Utilities {
     
     func getBookFromString(_ book_str: String) -> Scripture.Book {
         for book in Scripture.ALL {
-            if(book.Name[AppDelegate.Language.English.rawValue] == book_str || book.Name[appDelegate.Language.rawValue] == book_str) {
+            if(book.Name[AppDelegate.Language.English.rawValue] == book_str || book.Name[appDelegate.userLanguage.rawValue] == book_str) {
                 return book
             }
         }
@@ -234,9 +241,9 @@ struct Utilities {
     
     func getSubBookFromStrings(_ book_str: String, _ subBook_str: String) -> Scripture.SubBook {
         for book in Scripture.ALL {
-            if(book.Name[AppDelegate.Language.English.rawValue] == book_str || book.Name[appDelegate.Language.rawValue] == book_str) {
+            if(book.Name[AppDelegate.Language.English.rawValue] == book_str || book.Name[appDelegate.userLanguage.rawValue] == book_str) {
                 for subBook in book.SubBookArray {
-                    if subBook.Name[AppDelegate.Language.English.rawValue] == subBook_str || subBook.Name[appDelegate.Language.rawValue] == subBook_str {
+                    if subBook.Name[AppDelegate.Language.English.rawValue] == subBook_str || subBook.Name[appDelegate.userLanguage.rawValue] == subBook_str {
                         return subBook
                     }
                 }
@@ -250,7 +257,7 @@ struct Utilities {
         
         var index = 0
         for tempSubBook in book.SubBookArray {
-            if tempSubBook.Name[appDelegate.Language.rawValue] == appDelegate.subBookString {
+            if tempSubBook.Name[appDelegate.userLanguage.rawValue] == appDelegate.subBookString {
                 return index
             }
             index += 1
@@ -264,7 +271,7 @@ struct Utilities {
         let chapter = getCurrentChapterObject()
         var returnString = Const.URL_LDS_SCRIPTURES
         let subBook = getCurrentSubBook()
-        appDelegate.languageURL = appDelegate.languageURL_array[appDelegate.Language.rawValue]
+        appDelegate.languageURL = appDelegate.languageURL_array[appDelegate.userLanguage.rawValue]
         
         if chapter.optionalDescription.Description[0].contains("Record your testimony") {
             returnString = Const.URL_LDS_TESTIMONY + appDelegate.languageURL
@@ -272,7 +279,7 @@ struct Utilities {
         }
         
         switch appDelegate.bookString {
-        case Const.BOM, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.BOM.rawValue]:
+        case Const.BOM, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.BOM.rawValue]:
             returnString += Const.URL_BOM
             if chapter.optionalDescription.Description[0] == "Title Page" {
                 returnString += Const.URL_BOM_TITLE_PAGE
@@ -294,27 +301,27 @@ struct Utilities {
                 returnString += "\(appDelegate.chapter)"
                 //returnString += ".\(appDelegate.verse)"
             }
-        case Const.PGP, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.PGP.rawValue]:
+        case Const.PGP, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.PGP.rawValue]:
             returnString += Const.URL_PGP
-            if subBook.Name[appDelegate.Language.rawValue] == Const.PGP_LIST[appDelegate.Language.rawValue][0] {
+            if subBook.Name[appDelegate.userLanguage.rawValue] == Const.PGP_LIST[appDelegate.userLanguage.rawValue][0] {
                 returnString += Const.URL_PGP_TITLE
-            }else if subBook.Name[appDelegate.Language.rawValue] == Const.PGP_LIST[appDelegate.Language.rawValue][1] {
+            }else if subBook.Name[appDelegate.userLanguage.rawValue] == Const.PGP_LIST[appDelegate.userLanguage.rawValue][1] {
                 returnString += Const.URL_PGP_INTRO
             }else {
                 let index = getCurrentSubBookIndex()
                 returnString += Const.URL_PGP_LIST[index]
                 returnString += "\(appDelegate.chapter)"
             }
-        case Const.DC, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.DC.rawValue]:
+        case Const.DC, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.DC.rawValue]:
             returnString += Const.URL_DC
-            if subBook.Name[appDelegate.Language.rawValue] == Const.DC_LIST[appDelegate.Language.rawValue][0] {
+            if subBook.Name[appDelegate.userLanguage.rawValue] == Const.DC_LIST[appDelegate.userLanguage.rawValue][0] {
                 returnString += Const.URL_DC_TITLE
-            }else if subBook.Name[appDelegate.Language.rawValue] == Const.DC_LIST[appDelegate.Language.rawValue][1] {
+            }else if subBook.Name[appDelegate.userLanguage.rawValue] == Const.DC_LIST[appDelegate.userLanguage.rawValue][1] {
                 returnString += Const.URL_DC_INTRO
-            }else if subBook.Name[appDelegate.Language.rawValue] == Const.DC_LIST[appDelegate.Language.rawValue][3]{
+            }else if subBook.Name[appDelegate.userLanguage.rawValue] == Const.DC_LIST[appDelegate.userLanguage.rawValue][3]{
                 returnString += Const.URL_DC_OFFICIAL_DECLARATIONS
                 returnString += "\(1)"
-            }else if subBook.Name[appDelegate.Language.rawValue] == Const.DC_LIST[appDelegate.Language.rawValue][4]{
+            }else if subBook.Name[appDelegate.userLanguage.rawValue] == Const.DC_LIST[appDelegate.userLanguage.rawValue][4]{
                 returnString += Const.URL_DC_OFFICIAL_DECLARATIONS
                 returnString += "\(2)"
             }else {
@@ -322,12 +329,12 @@ struct Utilities {
                 returnString += Const.URL_DC_LIST[index]
                 returnString += "\(appDelegate.chapter)"
             }
-        case Const.OT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.OT.rawValue]:
+        case Const.OT, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.OT.rawValue]:
             returnString += Const.URL_OT
-            if subBook.Name[appDelegate.Language.rawValue] == Const.OT_LIST[appDelegate.Language.rawValue][0] {
+            if subBook.Name[appDelegate.userLanguage.rawValue] == Const.OT_LIST[appDelegate.userLanguage.rawValue][0] {
                 returnString += Const.URL_OT_TITLE
-            }else if subBook.Name[appDelegate.Language.rawValue] == Const.OT_LIST[appDelegate.Language.rawValue][1] {
-                if appDelegate.Language == .English {
+            }else if subBook.Name[appDelegate.userLanguage.rawValue] == Const.OT_LIST[appDelegate.userLanguage.rawValue][1] {
+                if appDelegate.userLanguage == .English {
                     returnString += Const.URL_OT_EPISTLE
                 }else {
                     returnString += Const.URL_OT_INTRO
@@ -337,9 +344,9 @@ struct Utilities {
                 returnString += Const.URL_OT_LIST[index]
                 returnString += "\(appDelegate.chapter)"
             }
-        case Const.NT, Const.BOOK_LIST[appDelegate.Language.rawValue][Const.Book.NT.rawValue]:
+        case Const.NT, Const.BOOK_LIST[appDelegate.userLanguage.rawValue][Const.Book.NT.rawValue]:
             returnString += Const.URL_NT
-            if subBook.Name[appDelegate.Language.rawValue] == Const.NT_LIST[appDelegate.Language.rawValue][0] {
+            if subBook.Name[appDelegate.userLanguage.rawValue] == Const.NT_LIST[appDelegate.userLanguage.rawValue][0] {
                 returnString += Const.URL_NT_TITLE
             }else {
                 let index = getCurrentSubBookIndex()
@@ -419,7 +426,7 @@ struct Utilities {
      fileName - e.g. "FinalAudio.m4a"
  
      */
-    func mergeAudioFiles(audioFileUrls: NSArray, fileName: String) {
+    func mergeAudioFiles(audioFileUrls: NSArray, fileName: String, deleteFile: Bool) {
         let composition = AVMutableComposition()
         
         for i in 0 ..< audioFileUrls.count {
@@ -438,10 +445,12 @@ struct Utilities {
         let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! as NSURL
         appDelegate.mergeAudioURL = documentDirectoryURL.appendingPathComponent(fileName)! as URL as NSURL
         
-        do {
-            try FileManager.default.removeItem(at: appDelegate.mergeAudioURL as URL)
-        } catch let error as NSError {
-            print("Error: \(error.domain)")
+        if deleteFile {
+            do {
+                try FileManager.default.removeItem(at: appDelegate.mergeAudioURL as URL)
+            } catch let error as NSError {
+                print("Error: \(error.domain)")
+            }
         }
         
         let assetExport = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A)
@@ -449,22 +458,106 @@ struct Utilities {
         assetExport?.outputURL = appDelegate.mergeAudioURL as URL
         assetExport?.exportAsynchronously(completionHandler:
             {
+                self.appDelegate.doneMergingFile = true
+                self.appDelegate.mergeSuccess = false
                 switch assetExport!.status
                 {
                 case AVAssetExportSessionStatus.failed:
                     print("failed \(String(describing: assetExport?.error))")
+                    self.appDelegate.mergeSuccess = false
                 case AVAssetExportSessionStatus.cancelled:
                     print("cancelled \(String(describing: assetExport?.error))")
+                    self.appDelegate.mergeSuccess = false
                 case AVAssetExportSessionStatus.unknown:
                     print("unknown\(String(describing: assetExport?.error))")
+                    self.appDelegate.mergeSuccess = false
                 case AVAssetExportSessionStatus.waiting:
                     print("waiting\(String(describing: assetExport?.error))")
+                    self.appDelegate.mergeSuccess = false
                 case AVAssetExportSessionStatus.exporting:
                     print("exporting\(String(describing: assetExport?.error))")
+                    self.appDelegate.mergeSuccess = false
                 default:
                     print("Audio Concatenation Complete")
+                    self.appDelegate.mergeSuccess = true
                 }
         })
+    }
+    
+    
+    func sizePerMB(url: URL?) -> UInt64 {
+        let filePath = (url?.path)!
+        var fileSize : UInt64 = 0
+        
+        do {
+            //return [FileAttributeKey : Any]
+            let attr = try FileManager.default.attributesOfItem(atPath: filePath)
+            fileSize = attr[FileAttributeKey.size] as! UInt64
+            
+            //if you convert to NSDictionary, you can get file size old way as well.
+            let dict = attr as NSDictionary
+            fileSize = dict.fileSize()
+        } catch {
+            print("Error: \(error)")
+        }
+        
+        return fileSize
+    }
+    
+    //https://medium.com/@gmcerveny/a-quick-ish-way-to-concatenate-audio-in-swift-e589ee957a5a
+    func mergeAudioFiles2(audioFileUrls: NSArray, fileName: String, deleteFile: Bool) {
+        let composition = AVMutableComposition()
+        let compositionAudioTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)
+        
+        var totalSize: UInt64 = 0
+        appDelegate.TotalSize_String = ""
+        for i in 0 ..< audioFileUrls.count {
+            compositionAudioTrack?.append(url: audioFileUrls[i] as! URL)
+            totalSize += sizePerMB(url: audioFileUrls[i] as? URL)
+            appDelegate.TotalSize_String = "\(totalSize)"
+        }
+        
+        
+        let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! as NSURL
+        appDelegate.mergeAudioURL = documentDirectoryURL.appendingPathComponent(fileName)! as URL as NSURL
+        if deleteFile {
+            do {
+                try FileManager.default.removeItem(at: appDelegate.mergeAudioURL as URL)
+            } catch let error as NSError {
+                print("Error: \(error.domain)")
+            }
+        }
+        
+        if let assetExport = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A) {
+            assetExport.outputFileType = AVFileType.m4a
+            assetExport.outputURL = appDelegate.mergeAudioURL as URL
+            assetExport.exportAsynchronously(completionHandler:
+                {
+                    self.appDelegate.doneMergingFile = true
+                    self.appDelegate.mergeSuccess = false
+                    switch assetExport.status
+                    {
+                    case AVAssetExportSessionStatus.failed:
+                        print("failed \(String(describing: assetExport.error))")
+                        self.appDelegate.mergeSuccess = false
+                    case AVAssetExportSessionStatus.cancelled:
+                        print("cancelled \(String(describing: assetExport.error))")
+                        self.appDelegate.mergeSuccess = false
+                    case AVAssetExportSessionStatus.unknown:
+                        print("unknown\(String(describing: assetExport.error))")
+                        self.appDelegate.mergeSuccess = false
+                    case AVAssetExportSessionStatus.waiting:
+                        print("waiting\(String(describing: assetExport.error))")
+                        self.appDelegate.mergeSuccess = false
+                    case AVAssetExportSessionStatus.exporting:
+                        print("exporting\(String(describing: assetExport.error))")
+                        self.appDelegate.mergeSuccess = false
+                    default:
+                        print("Audio Concatenation Complete")
+                        self.appDelegate.mergeSuccess = true
+                    }
+            })
+        }
     }
     
     func combineFile() -> Bool{
@@ -556,7 +649,43 @@ struct Utilities {
                 fileName += "\(appDelegate.subBookString)\(chapterSring).m4a"
             }
             fileName = fileName.replacingOccurrences(of: " ", with: "")
-            mergeAudioFiles(audioFileUrls: audioArray as NSArray, fileName: fileName)
+            
+            
+            mergeAudioFiles2(audioFileUrls: audioArray as NSArray, fileName: fileName, deleteFile: true)
+//            var currentFileMerge_index = 0
+//
+//            while currentFileMerge_index < audioArray.count {
+//
+//                var doDeleteFile = true
+//                var smallArray = [NSURL]()
+//                if currentFileMerge_index > 0 {
+//                    doDeleteFile = false
+//
+//
+//                    smallArray = [appDelegate.mergeAudioURL, audioArray[currentFileMerge_index]]
+//
+//                }else {
+//                    smallArray = [audioArray[0], audioArray[1]]
+//                    currentFileMerge_index += 1
+//                }
+//
+//                appDelegate.doneMergingFile = false
+//                mergeAudioFiles(audioFileUrls: smallArray as NSArray, fileName: fileName, deleteFile: doDeleteFile)
+//
+//                var mergingCount = 0
+//                while self.appDelegate.doneMergingFile == false {
+//                    //print("mergingCount: \(mergingCount)")
+//                    mergingCount += 1
+//                }
+//                print("mergingCount: \(mergingCount)")
+//
+//
+//                if self.appDelegate.mergeSuccess {
+//                    currentFileMerge_index += 1
+//                }
+//
+//            }
+            
         }else{
             print("Could not find any files to share")
             return false
@@ -575,5 +704,18 @@ struct Utilities {
 extension String {
     var isAlphanumeric: Bool {
         return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+}
+
+extension AVMutableCompositionTrack {
+    func append(url: URL) {
+        let newAsset = AVURLAsset(url: url)
+        let range = CMTimeRangeMake(start: CMTime.zero, duration: newAsset.duration)
+        let end = timeRange.end
+        print(end)
+        if let track = newAsset.tracks(withMediaType: AVMediaType.audio).first {
+            try! insertTimeRange(range, of: track, at: end)
+        }
+        
     }
 }

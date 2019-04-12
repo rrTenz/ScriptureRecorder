@@ -30,7 +30,7 @@ class ViewController_Settings: UIViewController {
         switchContRecord_attr.isOn = appDelegate.continualRecord
         labelVersion.text = "\(appDelegate.VERSION)"
         
-        switch appDelegate.Language {
+        switch appDelegate.userLanguage {
         case .English:
             buttonChangeUser_outlet.setTitle("Change User", for: .normal)
             Label_ContinuousPlay.text = "Continuous Play"
@@ -99,7 +99,7 @@ class ViewController_Settings: UIViewController {
     }
     
     @IBAction func buttonInfoPlay(_ sender: UIButton) {
-        switch appDelegate.Language {
+        switch appDelegate.userLanguage {
         case .English:
             showAlert(title: "Continuous Play", message: "The 'Continuous Play' option allows the app to continue playing one verse right after another. It will continue to do so until it finds a verse that has not been recorded, the user presses 'Stop', or 'Continuous Play' is disabled.")
         case .Spanish:
@@ -110,7 +110,7 @@ class ViewController_Settings: UIViewController {
     }
     
     @IBAction func buttonInfoRecord(_ sender: UIButton) {
-        switch appDelegate.Language {
+        switch appDelegate.userLanguage {
         case .English:
             showAlert(title: "Continuous Record", message: "The 'Continuous Record' option will record continually as the user navigates from verse to verse. It will continue to do so until the user presses 'Stop' or 'Continuous Record' is disabled.")
         case .Spanish:

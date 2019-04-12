@@ -18,7 +18,7 @@ class ViewController_Language: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Label_Language.text = Const.LANGUAGE[appDelegate.Language.rawValue]
+        Label_Language.text = Const.LANGUAGE[appDelegate.userLanguage.rawValue]
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +44,7 @@ class ViewController_Language: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Label_Language.text = Const.LANGUAGE[indexPath.row]
-        appDelegate.Language = AppDelegate.Language(rawValue: indexPath.row)!
+        appDelegate.userLanguage = AppDelegate.Language(rawValue: indexPath.row)!
         appDelegate.languageURL = appDelegate.languageURL_array[indexPath.row]
     }
     

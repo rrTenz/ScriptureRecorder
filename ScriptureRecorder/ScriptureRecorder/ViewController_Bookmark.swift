@@ -34,7 +34,7 @@ class ViewController_Bookmark: UIViewController {
         updateTextBox(4)
         updateTextBox(5)
         
-        switch appDelegate.Language {
+        switch appDelegate.userLanguage {
         case .English:
             Label_Bookmarks.text = "Bookmarks"
         case .Spanish:
@@ -48,7 +48,7 @@ class ViewController_Bookmark: UIViewController {
         var text = ""
         
         if appDelegate.bookmarks[i].bookString == "" || appDelegate.bookmarks[i].subBookString == ""{
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 text = "<Empty>"
             case .Spanish:

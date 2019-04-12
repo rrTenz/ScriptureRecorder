@@ -32,6 +32,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     @IBOutlet var buttonBook: UIButton!
     @IBOutlet var buttonSubBook: UIButton!
     
+    @IBOutlet weak var View_Progress: UIView!
+    @IBOutlet weak var CombineProgress_Label: UILabel!
+    
     static let text_buttonRecord = ["Record", "Grabar", "Gravar"]
     static let text_buttonPlay = ["Play", "Tocar", "Tocar"]
     static let text_buttonShare = ["Share", "Compartir", "Compartilhar"]
@@ -69,6 +72,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         
         imagePlay.isHidden = true
         imageRecord.isHidden = true
+        
+        self.timer_UI = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(run_UI_Code), userInfo: nil, repeats: true)
+    }
+    
+    @objc func run_UI_Code() {
+        CombineProgress_Label.text = "\(appDelegate.TotalSize_String)"
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,7 +97,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     override func viewDidAppear(_ animated: Bool) {
         if appDelegate.userName_prev != appDelegate.userName {
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 Utilities().popupMessage(view: self, title: "User changed", message: "User changed to:\n\(appDelegate.userName)", button: "OK")
             case .Spanish:
@@ -104,9 +113,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             shareFile()
         }
         
-        buttonRecord.setTitle(ViewController.text_buttonRecord[appDelegate.Language.rawValue], for: .normal)
-        buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
-        buttonSave.setTitle(ViewController.text_buttonShare[appDelegate.Language.rawValue], for: .normal)
+        buttonRecord.setTitle(ViewController.text_buttonRecord[appDelegate.userLanguage.rawValue], for: .normal)
+        buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.userLanguage.rawValue], for: .normal)
+        buttonSave.setTitle(ViewController.text_buttonShare[appDelegate.userLanguage.rawValue], for: .normal)
     }
     
     //TODO add for ads
@@ -143,52 +152,208 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
 //        print("adViewWillLeaveApplication")
 //    }
     
+    var activityIndicator = UIActivityIndicatorView()
+    var timer: Timer!
+    var timer_tryAgain: Timer!
+    var timer_UI: Timer!
+    var readFileSize_TryCount = 0
+    var audioData_TryAgain: NSURL = NSURL()
     func shareFile() {
-        var fileExists = false
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(run_BlockUi_Code), userInfo: nil, repeats: false)
+    }
+    
+    @objc func run_BlockUi_Code() {
         
-        //Create desired file
-        if appDelegate.whatToShare == .Verse {
-            //there is nothing to create
-            fileExists = verifyFileExists()
-        }else {
-            if Utilities().combineFile() == false {
-                switch appDelegate.Language {
-                case .English:
-                    Utilities().popupMessage(view: self, title: "Error", message: "The combined file could not be created", button: "OK")
-                case .Spanish:
-                    Utilities().popupMessage(view: self, title: "Error", message: "El archivo combinado no pudo ser creado", button: "Bueno")
-                case .Portuguese:
-                    Utilities().popupMessage(view: self, title: "Erro", message: "O arquivo combinado não pôde ser criado", button: "OK")
-                }
-            }else {
-                fileExists = true
-            }
+        View_Progress.isHidden = false
+        switch appDelegate.userLanguage {
+        case .English:
+            CombineProgress_Label.text = "Preparing File"
+        case .Spanish:
+            CombineProgress_Label.text = "Preparando el archivo"
+        case .Portuguese:
+            CombineProgress_Label.text = "Preparando Arquivo"
         }
         
-        //TODO check if combined file exists
-        if fileExists {
-            var path = ""
-            var audioData: NSURL
-            if appDelegate.whatToShare == .Verse {
-                path = self.audioFileLocation()
-                audioData = NSURL(fileURLWithPath: path)
-            }else {
-                audioData = appDelegate.mergeAudioURL
-            }
-            let activityVC = UIActivityViewController(activityItems:[audioData], applicationActivities: nil)
-            activityVC.popoverPresentationController?.sourceView = self.view
+        
+        //Activity Indicator init
+        activityIndicator.isHidden = false
+        activityIndicator.center = self.view.center
+        activityIndicator.color = .white
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        print("beginIgnoringInteractionEvents")
+        self.view.addSubview(activityIndicator)
+        
+        if timer_UI != nil {
+            timer_UI.invalidate()
+        }
+        self.timer_UI = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(run_UI_Code), userInfo: nil, repeats: true)
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: false)
+    }
+    
+    @objc func runTimedCode() {
+        //DispatchQueue.global(qos: .utility).async {
+            var fileExists = false
             
-            self.present(activityVC, animated: true, completion: nil)
-        }else{
-            switch appDelegate.Language {
-            case .English:
-                Utilities().popupMessage(view: self, title: "Oops", message: "File does not exisit", button: "OK")
-            case .Spanish:
-                Utilities().popupMessage(view: self, title: "Ups", message: "El archivo no existe", button: "Bueno")
-            case .Portuguese:
-                Utilities().popupMessage(view: self, title: "Opa", message: "Arquivo não existe", button: "OK")
+            //Create desired file
+            if self.appDelegate.whatToShare == .Verse {
+                //there is nothing to create
+                fileExists = self.verifyFileExists()
+            }else {
+                self.appDelegate.doneMergingFile = false
+                    if Utilities().combineFile() == false {
+                        self.FileComboFail()
+                    }else {
+                        fileExists = true
+                    }
+            }
+            
+            if fileExists {
+                var path = ""
+                var audioData: NSURL
+                if self.appDelegate.whatToShare == .Verse {
+                    path = self.audioFileLocation()
+                    audioData = NSURL(fileURLWithPath: path)
+                }else {
+                    audioData = self.appDelegate.mergeAudioURL
+                }
+                
+                print("Waiting for file to stablize")
+                self.audioData_TryAgain = audioData
+                self.readFileSize_TryCount = 10
+                self.fileSize_prev = 0
+                if timer_UI != nil {
+                    timer_UI.invalidate()
+                }
+                self.timer_tryAgain = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.run_TryAgainCode), userInfo: nil, repeats: false)
+            }else{
+                self.FileComboFail()
+            }
+        //}
+    }
+    
+    var fileSize_Total = 0
+    var fileSize_prev: UInt64 = 0
+    @objc func run_TryAgainCode() {
+        
+        print("readFileSize_TryCount: \(readFileSize_TryCount)")
+        
+        let fileSize = sizePerMB(url: audioData_TryAgain as URL)
+        if doesFileExist(url: audioData_TryAgain as URL) && fileSize > 0 {
+            
+            print("File Size is no longer 0, fileSize: \(fileSize), fileSize_prev \(fileSize_prev)")
+            
+            if appDelegate.TotalSize_String.isAlphanumeric {
+                fileSize_Total = Int(appDelegate.TotalSize_String)!
+            }
+            
+            let percent = (Float(fileSize) / Float(Double(fileSize_Total) * 0.2165)) * 100
+            if percent > 100.0 {
+                CombineProgress_Label.text = String(format: "%.3f", Double(fileSize) / 1000000.0) + " MB"
+            } else {
+                CombineProgress_Label.text = "~ " + String(format: "%.3f", percent) + " %"
+            }
+            
+            
+            if fileSize == fileSize_prev {
+                print("File is READY")
+                let activityVC = UIActivityViewController(activityItems:[audioData_TryAgain], applicationActivities: nil)
+                activityVC.popoverPresentationController?.sourceView = self.view
+                
+                self.present(activityVC, animated: true, completion: nil)
+                
+                activityIndicator.isHidden = true
+                activityIndicator.stopAnimating()
+                UIApplication.shared.endIgnoringInteractionEvents()
+                View_Progress.isHidden = true
+            }else {
+                print("File Size has changed")
+                fileSize_prev = fileSize
+                self.timer_tryAgain = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(run_TryAgainCode), userInfo: nil, repeats: false)
+            }
+            
+        }else {
+            if self.appDelegate.doneMergingFile {
+                readFileSize_TryCount -= 1
+            }
+            if readFileSize_TryCount >= 0 {
+                self.timer_tryAgain = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(run_TryAgainCode), userInfo: nil, repeats: false)
+            }else {
+                print("No more tries")
+                FileComboFail()
             }
         }
+    }
+    
+    func FileComboFail() {
+        switch appDelegate.userLanguage {
+        case .English:
+            Utilities().popupMessage(view: self, title: "Error", message: "The combined file could not be created", button: "OK")
+        case .Spanish:
+            Utilities().popupMessage(view: self, title: "Error", message: "El archivo combinado no pudo ser creado", button: "Bueno")
+        case .Portuguese:
+            Utilities().popupMessage(view: self, title: "Erro", message: "O arquivo combinado não pôde ser criado", button: "OK")
+        }
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+        View_Progress.isHidden = true
+    }
+    
+    func doesFileExist(url: URL) -> Bool {
+        var doesExist = false
+        var fileSize : UInt64 = 0
+        let filePath = url.path
+        let fileManager = FileManager.default
+        
+        if fileManager.fileExists(atPath: filePath) {
+            
+            do {
+                //return [FileAttributeKey : Any]
+                let attr = try FileManager.default.attributesOfItem(atPath: filePath)
+                fileSize = attr[FileAttributeKey.size] as! UInt64
+                
+                //if you convert to NSDictionary, you can get file size old way as well.
+                let dict = attr as NSDictionary
+                fileSize = dict.fileSize()
+                
+                if fileSize <= 0 {
+                    print("FILE SIZE IS 0")
+                    doesExist = false
+                }else {
+                    print("FILE AVAILABLE, fileSize: \(fileSize)")
+                    doesExist = true
+                }
+            } catch {
+                print("Error: \(error)")
+            }
+        } else {
+            print("FILE NOT AVAILABLE")
+        }
+        
+        return doesExist
+    }
+    
+    
+    func sizePerMB(url: URL?) -> UInt64 {
+        let filePath = (url?.path)!
+        var fileSize : UInt64 = 0
+        
+        do {
+            //return [FileAttributeKey : Any]
+            let attr = try FileManager.default.attributesOfItem(atPath: filePath)
+            fileSize = attr[FileAttributeKey.size] as! UInt64
+            
+            //if you convert to NSDictionary, you can get file size old way as well.
+            let dict = attr as NSDictionary
+            fileSize = dict.fileSize()
+        } catch {
+            print("Error: \(error)")
+        }
+        
+        return fileSize
     }
     
     @IBAction func buttonSave(_ sender: Any) {
@@ -301,7 +466,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     func playActions() {
         if verifyFileExists() == false {
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 Utilities().popupMessage(view: self, title: "Oops", message: "File does not exisit", button: "OK")
             case .Spanish:
@@ -312,10 +477,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             return
         }
         if !audioRecorder.isRecording{  //don't play when recording
-            if buttonPlay.titleLabel?.text == ViewController.text_buttonPlay[appDelegate.Language.rawValue] ||
+            if buttonPlay.titleLabel?.text == ViewController.text_buttonPlay[appDelegate.userLanguage.rawValue] ||
                 (audioPlayer != nil && audioPlayer.isPlaying == false) {
                 buttonRecord.isEnabled = false
-                buttonPlay.setTitle(ViewController.text_buttonStop[appDelegate.Language.rawValue], for: .normal)
+                buttonPlay.setTitle(ViewController.text_buttonStop[appDelegate.userLanguage.rawValue], for: .normal)
                 
                 imagePlay.isHidden = false
                 imageRecord.isHidden = true
@@ -325,7 +490,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             }else{
                 audioPlayer.stop()
                 buttonRecord.isEnabled = true
-                buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
+                buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.userLanguage.rawValue], for: .normal)
                 
                 imagePlay.isHidden = true
                 imageRecord.isHidden = true
@@ -337,7 +502,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         if audioRecorder.isRecording{
             stopRecording()
         }
-        if buttonPlay.titleLabel?.text == ViewController.text_buttonStop[appDelegate.Language.rawValue] ||
+        if buttonPlay.titleLabel?.text == ViewController.text_buttonStop[appDelegate.userLanguage.rawValue] ||
             (audioPlayer != nil && audioPlayer.isPlaying == true) {
             playActions()   //TODO this needs to be tested
         }
@@ -458,7 +623,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                 
                 if verifyFileExists() { //see if the new verse has been recorded before
                     //if the verse exists, don't try to record over it
-                    switch appDelegate.Language {
+                    switch appDelegate.userLanguage {
                     case .English:
                         Utilities().popupMessage(view: self, title: "Recording Stopped", message: "This verse has previously been recorded. Continual Record has stopped.", button: "OK")
                     case .Spanish:
@@ -503,7 +668,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                 
                 if verifyFileExists() { //see if the new verse has been recorded before
                     //if the verse exists, don't try to record over it
-                    switch appDelegate.Language {
+                    switch appDelegate.userLanguage {
                     case .English:
                         Utilities().popupMessage(view: self, title: "Recording Stopped", message: "This verse has previously been recorded. Continual Record has stopped.", button: "OK")
                     case .Spanish:
@@ -545,12 +710,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         let subList = Utilities().getCurrentBook().SubBookArray
         if (subBookIndex > 0){
             subBookIndex -= 1
-            appDelegate.subBookString = subList[subBookIndex].Name[appDelegate.Language.rawValue]
+            appDelegate.subBookString = subList[subBookIndex].Name[appDelegate.userLanguage.rawValue]
             appDelegate.chapter = Utilities().getCurrentSubBook().ChapterArray.count
             appDelegate.verse = Utilities().getCurrentChapterObject().verseCount
             appDelegate.subBookString_prev = appDelegate.subBookString
         }else{
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 Utilities().popupMessage(view: self, title: "Beginning of Book", message: "There is not a previous chapter or verse in this book", button: "OK")
             case .Spanish:
@@ -570,12 +735,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         let subList = Utilities().getCurrentBook().SubBookArray
         if (subBookIndex + 1 < subList.count){
             subBookIndex += 1
-            appDelegate.subBookString = subList[subBookIndex].Name[appDelegate.Language.rawValue]
+            appDelegate.subBookString = subList[subBookIndex].Name[appDelegate.userLanguage.rawValue]
             appDelegate.chapter = 1
             appDelegate.verse = Utilities().getMinVerse()
             appDelegate.subBookString_prev = appDelegate.subBookString
         }else{
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 Utilities().popupMessage(view: self, title: "End of Book", message: "There is not another chapter or verse in this book", button: "OK")
             case .Spanish:
@@ -609,7 +774,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     func preparePlayer(){
         if verifyFileExists() == false {
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 Utilities().popupMessage(view: self, title: "Oops", message: "The file does not exist", button: "Done")
             case .Spanish:
@@ -653,13 +818,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     
     func updateRecordButtonTitle(){
         if(audioRecorder.isRecording){
-            buttonRecord.setTitle(ViewController.text_buttonStop[appDelegate.Language.rawValue], for: .normal)
+            buttonRecord.setTitle(ViewController.text_buttonStop[appDelegate.userLanguage.rawValue], for: .normal)
             buttonPlay.isEnabled = false
             
             imagePlay.isHidden = true
             imageRecord.isHidden = false
         }else{
-            buttonRecord.setTitle(ViewController.text_buttonRecord[appDelegate.Language.rawValue], for: .normal)
+            buttonRecord.setTitle(ViewController.text_buttonRecord[appDelegate.userLanguage.rawValue], for: .normal)
             if verifyFileExists() {
                 buttonPlay.isEnabled = true
                 
@@ -694,7 +859,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("audioPlayerDidFinishPlaying")
         buttonRecord.isEnabled = true
-        buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
+        buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.userLanguage.rawValue], for: .normal)
         
         imagePlay.isHidden = true
         imageRecord.isHidden = true
@@ -728,11 +893,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                 if verifyFileExists() { //see if the new verse exists
                     //if the verse exists, start playing it
                     print("   Start next Continous Play verse")
-                    buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
+                    buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.userLanguage.rawValue], for: .normal)
                     playActions()
                 }else {
                     print("   Verse does not exist")
-                    switch appDelegate.Language {
+                    switch appDelegate.userLanguage {
                     case .English:
                         Utilities().popupMessage(view: self, title: "Playing Stopped", message: "Continuous Play stopped because you reached a verse that has not been recorded.", button: "OK")
                     case .Spanish:
@@ -742,7 +907,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                     }
                 }
             }else {
-                switch appDelegate.Language {
+                switch appDelegate.userLanguage {
                 case .English:
                     Utilities().popupMessage(view: self, title: "Playing Stopped", message: "Continuous Play stopped because you reached the end of the book.", button: "OK")
                 case .Spanish:
@@ -762,7 +927,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             appDelegate.goToBookmark = false
         }else {
             if(appDelegate.bookString != appDelegate.bookString_prev){
-                let var1 = Const.SUB_BOOK_LIST[appDelegate.Language.rawValue]
+                let var1 = Const.SUB_BOOK_LIST[appDelegate.userLanguage.rawValue]
                 let var2 = var1[appDelegate.bookEnum.rawValue]
                 var index = Utilities().getCurrentSubBookIndex()
                 if index == -1 {
@@ -798,7 +963,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         if(audioPlayer != nil && audioPlayer.isPlaying == true) {
             wasPlaying = true
             audioPlayer.stop()
-            buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.Language.rawValue], for: .normal)
+            buttonPlay.setTitle(ViewController.text_buttonPlay[appDelegate.userLanguage.rawValue], for: .normal)
             
             imagePlay.isHidden = true
             imageRecord.isHidden = true
@@ -814,7 +979,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         var verseString = ""
         let subBook = Utilities().getCurrentSubBook()
         if appDelegate.verse == -1 && appDelegate.chapter == 1 {
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 verseString = " - Book Title and Book Summary"
             case .Spanish:
@@ -825,7 +990,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         }else if subBook.Name.contains("Intro") || subBook.Name.contains("Title") || subBook.Name.contains("Dedicatory") || subBook.Name.contains(" Testimony") ||          subBook.Name.contains("Portada") || subBook.Name.contains("") || subBook.Name.contains("Introducción") || subBook.Name.contains("Testimonio ") {
             verseString = ""
         }else if appDelegate.verse == -1 {
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 verseString = " - Chapter Pre-heading"
             case .Spanish:
@@ -833,8 +998,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             case .Portuguese:
                 verseString = " - Capítulo Pré-cabeçalho"
             }
-        }else if subBook.Name[appDelegate.Language.rawValue] == Const.PGP_AofF_ARRAY[appDelegate.Language.rawValue] && appDelegate.verse == 0 {
-            switch appDelegate.Language {
+        }else if subBook.Name[appDelegate.userLanguage.rawValue] == Const.PGP_AofF_ARRAY[appDelegate.userLanguage.rawValue] && appDelegate.verse == 0 {
+            switch appDelegate.userLanguage {
             case .English:
                 verseString = " - Articles of Faith Title"
             case .Spanish:
@@ -843,9 +1008,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                 verseString = " - Regras de Fé, Título"
             }
         }else if (appDelegate.chapter == 116 || appDelegate.chapter == 120) &&
-                    subBook.Name[appDelegate.Language.rawValue] == Const.DC_SECTIONS_ARRAY[appDelegate.Language.rawValue] &&
+                    subBook.Name[appDelegate.userLanguage.rawValue] == Const.DC_SECTIONS_ARRAY[appDelegate.userLanguage.rawValue] &&
                     appDelegate.verse == 0 {
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 verseString = " - Chapter Pre-heading"
             case .Spanish:
@@ -854,7 +1019,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
                 verseString = " - Capítulo Pré-cabeçalho"
             }
         }else if appDelegate.verse == 0 {
-            switch appDelegate.Language {
+            switch appDelegate.userLanguage {
             case .English:
                 verseString = " - Chapter Heading"
             case .Spanish:
@@ -866,15 +1031,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             verseString = ":\(appDelegate.verse)"
         }
         
-        let subBookString = Const.SUB_BOOK_LIST[appDelegate.Language.rawValue][appDelegate.bookEnum.rawValue][Utilities().getCurrentSubBookIndex()]
+        let subBookString = Const.SUB_BOOK_LIST[appDelegate.userLanguage.rawValue][appDelegate.bookEnum.rawValue][Utilities().getCurrentSubBookIndex()]
         
         let description = Utilities().getCurrentChapterObject().optionalDescription.Description
-        textViewVerse.text = "\(subBookString) \(appDelegate.chapter)\(verseString)\n\(description[appDelegate.Language.rawValue])"
+        textViewVerse.text = "\(subBookString) \(appDelegate.chapter)\(verseString)\n\(description[appDelegate.userLanguage.rawValue])"
         
 //        buttonBook.setTitle(" \(appDelegate.bookString)", for: .normal)
 //        buttonSubBook.setTitle(" \(appDelegate.subBookString)", for: .normal)
-        buttonBook.setTitle(" \(Const.BOOK_LIST[appDelegate.Language.rawValue][appDelegate.bookEnum.rawValue])", for: .normal)
-        buttonSubBook.setTitle(" \(Const.SUB_BOOK_LIST[appDelegate.Language.rawValue][appDelegate.bookEnum.rawValue][Utilities().getCurrentSubBookIndex()])", for: .normal)    //TODO fix
+        buttonBook.setTitle(" \(Const.BOOK_LIST[appDelegate.userLanguage.rawValue][appDelegate.bookEnum.rawValue])", for: .normal)
+        buttonSubBook.setTitle(" \(Const.SUB_BOOK_LIST[appDelegate.userLanguage.rawValue][appDelegate.bookEnum.rawValue][Utilities().getCurrentSubBookIndex()])", for: .normal)    //TODO fix
         
         let url = Utilities().getScriptureUrl()
         let currentURL = self.webView.request?.url?.absoluteString
